@@ -80,9 +80,24 @@ public class ItemService implements IItemService{
         return item;
     }
 
-    @Override
-    public void insert(Object p) {
 
+    @Override
+    public void insert(Item item) {
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ITEM);
+            preparedStatement.setInt(1,item.getItem_id());
+            preparedStatement.setString(2,item.getItem_code());
+            preparedStatement.setInt(3,item.getShop_id());
+            preparedStatement.setInt(4,item.getCategory_id());
+            preparedStatement.setInt(5,item.getDeal_id());
+            preparedStatement.setString(6,item.getItem_name());
+            preparedStatement.setDouble(7,item.getItem_price());
+            preparedStatement.setString(8,item.getItem_description());
+            preparedStatement.setString(9,item.getItem_image());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -91,13 +106,13 @@ public class ItemService implements IItemService{
     }
 
     @Override
-    public void edit(int id, Object o) {
+    public void edit(int id, Item o) {
 
     }
 
 
     @Override
-    public void save(Object p, int[] categories) {
+    public void save(Item p, int[] categories) {
 
     }
 }
