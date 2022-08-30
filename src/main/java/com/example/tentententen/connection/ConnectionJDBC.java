@@ -30,4 +30,8 @@ public class ConnectionJDBC {
 
         return  connection;
     }
+
+    public static void main(String[] args) {
+        getConnect();
+    }
 }
