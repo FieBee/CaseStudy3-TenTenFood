@@ -101,13 +101,15 @@ public class ItemService implements IItemService{
     }
 
     @Override
-    public void delete(int id) {
+    public boolean delete(int id) {
 
+        return false;
     }
 
     @Override
-    public void edit(int id, Item o) {
+    public boolean edit(int id, Item o) {
 
+        return false;
     }
 
 
