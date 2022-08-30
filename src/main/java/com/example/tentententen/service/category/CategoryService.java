@@ -4,10 +4,6 @@ import com.example.tentententen.connection.ConnectionJDBC;
 import com.example.tentententen.model.Category;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryService implements ICategoryService{
@@ -59,12 +55,13 @@ public class CategoryService implements ICategoryService{
     }
 
     @Override
-    public void delete(int id) {
+    public boolean delete(int id) {
 
+        return false;
     }
 
     @Override
-    public void edit(int id, Object o) {
-
+    public boolean edit(int id, Object o) {
+        return false;
     }
 }

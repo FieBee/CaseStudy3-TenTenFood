@@ -6,7 +6,7 @@ public interface IService<E> {
     List<E> fillAll();
     E findById(int id);
     void insert(E p);
-    void delete(int id);
-    void edit(int id,E t);
+    boolean delete(int id);
+    boolean edit(int id,E t);
 
 }
