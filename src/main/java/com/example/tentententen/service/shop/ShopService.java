@@ -88,11 +88,29 @@ public class ShopService implements IShopService {
 
     @Override
     public boolean deleteShop(int id) throws SQLException {
-        return false;
+        boolean rowDeleted;
+        try (PreparedStatement statement = connection.prepareStatement(DELETE_SHOP_SQL)) {
+            statement.setInt(1, id);
+            rowDeleted = statement.executeUpdate() > 0;
+        }
+        return rowDeleted;
     }
 
     @Override
     public boolean updateShop(Shop shop) throws SQLException {
-        return false;
+        boolean rowUpdated;
+        try (PreparedStatement statement = connection.prepareStatement(UPDATE_SHOP_SQL)) {
+            statement.setInt(1, shop.getShop_id());
+            statement.setString(2, shop.getShop_code());
+            statement.setString(3, shop.getShop_name());
+            statement.setString(4, shop.getShop_email());
+            statement.setInt(5, shop.getShop_phone());
+            statement.setString(6, shop.getShop_address());
+            statement.setString(7, shop.getShop_account());
+            statement.setString(8, shop.getShop_password());
+
+            rowUpdated = statement.executeUpdate() > 0;
+        }
+        return rowUpdated;
     }
 }
