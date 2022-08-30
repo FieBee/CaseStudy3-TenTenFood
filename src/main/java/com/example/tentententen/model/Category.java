@@ -21,6 +21,12 @@ public class Category {
         this.itemList = itemList;
     }
 
+    public Category(String category_code, String category_name, String category_description) {
+        this.category_code = category_code;
+        this.category_name = category_name;
+        this.category_description = category_description;
+    }
+
     public Category(int category_id, String category_code, String category_name, String category_description) {
         this.category_id = category_id;
         this.category_code = category_code;

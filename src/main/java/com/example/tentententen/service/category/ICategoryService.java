@@ -6,8 +6,7 @@ import com.example.tentententen.service.IService;
 
 import java.util.List;
 
-public interface ICategoryService extends IService {
+public interface ICategoryService extends IService<Category> {
     List<Category> findAllByItemId(int item_id);
-
 
 }
