@@ -14,5 +14,5 @@ public interface IShopService {
 
     boolean deleteShop(int id)throws SQLException;
 
-    boolean editShop(Shop shop)throws SQLException;
+    boolean updateShop(Shop shop)throws SQLException;
 }
