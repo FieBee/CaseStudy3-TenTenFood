@@ -42,10 +42,10 @@
         <input type="submit" value="Search">
     </form>
     <br>
-    <h2>
-        <a href="/home?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
-        <a href="/items" class="csw-btn-button" rel="nofollow" >Display item List</a>
-    </h2>
+<%--    <h2>--%>
+<%--        <a href="/home?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>--%>
+<%--        <a href="/items" class="csw-btn-button" rel="nofollow" >Display item List</a>--%>
+<%--    </h2>--%>
 
 </center>
 <div align="center">
