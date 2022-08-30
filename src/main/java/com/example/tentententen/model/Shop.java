@@ -10,12 +10,12 @@ public class Shop {
     private int shop_phone;
     private String shop_address;
     private String shop_account;
-    private Password shop_password;
+    private String shop_password;
 
     public Shop() {
     }
 
-    public Shop(int shop_id, String shop_code, String shop_name, String shop_email, int shop_phone, String shop_address, String shop_account, Password shop_password) {
+    public Shop(int shop_id, String shop_code, String shop_name, String shop_email, int shop_phone, String shop_address, String shop_account, String shop_password) {
         this.shop_id = shop_id;
         this.shop_code = shop_code;
         this.shop_name = shop_name;
@@ -82,11 +82,11 @@ public class Shop {
         this.shop_account = shop_account;
     }
 
-    public Password getShop_password() {
+    public String getShop_password() {
         return shop_password;
     }
 
-    public void setShop_password(Password shop_password) {
+    public void setShop_password(String shop_password) {
         this.shop_password = shop_password;
     }
 }
