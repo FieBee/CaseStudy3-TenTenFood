@@ -2,7 +2,6 @@ package com.example.tentententen.service.category;
 
 import com.example.tentententen.connection.ConnectionJDBC;
 import com.example.tentententen.model.Category;
-import com.example.tentententen.model.Item;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,30 +17,31 @@ public class CategoryService implements ICategoryService{
             " JOIN item_category  ON category.id = item.category_id and item.item_id=?";
 
 
+
     @Override
-    public List<Item> findAllByBookId(int item_id) {
+    public List<Category> findAllByItemId(int item_id) {
         return null;
     }
 
-    @Override
-    public List<Category> findAll() {
-        List<Category> categoryList = new ArrayList<>();
-        try {
-            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);
-            ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()){
-                int id = resultSet.getInt("category_id");
-                String code = resultSet.getString("category_code");
-                String name = resultSet.getString("category_name");
-                String description = resultSet.getString("category_description");
-                Category category = new Category(id, code, name, description);
-                categoryList.add(category);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return categoryList;
-    }
+//    @Override
+//    public List<Category> findAll() {
+//        List<Category> categoryList = new ArrayList<>();
+//        try {
+//            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);
+//            ResultSet resultSet = statement.executeQuery();
+//            while (resultSet.next()){
+//                int id = resultSet.getInt("category_id");
+//                String code = resultSet.getString("category_code");
+//                String name = resultSet.getString("category_name");
+//                String description = resultSet.getString("category_description");
+//                Category category = new Category(id, code, name, description);
+//                categoryList.add(category);
+//            }
+//        } catch (SQLException throwables) {
+//            throwables.printStackTrace();
+//        }
+//        return categoryList;
+//    }
 
     @Override
     public List fillAll() {
