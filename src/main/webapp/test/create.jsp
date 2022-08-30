@@ -9,7 +9,7 @@
 <center>
   <h1>User Management</h1>
   <h2>
-    <a href="/users">List All Users</a>
+    <a href="/items">List All Items</a>
   </h2>
 </center>
 <div align="center">
@@ -19,21 +19,51 @@
         <h2>Add New User</h2>
       </caption>
       <tr>
-        <th>User Name:</th>
+        <th>item_code:</th>
         <td>
-          <input type="text" name="name" id="name" size="45"/>
+          <input type="text" name="item_code" id="item_code" size="45"/>
         </td>
       </tr>
       <tr>
-        <th>User Email:</th>
+        <th>shop_id:</th>
         <td>
-          <input type="text" name="email" id="email" size="45"/>
+          <input type="text" name="shop_id" id="shop_id" size="45"/>
         </td>
       </tr>
       <tr>
-        <th>Country:</th>
+        <th>category_id:</th>
         <td>
-          <input type="text" name="country" id="country" size="15"/>
+          <input type="text" name="category_id" id="category_id" size="15"/>
+        </td>
+      </tr>
+      <tr>
+        <th>deal_id:</th>
+        <td>
+          <input type="text" name="deal_id" id="deal_id" size="15"/>
+        </td>
+      </tr>
+      <tr>
+        <th>item_name:</th>
+        <td>
+          <input type="text" name="item_name" id="item_name" size="15"/>
+        </td>
+      </tr>
+      <tr>
+        <th>item_price:</th>
+        <td>
+          <input type="text" name="item_price" id="item_price" size="15"/>
+        </td>
+      </tr>
+      <tr>
+        <th>item_description:</th>
+        <td>
+          <input type="text" name="item_description" id="item_description" size="15"/>
+        </td>
+      </tr>
+      <tr>
+        <th>item_image:</th>
+        <td>
+          <input type="text" name="item_image" id="item_image" size="15"/>
         </td>
       </tr>
       <tr>

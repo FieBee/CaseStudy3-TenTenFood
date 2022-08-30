@@ -14,13 +14,13 @@ public class ItemService implements IItemService{
 
     Connection connection = ConnectionJDBC.getConnect();
 
-    public static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
-    public static final String SELECT_ITEM_BY_ID = "SELECT * FROM item " +
+    private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
+    private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item " +
             "JOIN item_category ON category.id = item.category_id and item.item_id=?";
-    public static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
+    private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
-    public static final String DELETE_ITEM = "DELETE FROM item WHERE item_id =? ;";
-    public static final String UPDATE_ITEM = "UPDATE item SET item_code =?, shop_id =?, category_id =?, deal_id =?," +
+    private static final String DELETE_ITEM = "DELETE FROM item WHERE item_id =? ;";
+    private static final String UPDATE_ITEM = "UPDATE item SET item_code =?, shop_id =?, category_id =?, deal_id =?," +
             "item_name = ?, item_price =?, item_description =?, item_image =? WHERE item_id =?;";
 
 
@@ -134,9 +134,7 @@ public class ItemService implements IItemService{
             throw new RuntimeException(e);
         }
         return rowUpdated;
-
     }
-
 
     @Override
     public void save(Item p, int[] categories) {

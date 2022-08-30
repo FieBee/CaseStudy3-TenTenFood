@@ -18,7 +18,7 @@ import java.util.List;
 @WebServlet (name = "ItemServlet", value = "/home")
 public class ItemServlet extends HttpServlet {
 
-    IService itemService = new ItemService();
+    private IService itemService = new ItemService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -54,7 +54,7 @@ public class ItemServlet extends HttpServlet {
                     listItem(request,response);
                     break;
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -62,7 +62,7 @@ public class ItemServlet extends HttpServlet {
     private void listItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Item> items = itemService.fillAll();
         request.setAttribute("items",items);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/home.jsp");
         dispatcher.forward(request,response);
     }
     private void showCreate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {

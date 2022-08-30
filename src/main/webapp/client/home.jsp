@@ -33,17 +33,17 @@
 <body>
 <center>
     <h1>item Management</h1>
-    <h2><a href="/items?action=create" class="csw-btn-button" rel="nofollow">Creat New item</a></h2>
+    <h2><a href="/home?action=create" class="csw-btn-button" rel="nofollow">Creat New item</a></h2>
 
     <br>
 
-    <form action="/items?action=find" method="post">
+    <form action="/home?action=find" method="post">
         <input type="text" name="search" id="search" placeholder="country">
         <input type="submit" value="Search">
     </form>
     <br>
     <h2>
-        <a href="/items?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
+        <a href="/home?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
         <a href="/items" class="csw-btn-button" rel="nofollow" >Display item List</a>
     </h2>
 
