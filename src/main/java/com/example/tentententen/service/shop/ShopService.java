@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShopService implements IShopService {
@@ -48,10 +49,11 @@ public class ShopService implements IShopService {
                 String shop_code = rs.getString("shop_code");
                 String shop_name = rs.getString("shop_name");
                 String shop_email = rs.getString("shop_email");
-                String shop_phone = rs.getString("shop_phone");
+                int shop_phone = rs.getInt("shop_phone");
                 String shop_address = rs.getString("shop_address");
                 String shop_account = rs.getString("shop_account");
                 String shop_password = rs.getString("shop_password");
+                shop = new Shop(id, shop_code, shop_name, shop_email, shop_email, shop_phone, shop_address, shop_account, shop_password);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -61,7 +63,26 @@ public class ShopService implements IShopService {
 
     @Override
     public List<Shop> selectAllShops() {
-        return null;
+        List<Shop> shops = new ArrayList<>();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SHOP)) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String shop_code = rs.getString("shop_code");
+                String shop_name = rs.getString("shop_name");
+                String shop_email = rs.getString("shop_email");
+                int shop_phone = rs.getInt("shop_phone");
+                String shop_address = rs.getString("shop_address");
+                String shop_account = rs.getString("shop_account");
+                String shop_password = rs.getString("shop_password");
+                shops.add(new Shop(id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return shops;
     }
 
     @Override

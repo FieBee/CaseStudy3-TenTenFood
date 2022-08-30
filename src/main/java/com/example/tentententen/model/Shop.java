@@ -26,6 +26,17 @@ public class Shop {
         this.shop_password = shop_password;
     }
 
+    public Shop(int id, String shop_code, String shop_name, String shop_email, String shop_email1, int shop_phone, String shop_address, String shop_account, String shop_password) {
+        this.shop_id = id;
+        this.shop_code = shop_code;
+        this.shop_name = shop_name;
+        this.shop_email = shop_email;
+        this.shop_phone = shop_phone;
+        this.shop_address = shop_address;
+        this.shop_account = shop_account;
+        this.shop_password = shop_password;
+    }
+
     public int getShop_id() {
         return shop_id;
     }
