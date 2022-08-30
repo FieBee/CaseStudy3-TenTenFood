@@ -27,7 +27,6 @@ public class ConnectionJDBC {
                 e.printStackTrace();
             }
         }
-
         return  connection;
     }
 }

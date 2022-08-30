@@ -26,7 +26,7 @@ public class ItemServlet extends HttpServlet {
         }
         try{
             switch (action){
-                case "":
+                case "asd":
                     break;
                 default:
                     listItem(request,response);
@@ -45,7 +45,7 @@ public class ItemServlet extends HttpServlet {
         }
         try{
             switch (action){
-                case "":
+                case "asd":
                     break;
                 default:
                     listItem(request,response);
