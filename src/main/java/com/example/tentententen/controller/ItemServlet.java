@@ -34,6 +34,9 @@ public class ItemServlet extends HttpServlet {
                 case "edit":
                     showEdit(request,response);
                     break;
+                case "delete":
+                    deleteItem(request,response);
+                    break;
                 default:
                     listItem(request,response);
                     break;
@@ -57,6 +60,9 @@ public class ItemServlet extends HttpServlet {
                 case "edit":
                     editItem(request,response);
                     break;
+                case "delete":
+                    deleteItem(request,response);
+                    break;
                 default:
                     listItem(request,response);
                     break;
@@ -69,7 +75,7 @@ public class ItemServlet extends HttpServlet {
     private void listItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Item> items = itemService.fillAll();
         request.setAttribute("items",items);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
         dispatcher.forward(request,response);
     }
     private void showCreate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
@@ -120,5 +126,14 @@ public class ItemServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/edit.jsp");
         dispatcher.forward(request,response);
 
+    }
+
+    private void deleteItem(HttpServletRequest request,HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int item_id = Integer.parseInt(request.getParameter("id"));
+        itemService.delete(item_id);
+        List<Item> items = itemService.fillAll();
+        request.setAttribute("items",items);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
+        dispatcher.forward(request,response);
     }
 }
