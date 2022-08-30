@@ -39,6 +39,9 @@ public class Item {
         this.categoryList = categoryList;
     }
 
+    public Item(String item_code, int shop_id, int category_id, int deal_id, String item_name, double item_price, String item_description, String item_image) {
+    }
+
     public int getItem_id() {
         return item_id;
     }
