@@ -27,7 +27,7 @@ public class ItemService implements IItemService{
 
 
     @Override
-    public List fillAll() {
+    public List<Item> fillAll() {
         List<Item> itemList = new ArrayList<>();
         try (
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ITEM);) {
@@ -55,7 +55,7 @@ public class ItemService implements IItemService{
     }
 
     @Override
-    public Object findById(int id) {
+    public Item findById(int id) {
         Item item = null;
         try(PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ITEM_BY_ID);){
             preparedStatement.setInt(1,id);
@@ -72,11 +72,12 @@ public class ItemService implements IItemService{
                 String item_description = resultSet.getString("item_description");
                 String item_image = resultSet.getString("item_image");
 
-                item = new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price);
+                item = new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return item;
     }
 
     @Override
@@ -94,8 +95,9 @@ public class ItemService implements IItemService{
 
     }
 
+
     @Override
-    public void save(Item p, int[] categories) {
+    public void save(Object p, int[] categories) {
 
     }
 }
