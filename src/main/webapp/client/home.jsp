@@ -65,7 +65,7 @@
         </tr>
         <c:forEach var="item" items="${items}">
             <tr>
-                <td>${item.item_id}</td>
+                <td><c:out value="${item.item_id}"/></td>
                 <td>${item.item_code}</td>
                 <td>${item.shop_id}</td>
                 <td>${item.category_id}</td>
@@ -75,8 +75,8 @@
                 <td>${item.item_description}</td>
                 <td>${item.item_image}</td>
                 <td>
-                    <a  href="/items?action=edit&id=${item.id}">Edit</a>
-                    <a href="/items?action=delete&id=${item.id}">Delete</a>
+                    <a  href="/home?action=edit&id=${item.item_id}">Edit</a>
+                    <a href="/home?action=delete&id=${item.item_id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

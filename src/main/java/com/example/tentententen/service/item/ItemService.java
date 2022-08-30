@@ -15,8 +15,7 @@ public class ItemService implements IItemService{
     Connection connection = ConnectionJDBC.getConnect();
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
-    private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item " +
-            "JOIN item_category ON category.id = item.category_id and item.item_id=?";
+    private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
     private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
 
@@ -141,11 +140,12 @@ public class ItemService implements IItemService{
             statement.setString(1, item.getItem_code());
             statement.setInt(2, item.getShop_id());
             statement.setInt(3, item.getCategory_id());
-            statement.setInt(5, item.getDeal_id());
-            statement.setString(6, item.getItem_name());
-            statement.setDouble(7, item.getItem_price());
-            statement.setString(8, item.getItem_description());
-            statement.setString(9, item.getItem_image());
+            statement.setInt(4, item.getDeal_id());
+            statement.setString(5, item.getItem_name());
+            statement.setDouble(6, item.getItem_price());
+            statement.setString(7, item.getItem_description());
+            statement.setString(8, item.getItem_image());
+            statement.setInt(9, id);
             rowUpdated = statement.executeUpdate() > 0;
             
             
