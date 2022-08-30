@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Bill {
     private int bill_id;
     private String bill_code;
-    private int status;
+    private boolean status;
     private LocalDateTime bill_date;
     private double bill_totalCost;
 
@@ -13,11 +13,11 @@ public class Bill {
 //    private int shop_id;
 
 
-    public Bill(int bill_id, String bill_code, int status, LocalDateTime bill_date, double bill_totalCost) {
+    public Bill(int bill_id, String bill_code, boolean status, String bill_date, double bill_totalCost) {
         this.bill_id = bill_id;
         this.bill_code = bill_code;
         this.status = status;
-        this.bill_date = bill_date;
+        this.bill_date = LocalDateTime.parse(bill_date);
         this.bill_totalCost = bill_totalCost;
     }
 
@@ -37,17 +37,18 @@ public class Bill {
         this.bill_code = bill_code;
     }
 
-    public int getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public LocalDateTime getBill_date() {
-        return bill_date;
+    public String getBill_date() {
+        return (String.valueOf(bill_date));
     }
+
 
     public void setBill_date(LocalDateTime bill_date) {
         this.bill_date = bill_date;
