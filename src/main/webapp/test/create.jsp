@@ -9,7 +9,7 @@
 <center>
   <h1>User Management</h1>
   <h2>
-    <a href="/items">List All Items</a>
+    <a href="/home">List All Items</a>
   </h2>
 </center>
 <div align="center">

@@ -86,4 +86,13 @@ public class ItemServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/create.jsp");
         dispatcher.forward(request,response);
     }
+
+    private void showEdit(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        int item_id = Integer.parseInt(request.getParameter("item_id"));
+        Item item = (Item) this.itemService.findById(item_id);
+        request.setAttribute("item",item);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("edit");
+        dispatcher.forward(request,response);
+
+    }
 }

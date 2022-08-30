@@ -57,6 +57,7 @@
             <th>item_code</th>
             <th>shop_id</th>
             <th>category_id</th>
+            <th>deal_id</th>
             <th>item_name</th>
             <th>item_price</th>
             <th>item_description</th>
@@ -73,6 +74,10 @@
                 <td>${item.item_price}</td>
                 <td>${item.item_description}</td>
                 <td>${item.item_image}</td>
+                <td>
+                    <a  href="/items?action=edit&id=${item.id}">Edit</a>
+                    <a href="/items?action=delete&id=${item.id}">Delete</a>
+                </td>
             </tr>
         </c:forEach>
     </table>

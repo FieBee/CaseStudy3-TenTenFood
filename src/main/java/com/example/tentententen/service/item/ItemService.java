@@ -19,6 +19,7 @@ public class ItemService implements IItemService{
             "JOIN item_category ON category.id = item.category_id and item.item_id=?";
     private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
+
     private static final String DELETE_ITEM = "DELETE FROM item WHERE item_id =? ;";
     private static final String UPDATE_ITEM = "UPDATE item SET item_code =?, shop_id =?, category_id =?, deal_id =?," +
             "item_name = ?, item_price =?, item_description =?, item_image =? WHERE item_id =?;";
@@ -79,23 +80,42 @@ public class ItemService implements IItemService{
         return item;
     }
 
-
+//    public static void main(String[] args) {
+//        try{
+//            Connection connection1 = ConnectionJDBC.getConnect();
+//            Item item = new Item("it10",22,22,22,"Chả2 Cốm",350200,"Chả cốm làm từ cốm khá ngon","da01.jpg");
+//            PreparedStatement statement = connection1.prepareStatement(INSERT_ITEM);
+//            statement.setString(1,"alo");
+//            statement.setInt(2,2);
+//            statement.setInt(3,2);
+//            statement.setInt(4,2);
+//            statement.setString(5,"asd");
+//            statement.setDouble(6,222);
+//            statement.setString(7,"ads");
+//            statement.setString(8,"Asd");
+////            statement.executeUpdate();
+//            System.out.println(statement);
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
     @Override
     public void insert(Item item) {
         try{
-            PreparedStatement statement = connection.prepareStatement(INSERT_ITEM);
-            statement.setString(1,item.getItem_code());
-            statement.setInt(2,item.getShop_id());
-            statement.setInt(3,item.getCategory_id());
-            statement.setInt(4,item.getDeal_id());
-            statement.setString(5,item.getItem_name());
-            statement.setDouble(6,item.getItem_price());
-            statement.setString(7,item.getItem_description());
-            statement.setString(8,item.getItem_image());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        PreparedStatement statement = connection.prepareStatement(INSERT_ITEM);
+        statement.setString(1,item.getItem_code());
+        statement.setInt(2,item.getShop_id());
+        statement.setInt(3,item.getCategory_id());
+        statement.setInt(4,item.getDeal_id());
+        statement.setString(5,item.getItem_name());
+        statement.setDouble(6,item.getItem_price());
+        statement.setString(7,item.getItem_description());
+        statement.setString(8,item.getItem_image());
+        statement.executeUpdate();
+        System.out.println(statement);
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
     }
 
 
