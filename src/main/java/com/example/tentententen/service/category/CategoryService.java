@@ -99,11 +99,11 @@ public class CategoryService implements ICategoryService{
     public boolean edit(int id, Category category) throws SQLException {
         boolean rowUpdated;
         try (
-                PreparedStatement statement = connection.prepareStatement(DELETE_CATEGORY);) {
-            statement.setString(5, category.getCategory_code());
-            statement.setString(7, category.getCategory_name());
-            statement.setString(8, category.getCategory_description());
-            statement.setInt(9, id);
+                PreparedStatement statement = connection.prepareStatement(UPDATE_CATEGORY);) {
+            statement.setString(1, category.getCategory_code());
+            statement.setString(2, category.getCategory_name());
+            statement.setString(3, category.getCategory_description());
+            statement.setInt(4, id);
             rowUpdated = statement.executeUpdate() > 0;
 
         } catch (SQLException e) {
