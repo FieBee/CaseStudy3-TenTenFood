@@ -39,7 +39,7 @@ public class ItemServlet extends HttpServlet {
                     deleteItem(request,response);
                     break;
                 case "find":
-                    sortItem(request,response);
+                    searchItem(request,response);
                     break;
                 default:
                     listItem(request,response);
@@ -68,7 +68,7 @@ public class ItemServlet extends HttpServlet {
                     deleteItem(request,response);
                     break;
                 case "find":
-                    sortItem(request,response);
+                    searchItem(request,response);
                     break;
                 default:
                     listItem(request,response);
@@ -144,7 +144,7 @@ public class ItemServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
-    public void sortItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+    public void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
         List<Item> items = itemService.selectItemByName(name);
 
