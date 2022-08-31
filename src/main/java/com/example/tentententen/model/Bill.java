@@ -13,6 +13,15 @@ public class Bill {
 
     private int shop_id;
 
+    public Bill(String bill_code, boolean status, LocalDateTime bill_date, double bill_totalCost, int customer_id, int shop_id) {
+        this.bill_code = bill_code;
+        this.status = status;
+        this.bill_date = bill_date;
+        this.bill_totalCost = bill_totalCost;
+        this.customer_id = customer_id;
+        this.shop_id = shop_id;
+    }
+
     public boolean isStatus() {
         return status;
     }
