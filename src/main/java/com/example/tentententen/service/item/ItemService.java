@@ -16,6 +16,8 @@ public class ItemService implements IItemService{
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
+    private static final String SELECT_ITEM_BY_NAME = "SELECT * FROM item WHERE item_name='%?%'";
+
     private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
 
@@ -79,25 +81,6 @@ public class ItemService implements IItemService{
         return item;
     }
 
-//    public static void main(String[] args) {
-//        try{
-//            Connection connection1 = ConnectionJDBC.getConnect();
-//            Item item = new Item("it10",22,22,22,"Chả2 Cốm",350200,"Chả cốm làm từ cốm khá ngon","da01.jpg");
-//            PreparedStatement statement = connection1.prepareStatement(INSERT_ITEM);
-//            statement.setString(1,"alo");
-//            statement.setInt(2,2);
-//            statement.setInt(3,2);
-//            statement.setInt(4,2);
-//            statement.setString(5,"asd");
-//            statement.setDouble(6,222);
-//            statement.setString(7,"ads");
-//            statement.setString(8,"Asd");
-////            statement.executeUpdate();
-//            System.out.println(statement);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
     @Override
     public void insert(Item item) {
         try{
@@ -112,9 +95,9 @@ public class ItemService implements IItemService{
         statement.setString(8,item.getItem_image());
         statement.executeUpdate();
         System.out.println(statement);
-    } catch (SQLException e) {
+        } catch (SQLException e) {
         throw new RuntimeException(e);
-    }
+        }
     }
 
 
@@ -154,6 +137,32 @@ public class ItemService implements IItemService{
             throw new RuntimeException(e);
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<Item> selectItemByName(String item_name) {
+        List<Item> items = new ArrayList<>();
+        try(
+                PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ITEM_BY_NAME);){
+            preparedStatement.setString(1,'%'+item_name+'%');
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+
+                int item_id = resultSet.getInt("item_id");
+                String item_code = resultSet.getString("item_code");
+                int shop_id = resultSet.getInt("shop_id");
+                int category_id = resultSet.getInt("category_id");
+                int deal_id = resultSet.getInt("deal_id");
+                double item_price = resultSet.getDouble("item_price");
+                String item_description = resultSet.getString("item_description");
+                String item_image = resultSet.getString("item_image");
+                items.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image)) ;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return items;
     }
 
     @Override
