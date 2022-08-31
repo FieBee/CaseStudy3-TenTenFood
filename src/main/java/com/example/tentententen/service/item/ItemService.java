@@ -16,6 +16,8 @@ public class ItemService implements IItemService{
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
+    private static final String SELECT_ITEM_BY_NAME = "SELECT * FROM item WHERE item_name='%?%'";
+
     private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
 
@@ -135,6 +137,32 @@ public class ItemService implements IItemService{
             throw new RuntimeException(e);
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<Item> selectItemByName(String item_name) {
+        List<Item> items = new ArrayList<>();
+        try(
+                PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ITEM_BY_NAME);){
+            preparedStatement.setString(1,'%'+item_name+'%');
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+
+                int item_id = resultSet.getInt("item_id");
+                String item_code = resultSet.getString("item_code");
+                int shop_id = resultSet.getInt("shop_id");
+                int category_id = resultSet.getInt("category_id");
+                int deal_id = resultSet.getInt("deal_id");
+                double item_price = resultSet.getDouble("item_price");
+                String item_description = resultSet.getString("item_description");
+                String item_image = resultSet.getString("item_image");
+                items.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image)) ;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return items;
     }
 
     @Override
