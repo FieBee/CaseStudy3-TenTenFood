@@ -1,17 +1,19 @@
 package com.example.tentententen.controller;
 
-import com.example.tentententen.model.Item;
 import com.example.tentententen.model.Shop;
 import com.example.tentententen.service.shop.IShopService;
 import com.example.tentententen.service.shop.ShopService;
 
-import java.io.*;
-import java.sql.SQLException;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
+import java.util.List;
 
 @WebServlet(name = "ShopServlet", value = "/shop")
 public class ShopServlet extends HttpServlet {
@@ -38,6 +40,8 @@ public class ShopServlet extends HttpServlet {
                 case "delete":
                     deleteShop(request,response);
                     break;
+                case "search":
+                    searchShop(request, response);
                 default:
                     listShop(request,response);
                     break;
@@ -45,6 +49,15 @@ public class ShopServlet extends HttpServlet {
        } catch (Exception e) {
            e.printStackTrace();
        }
+    }
+
+    private void searchShop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
+        List<Shop> shops = (List<Shop>) shopService.selectShopByName(name);
+
+        request.setAttribute("shops",shops);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
+        dispatcher.forward(request,response);
     }
 
     private void listShop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -109,6 +122,8 @@ public class ShopServlet extends HttpServlet {
                 case "delete":
                     deleteShop(request, response);
                     break;
+                case "search":
+                    searchShop(request, response);
                 default:
                     listShop(request, response);
                     break;
