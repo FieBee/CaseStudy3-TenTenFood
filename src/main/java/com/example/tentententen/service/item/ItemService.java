@@ -26,7 +26,6 @@ public class ItemService implements IItemService{
             "item_name = ?, item_price =?, item_description =?, item_image =? WHERE item_id =?;";
 
 
-
     @Override
     public List<Item> fillAll() {
         List<Item> itemList = new ArrayList<>();

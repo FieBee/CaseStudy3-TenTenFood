@@ -20,7 +20,7 @@ public class BillService implements IBillService{
     public static final String SELECT_BILL_BY_ID = "SELECT * FROM bill WHERE id=?";
     public static final String INSERT_BILL ="INSERT INTO bill (bill_code, status, bill_date, bill_totalCost) VALUE (?,?,?,?);";
     public static final String DELETE_BILL = "DELETE FROM bill WHERE item_id =? ;";
-    public static final String UPDATE_ITEM = "UPDATE bill SET bill_code = ?, status = ?, bill_date =?, bill_totalCost =? WHERE item_id =?;";
+    public static final String UPDATE_BILL = "UPDATE bill SET bill_code = ?, status = ?, bill_date =?, bill_totalCost =?,customer_id=?,shop_id =? WHERE item_id =?;";
     @Override
     public List<Bill> fillAll() {
         List<Bill> billList = new ArrayList<>();
@@ -78,8 +78,21 @@ public class BillService implements IBillService{
     }
 
     @Override
-    public boolean edit(int id, Bill t) throws SQLException {
-        return false;
-//        Chắc ko dùng
+    public boolean edit(int id, Bill bill) throws SQLException {
+        boolean rowUpdate;
+        try{
+            PreparedStatement statement = connection.prepareStatement(UPDATE_BILL);
+            statement.setString(1,bill.getBill_code());
+            statement.setBoolean(2,bill.getStatus());
+            statement.setString(3,bill.getBill_date());
+            statement.setDouble(4,bill.getBill_totalCost());
+            statement.setInt(5,bill.getCustomer_id());
+            statement.setInt(6,bill.getShop_id());
+            statement.setInt(7,id);
+            rowUpdate = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return rowUpdate;
     }
 }
