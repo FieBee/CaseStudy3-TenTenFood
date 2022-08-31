@@ -98,7 +98,7 @@ public class ItemServlet extends HttpServlet {
         String item_name = new String(request.getParameter("item_name").getBytes("iso-8859-1"),"utf-8");
         double item_price = Double.parseDouble(request.getParameter("item_price"));
         String item_description = new String(request.getParameter("item_description").getBytes("iso-8859-1"),"utf-8");
-        String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
+            String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
         Item item = new Item(item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image);
 
         itemService.insert(item);
