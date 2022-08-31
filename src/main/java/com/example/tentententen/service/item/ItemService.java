@@ -16,7 +16,7 @@ public class ItemService implements IItemService{
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
-    private static final String SELECT_ITEM_BY_NAME = "SELECT * FROM item WHERE item_name='%?%'";
+    private static final String SELECT_ITEM_BY_NAME = "SELECT * FROM item WHERE item_name like ?";
 
     private static final String INSERT_ITEM ="INSERT INTO item (item_code, shop_id, category_id, deal_id," +
             "item_name, item_price, item_description, item_image) VALUE (?,?,?,?,?,?,?,?);";
@@ -119,7 +119,7 @@ public class ItemService implements IItemService{
     public boolean edit(int id, Item item) {
         boolean rowUpdated;
         try (
-             PreparedStatement statement = connection.prepareStatement(UPDATE_ITEM);) {
+             PreparedStatement statement = connection.prepareStatement(SELECT_ITEM_BY_NAME);) {
             statement.setString(1, item.getItem_code());
             statement.setInt(2, item.getShop_id());
             statement.setInt(3, item.getCategory_id());
@@ -144,7 +144,7 @@ public class ItemService implements IItemService{
         List<Item> items = new ArrayList<>();
         try(
                 PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ITEM_BY_NAME);){
-            preparedStatement.setString(1,'%'+item_name+'%');
+            preparedStatement.setString(1,"%"+item_name+"%");
 
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
