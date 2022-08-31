@@ -1,6 +1,7 @@
 package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Customer;
+import com.example.tentententen.model.Deal;
 import com.example.tentententen.service.IService;
 import com.example.tentententen.service.customer.CustomerService;
 
@@ -45,7 +46,14 @@ public class CustomerServlet extends HttpServlet {
         int customer_id= Integer.parseInt(req.getParameter("id"));
         try {
             service.delete(customer_id);
+            List<Customer> customerList= service.fillAll();
+            req.setAttribute("customers",customerList);
+            req.getRequestDispatcher("").forward(req,resp);
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

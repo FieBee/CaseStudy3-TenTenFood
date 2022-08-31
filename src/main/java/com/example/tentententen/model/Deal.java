@@ -14,21 +14,21 @@ public class Deal {
     public Deal() {
     }
 
-    public Deal(int deal_id, String deal_code, String deal_name, LocalDateTime deal_startDate, LocalDateTime deal_endDate, String deal_description, String deal_image) {
+    public Deal(int deal_id, String deal_code, String deal_name, String deal_startDate, String deal_endDate, String deal_description, String deal_image) {
         this.deal_id = deal_id;
         this.deal_code = deal_code;
         this.deal_name = deal_name;
-        this.deal_startDate = deal_startDate;
-        this.deal_endDate = deal_endDate;
+        this.deal_startDate = LocalDateTime.parse(deal_startDate);
+        this.deal_endDate = LocalDateTime.parse(deal_endDate);
         this.deal_description = deal_description;
         this.deal_image = deal_image;
     }
 
-    public Deal(String deal_code, String deal_name, LocalDateTime deal_startDate, LocalDateTime deal_endDate, String deal_description, String deal_image) {
+    public Deal(String deal_code, String deal_name, String deal_startDate, String deal_endDate, String deal_description, String deal_image) {
         this.deal_code = deal_code;
         this.deal_name = deal_name;
-        this.deal_startDate = deal_startDate;
-        this.deal_endDate = deal_endDate;
+        this.deal_startDate = LocalDateTime.parse(deal_startDate);
+        this.deal_endDate = LocalDateTime.parse(deal_endDate);
         this.deal_description = deal_description;
         this.deal_image = deal_image;
     }
@@ -57,16 +57,16 @@ public class Deal {
         this.deal_name = deal_name;
     }
 
-    public LocalDateTime getDeal_startDate() {
-        return deal_startDate;
+    public String getDeal_startDate() {
+        return String.valueOf(deal_startDate);
     }
 
     public void setDeal_startDate(LocalDateTime deal_startDate) {
         this.deal_startDate = deal_startDate;
     }
 
-    public LocalDateTime getDeal_endDate() {
-        return deal_endDate;
+    public String getDeal_endDate() {
+        return String.valueOf(deal_endDate);
     }
 
     public void setDeal_endDate(LocalDateTime deal_endDate) {
