@@ -1,15 +1,32 @@
 package com.example.tentententen.controller;
 
+import com.example.tentententen.service.shop.IShopService;
+import com.example.tentententen.service.shop.ShopService;
+
 import java.io.*;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/home")
 public class ShopServlet extends HttpServlet {
-    private String message;
+    private IShopService shopService;
 
     public void init() {
-        message = "Nhom 3";
+        shopService = new ShopService();
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       String action = request.getParameter("action");
+       if (action == null) {
+            action = "";
+       }
+       try {
+            switch (action) {
+                case "create":
+            }
+       }
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
