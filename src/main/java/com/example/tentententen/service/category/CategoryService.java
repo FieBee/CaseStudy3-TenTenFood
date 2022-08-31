@@ -4,6 +4,10 @@ import com.example.tentententen.connection.ConnectionJDBC;
 import com.example.tentententen.model.Category;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryService implements ICategoryService{
@@ -19,38 +23,34 @@ public class CategoryService implements ICategoryService{
         return null;
     }
 
-//    @Override
-//    public List<Category> findAll() {
-//        List<Category> categoryList = new ArrayList<>();
-//        try {
-//            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);
-//            ResultSet resultSet = statement.executeQuery();
-//            while (resultSet.next()){
-//                int id = resultSet.getInt("category_id");
-//                String code = resultSet.getString("category_code");
-//                String name = resultSet.getString("category_name");
-//                String description = resultSet.getString("category_description");
-//                Category category = new Category(id, code, name, description);
-//                categoryList.add(category);
-//            }
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-//        return categoryList;
-//    }
-
     @Override
     public List fillAll() {
-        return null;
+        List<Category> categoryList = new ArrayList<>();
+        try {
+            PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt("category_id");
+                String code = resultSet.getString("category_code");
+                String name = resultSet.getString("category_name");
+                String description = resultSet.getString("category_description");
+                Category category = new Category(id, code, name, description);
+                categoryList.add(category);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return categoryList;
     }
 
     @Override
-    public Object findById(int id) {
+    public Category findById(int id) {
         return null;
     }
 
+
     @Override
-    public void insert(Object p) {
+    public void insert(Category p) {
 
     }
 
@@ -61,8 +61,9 @@ public class CategoryService implements ICategoryService{
     }
 
     @Override
-    public boolean edit(int id, Object o) {
-
+    public boolean edit(int id, Category t) throws SQLException {
         return false;
     }
+
+
 }
