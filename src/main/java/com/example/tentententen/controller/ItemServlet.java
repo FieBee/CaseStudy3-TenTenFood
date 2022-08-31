@@ -2,6 +2,7 @@ package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Item;
 import com.example.tentententen.service.IService;
+import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
 
 import javax.servlet.RequestDispatcher;
@@ -19,7 +20,7 @@ import java.util.List;
 @WebServlet (name = "ItemServlet", value = "/home")
 public class ItemServlet extends HttpServlet {
 
-    private IService itemService = new ItemService();
+    private IItemService itemService = new ItemService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -36,6 +37,9 @@ public class ItemServlet extends HttpServlet {
                     break;
                 case "delete":
                     deleteItem(request,response);
+                    break;
+                case "find":
+                    sortItem(request,response);
                     break;
                 default:
                     listItem(request,response);
@@ -62,6 +66,9 @@ public class ItemServlet extends HttpServlet {
                     break;
                 case "delete":
                     deleteItem(request,response);
+                    break;
+                case "find":
+                    sortItem(request,response);
                     break;
                 default:
                     listItem(request,response);
@@ -91,7 +98,7 @@ public class ItemServlet extends HttpServlet {
         String item_name = new String(request.getParameter("item_name").getBytes("iso-8859-1"),"utf-8");
         double item_price = Double.parseDouble(request.getParameter("item_price"));
         String item_description = new String(request.getParameter("item_description").getBytes("iso-8859-1"),"utf-8");
-        String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
+            String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
         Item item = new Item(item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image);
 
         itemService.insert(item);
@@ -132,6 +139,15 @@ public class ItemServlet extends HttpServlet {
         int item_id = Integer.parseInt(request.getParameter("id"));
         itemService.delete(item_id);
         List<Item> items = itemService.fillAll();
+        request.setAttribute("items",items);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
+        dispatcher.forward(request,response);
+    }
+
+    public void sortItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+        String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
+        List<Item> items = itemService.selectItemByName(name);
+
         request.setAttribute("items",items);
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
         dispatcher.forward(request,response);
