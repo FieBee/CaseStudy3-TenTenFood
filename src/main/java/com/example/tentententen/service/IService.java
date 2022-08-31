@@ -10,7 +10,4 @@ public interface IService<E> {
 
     boolean delete(int id) throws SQLException;
     boolean edit(int id, E t) throws SQLException;
-
-
-
 }

@@ -13,10 +13,10 @@ import java.util.List;
 
 public class ShopService implements IShopService {
     private static final String ADD_SHOP_SQL = "insert into shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password) values (?, ?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_SHOP_BY_NAME = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where id = ?";
+    private static final String SELECT_SHOP_BY_NAME = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where shop_id = ?";
     private static final String SELECT_ALL_SHOP = "select * from shop";
-    private static final String DELETE_SHOP_SQL = "delete from shop where id = ?";
-    private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? where id = ?";
+    private static final String DELETE_SHOP_SQL = "delete from shop where shop_id = ?";
+    private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? where shop_id = ?";
 
     Connection connection = ConnectionJDBC.getConnect();
 
