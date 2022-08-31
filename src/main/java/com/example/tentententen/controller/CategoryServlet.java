@@ -21,13 +21,55 @@ public class CategoryServlet extends HttpServlet {
 
     ICategoryService categoryService = new CategoryService();
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null){
+            action = "";
+        }
+        try{
+            switch (action){
+                case "create":
+                    createCategory(request,response);
+                    break;
+                case "edit":
+                    editCategory(request,response);
+                    break;
+                case "delete":
+                    deleteCategory(request,response);
+                    break;
+                default:
+                    listCatagory(request,response);
+                    break;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null){
+            action = "";
+        }
+        try{
+            switch (action){
+                case "create":
+                    createCategory(request,response);
+                    break;
+                case "edit":
+                    editCategory(request,response);
+                    break;
+                case "delete":
+                    deleteCategory(request,response);
+                    break;
+                default:
+                    listCatagory(request,response);
+                    break;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void listCatagory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
