@@ -79,25 +79,6 @@ public class ItemService implements IItemService{
         return item;
     }
 
-//    public static void main(String[] args) {
-//        try{
-//            Connection connection1 = ConnectionJDBC.getConnect();
-//            Item item = new Item("it10",22,22,22,"Chả2 Cốm",350200,"Chả cốm làm từ cốm khá ngon","da01.jpg");
-//            PreparedStatement statement = connection1.prepareStatement(INSERT_ITEM);
-//            statement.setString(1,"alo");
-//            statement.setInt(2,2);
-//            statement.setInt(3,2);
-//            statement.setInt(4,2);
-//            statement.setString(5,"asd");
-//            statement.setDouble(6,222);
-//            statement.setString(7,"ads");
-//            statement.setString(8,"Asd");
-////            statement.executeUpdate();
-//            System.out.println(statement);
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
     @Override
     public void insert(Item item) {
         try{
@@ -112,9 +93,9 @@ public class ItemService implements IItemService{
         statement.setString(8,item.getItem_image());
         statement.executeUpdate();
         System.out.println(statement);
-    } catch (SQLException e) {
+        } catch (SQLException e) {
         throw new RuntimeException(e);
-    }
+        }
     }
 
 
