@@ -74,11 +74,11 @@ CREATE TABLE bill (
 
 
 CREATE TABLE bill_detail (
+                             bill_detail_id int auto_increment primary key ,
                              bill_id INT ,
                              item_id INT,
                              quantity INT NOT NULL,
                              price DOUBLE NOT NULL,
-                             PRIMARY KEY(bill_id,item_id),
                              FOREIGN KEY(bill_id) REFERENCES bill(bill_id),
                              FOREIGN KEY(item_id) REFERENCES item(item_id)
 );
