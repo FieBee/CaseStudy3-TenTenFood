@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -89,6 +90,33 @@ public class BillServlet extends HttpServlet {
         int bill_id = Integer.parseInt(request.getParameter("id"));
         Bill bill = (Bill) this.billService.findById(bill_id);
         request.setAttribute("bill",bill);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("");
+        dispatcher.forward(request,response);
+    }
+
+    private void editItem(HttpServletRequest request,HttpServletResponse response) throws IOException, SQLException, ServletException {
+        int bill_id = Integer.parseInt(request.getParameter("bill_id"));
+        String bill_code = new String(request.getParameter("bill_code").getBytes("iso-8859-1"),"utf-8");
+        boolean status = Boolean.parseBoolean(request.getParameter("status"));
+        LocalDateTime bill_date = LocalDateTime.parse(request.getParameter("bill_date"));
+        double bill_totalCost = Double.parseDouble(request.getParameter("bill_totalCost"));
+        int customer_id = Integer.parseInt(request.getParameter("customer_id"));
+        int shop_id = Integer.parseInt(request.getParameter("shop_id"));
+
+        Bill bill = new Bill(bill_id, bill_code, status,bill_date,bill_totalCost,customer_id,shop_id);
+        billService.edit(bill_id,bill);
+
+        request.setAttribute("message","Okeeee b oi ");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("");
+        dispatcher.forward(request,response);
+
+    }
+
+    private void deleteItem(HttpServletRequest request,HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int bill_id = Integer.parseInt(request.getParameter("id"));
+        billService.delete(bill_id);
+        List<Bill> bills = billService.fillAll();
+        request.setAttribute("bills",bills);
         RequestDispatcher dispatcher = request.getRequestDispatcher("");
         dispatcher.forward(request,response);
     }
