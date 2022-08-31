@@ -90,7 +90,7 @@ public class ShopServlet extends HttpServlet {
     }
 
     private void createShop(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String shop_code = new String(request.getParameter("shop_code").getBytes("iso-8859-1"),"utf-8");
+        String shop_code = new String(request.getParameter("shop_id").getBytes("iso-8859-1"),"utf-8");
         String shop_name = new String(request.getParameter("shop_name").getBytes("iso-8859-1"),"utf-8");
         String shop_email = new String(request.getParameter("shop_email").getBytes("iso-8859-1"),"utf-8");
         int shop_phone = Integer.parseInt(request.getParameter("shop_phone"));
