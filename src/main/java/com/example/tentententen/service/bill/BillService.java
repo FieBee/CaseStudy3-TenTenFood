@@ -17,9 +17,9 @@ public class BillService implements IBillService{
     Connection connection = ConnectionJDBC.getConnect();
 
     public static final String SELECT_ALL_BILL = "SELECT * FROM bill;";
-    public static final String SELECT_BILL_BY_ID = "SELECT * FROM bill WHERE id=?";
+    public static final String SELECT_BILL_BY_ID = "SELECT * FROM bill WHERE bill_id=?";
     public static final String INSERT_BILL ="INSERT INTO bill (bill_code, status, bill_date, bill_totalCost) VALUE (?,?,?,?);";
-    public static final String DELETE_BILL = "DELETE FROM bill WHERE item_id =? ;";
+    public static final String DELETE_BILL = "DELETE FROM bill WHERE bill_id =? ;";
     public static final String UPDATE_BILL = "UPDATE bill SET bill_code = ?, status = ?, bill_date =?, bill_totalCost =?,customer_id=?,shop_id =? WHERE item_id =?;";
     @Override
     public List<Bill> fillAll() {
