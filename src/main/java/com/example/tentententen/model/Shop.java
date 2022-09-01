@@ -9,8 +9,32 @@ public class Shop {
     private String shop_address;
     private String shop_account;
     private String shop_password;
+    private String shop_image;
 
     public Shop() {
+    }
+
+    public Shop(int shop_id, String shop_code, String shop_name, String shop_email, int shop_phone, String shop_address, String shop_account, String shop_password, String shop_image) {
+        this.shop_id = shop_id;
+        this.shop_code = shop_code;
+        this.shop_name = shop_name;
+        this.shop_email = shop_email;
+        this.shop_phone = shop_phone;
+        this.shop_address = shop_address;
+        this.shop_account = shop_account;
+        this.shop_password = shop_password;
+        this.shop_image = shop_image;
+    }
+
+    public Shop(String shop_code, String shop_name, String shop_email, int shop_phone, String shop_address, String shop_account, String shop_password, String shop_image) {
+        this.shop_code = shop_code;
+        this.shop_name = shop_name;
+        this.shop_email = shop_email;
+        this.shop_phone = shop_phone;
+        this.shop_address = shop_address;
+        this.shop_account = shop_account;
+        this.shop_password = shop_password;
+        this.shop_image = shop_image;
     }
 
     public Shop(int shop_id, String shop_code, String shop_name, String shop_email, int shop_phone, String shop_address, String shop_account, String shop_password) {
@@ -96,5 +120,28 @@ public class Shop {
 
     public void setShop_password(String shop_password) {
         this.shop_password = shop_password;
+    }
+
+    public String getShop_image() {
+        return shop_image;
+    }
+
+    public void setShop_image(String shop_image) {
+        this.shop_image = shop_image;
+    }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "shop_id=" + shop_id +
+                ", shop_code='" + shop_code + '\'' +
+                ", shop_name='" + shop_name + '\'' +
+                ", shop_email='" + shop_email + '\'' +
+                ", shop_phone=" + shop_phone +
+                ", shop_address='" + shop_address + '\'' +
+                ", shop_account='" + shop_account + '\'' +
+                ", shop_password='" + shop_password + '\'' +
+                ", shop_image='" + shop_image + '\'' +
+                '}';
     }
 }

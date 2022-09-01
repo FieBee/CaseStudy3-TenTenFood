@@ -10,7 +10,8 @@ CREATE TABLE shop (
                       shop_phone nVARCHAR(150) NOT NULL UNIQUE,
                       shop_address nVARCHAR(150) NOT NULL,
                       shop_account nVARCHAR(150) NOT NULL UNIQUE,
-                      shop_password nVARCHAR(150) NOT NULL
+                      shop_password nVARCHAR(150) NOT NULL,
+                      shop_image nvarchar(150)
 );
 CREATE TABLE category (
                           category_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -88,13 +89,13 @@ ALTER TABLE category
             REFERENCES item (item_id);
 
 SELECT * FROM shop;
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s1','sunny','sunny@gmail.com','0916287678','89 nguyễn hoàng','a','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s2','nắng mới','nangmoi@gmail.com','0916287675','39 trần nhân tông','b','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s3','sao mai','saomai@gmail.com','0916287674','89 tôn thất tùng','c','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s4','bình minh','binhminh@gmail.com','0916287672','89 yết kiều','d','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s5','giờ mới','giomoi@gmail.com','0916287671','89 đỗ đức','f','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s6','kimYoun','kimYoun@gmail.com','0916287670','100 nguyễn hoàng 2','g','123456');
-INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password) VALUES ('s7','kimYoung','kimYoung@gmail.com','091628767','100 nguyễn hoàng 3','h','123456');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s1','sunny','sunny@gmail.com','0916287678','89 nguyễn hoàng','a','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s2','nắng mới','nangmoi@gmail.com','0916287675','39 trần nhân tông','b','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s3','sao mai','saomai@gmail.com','0916287674','89 tôn thất tùng','c','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s4','bình minh','binhminh@gmail.com','0916287672','89 yết kiều','d','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s5','giờ mới','giomoi@gmail.com','0916287671','89 đỗ đức','f','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s6','kimYoun','kimYoun@gmail.com','0916287670','100 nguyễn hoàng 2','g','123456','s01.jpg');
+INSERT INTO shop(shop_code,shop_name,shop_email,shop_phone,shop_address,shop_account,shop_password,shop_image) VALUES ('s7','kimYoung','kimYoung@gmail.com','091628767','100 nguyễn hoàng 3','h','123456','s01.jpg');
 
 select * from category;
 INSERT INTO category(category_code, category_name, category_description, item_id)values('ctg1','đồ ăn','ăn những đồ ăn ngon',null);

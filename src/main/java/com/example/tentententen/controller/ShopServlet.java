@@ -85,7 +85,8 @@ public class ShopServlet extends HttpServlet {
         String shop_address = new String(request.getParameter("shop_address").getBytes("iso-8859-1"),"utf-8");
         String shop_account = new String(request.getParameter("shop_account").getBytes("iso-8859-1"),"utf-8");
         String shop_password = new String(request.getParameter("shop_password").getBytes("iso-8859-1"),"utf-8");
-        Shop shop = new Shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password);
+        String shop_image= request.getParameter("shop_image");
+        Shop shop = new Shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password, shop_image);
         shopService.edit(shop_id, shop);
     }
 
@@ -97,7 +98,8 @@ public class ShopServlet extends HttpServlet {
         String shop_address = new String(request.getParameter("shop_address").getBytes("iso-8859-1"),"utf-8");
         String shop_account = new String(request.getParameter("shop_account").getBytes("iso-8859-1"),"utf-8");
         String shop_password = new String(request.getParameter("shop_password").getBytes("iso-8859-1"),"utf-8");
-        Shop shop = new Shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password);
+        String shop_image= request.getParameter("shop_image");
+        Shop shop = new Shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image);
 
         shopService.insert(shop);
 

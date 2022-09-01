@@ -339,18 +339,19 @@
                   <div class="box-line-lg"></div>
                 </div>
               </div>
-<%--              List items foreach--%> <c:forEach var="items" items="${items}">
+<%--              List items foreach--%>
+              <c:forEach var="shops" items="${shops}">
               <div class="item-restaurant"><a target="_blank" class="item-content"
                                               href="">
                 <div class="img-restaurant"><img
-                        src="${items.item_image}"
+                        src="img/${shops.shop_image}"
                         class=""></div>
                 <div class="info-restaurant">
                   <div class="info-basic-res">
-                    <h4 class="name-res" title="${items.item_name}">${items.item_name}</h4>
-                    <div class="address-res" title="${items.item_description}">${items.item_description}</div>
+                    <h4 class="name-res" title="${shops.shop_name}">${shops.shop_name}</h4>
+                    <div class="address-res" title="${shops.shop_address}">${shops.shop_address}</div>
                   </div>
-                  <p class="content-promotion">$ ${items.item_price}</p>
+                  <p class="content-promotion"><i class="fas fa-tag"></i>Giảm 100%</p>
                   <div class="opentime-status"><span class="stt online" title="Mở cửa"
                                                      style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
 

@@ -12,11 +12,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShopService implements IShopService {
-    private static final String ADD_SHOP_SQL = "insert into shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password) values (?, ?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_SHOP_BY_NAME = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where shop_id = ?";
+    private static final String ADD_SHOP_SQL = "insert into shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image) values (?, ?, ?, ?, ?, ?, ?,?)";
+    private static final String SELECT_SHOP_BY_ID = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where shop_id = ?";
     private static final String SELECT_ALL_SHOP = "select * from shop";
     private static final String DELETE_SHOP_SQL = "delete from shop where shop_id = ?";
-    private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? where shop_id = ?";
+    private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? , shop_image=? where shop_id = ?";
+    private static final String SELECT_SHOP_BY_NAME = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? , shop_image=? where shop_name = ?";
 
     Connection connection = ConnectionJDBC.getConnect();
 
@@ -26,9 +27,8 @@ public class ShopService implements IShopService {
         try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_SHOP)) {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-
             while (rs.next()) {
-                int id = rs.getInt("id");
+                int id = rs.getInt("shop_id");
                 String shop_code = rs.getString("shop_code");
                 String shop_name = rs.getString("shop_name");
                 String shop_email = rs.getString("shop_email");
@@ -36,7 +36,8 @@ public class ShopService implements IShopService {
                 String shop_address = rs.getString("shop_address");
                 String shop_account = rs.getString("shop_account");
                 String shop_password = rs.getString("shop_password");
-                shops.add(new Shop(id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password));
+                String shop_image= rs.getString("shop_image");
+                shops.add(new Shop(id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password, shop_image));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,7 +47,28 @@ public class ShopService implements IShopService {
 
     @Override
     public Shop findById(int id) {
-        return null;
+        Shop shop = null;
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_SHOP_BY_ID)) {
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                int shop_id = rs.getInt("shop_id");
+                String shop_code = rs.getString("shop_code");
+                String shop_name = rs.getString("shop_name");
+                String shop_email = rs.getString("shop_email");
+                int shop_phone = rs.getInt("shop_phone");
+                String shop_address = rs.getString("shop_address");
+                String shop_account = rs.getString("shop_account");
+                String shop_password = rs.getString("shop_password");
+                String shop_image= rs.getString("shop_image");
+                shop = new Shop(shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return shop;
     }
 
     @Override
@@ -60,6 +82,7 @@ public class ShopService implements IShopService {
             preparedStatement.setString(5, shop.getShop_address());
             preparedStatement.setString(6, shop.getShop_account());
             preparedStatement.setString(7, shop.getShop_password());
+            preparedStatement.setString(8, shop.getShop_image());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -89,6 +112,7 @@ public class ShopService implements IShopService {
             statement.setString(6, shop.getShop_address());
             statement.setString(7, shop.getShop_account());
             statement.setString(8, shop.getShop_password());
+            statement.setString(9, shop.getShop_image());
 
             rowUpdated = statement.executeUpdate() > 0;
         }
@@ -112,7 +136,8 @@ public class ShopService implements IShopService {
                 String shop_address = rs.getString("shop_address");
                 String shop_account = rs.getString("shop_account");
                 String shop_password = rs.getString("shop_password");
-                shop = new Shop(shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password);
+                String shop_image= rs.getString("shop_image");
+                shop = new Shop(shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password, shop_image);
             }
         } catch (SQLException e) {
             e.printStackTrace();
