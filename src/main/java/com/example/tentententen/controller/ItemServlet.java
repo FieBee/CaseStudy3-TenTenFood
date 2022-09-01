@@ -82,7 +82,7 @@ public class ItemServlet extends HttpServlet {
     private void listItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Item> items = itemService.fillAll();
         request.setAttribute("items",items);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
         dispatcher.forward(request,response);
     }
     private void showCreate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {

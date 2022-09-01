@@ -16,7 +16,7 @@ import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "Bill_detail Servlet", value = "/bill_details")
+@WebServlet(name = "Bill_detailServlet", value = "/bill_details")
 public class Bill_detailServlet extends HttpServlet {
     private IBill_DetailService bill_detailService;
 
