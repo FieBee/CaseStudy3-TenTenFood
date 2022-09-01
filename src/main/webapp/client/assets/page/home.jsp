@@ -134,7 +134,7 @@
               </div>
             </div>
             <div class="user-acc col-auto">
-              <a href="../../login.html"><button type="button" class="btn btn-none-bg btn-login">
+              <a href="home?action=login"><button type="button" class="btn btn-none-bg btn-login">
                 <span class="font14">Đăng nhập</span>
               </button></a>
             </div>
