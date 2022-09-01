@@ -239,34 +239,17 @@
                     href="/ha-noi/danh-sach-dia-diem-giao-tan-noi?q="><button type="button"
                                                                               class="btn btn-search"><span class="fa fa-search"></span></button></a></div>
           </div>
-          <div class="category-list-filter"><a href="/ha-noi/danh-sach-dia-diem-giao-tan-noi"><span
-                  class="category-item ">All</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-food-giao-tan-noi"><span
-                  class="category-item ">Đồ ăn</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-drink-giao-tan-noi"><span
-                  class="category-item ">Đồ uống</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-vegetarian-giao-tan-noi"><span
-                  class="category-item ">Đồ chay</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-cake-pastry-giao-tan-noi"><span
-                  class="category-item ">Bánh kem</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-desserts-giao-tan-noi"><span
-                  class="category-item ">Tráng miệng</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-home-made-giao-tan-noi"><span
-                  class="category-item ">Homemade</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-streetfood-giao-tan-noi"><span
-                  class="category-item ">Vỉa hè</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-pizza-pasta-burger-giao-tan-noi"><span
-                  class="category-item ">Pizza/Burger</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-chicken-giao-tan-noi"><span
-                  class="category-item ">Món gà</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-hotpot-giao-tan-noi"><span
-                  class="category-item ">Món lẩu</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-sushi-giao-tan-noi"><span
-                  class="category-item ">Sushi</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-soup-based-giao-tan-noi"><span
-                  class="category-item ">Mì phở</span></a><a
-                  href="/ha-noi/danh-sach-dia-diem-phuc-vu-rice-giao-tan-noi"><span
-                  class="category-item ">Cơm hộp</span></a></div>
+          <div class="category-list-filter">
+            <a href="/ha-noi/danh-sach-dia-diem-giao-tan-noi">
+              <span class="category-item ">All</span>
+            </a>
+            <c:forEach var="category" items="${categories}">
+              <a href="/ha-noi/danh-sach-dia-diem-phuc-vu-food-giao-tan-noi">
+                  <span class="category-item ">${category.category_name}</span>
+              </a>
+            </c:forEach>
+
+          </div>
           <div>
             <div class="font18 mb-2 mt-3">Sử dụng App ShopeeFood để có nhiều giảm giá <br>và trải nghiệm
               tốt hơn</div><a target="_blank" rel="noopener noreferrer"
