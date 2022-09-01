@@ -33,8 +33,8 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/home.jsp");
-        dispatcher.forward(request,response);
+
+
 
     }
 
