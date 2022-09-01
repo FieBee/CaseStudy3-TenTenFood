@@ -18,7 +18,8 @@ public class HomeServlet extends HttpServlet {
        }
        try{
            switch (action){
-               case "ac":
+               case "login":
+                   showlogin(req,resp);
                    break;
                default:
                    showHome(req,resp);
@@ -36,6 +37,11 @@ public class HomeServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
         dispatcher.forward(request,response);
 
+    }
+
+    private void showlogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
+        dispatcher.forward(request,response);
     }
 
     @Override
