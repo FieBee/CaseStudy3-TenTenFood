@@ -348,8 +348,15 @@
                         class=""></div>
                 <div class="info-restaurant">
                   <div class="info-basic-res">
+<<<<<<< HEAD:src/main/webapp/client/page/home.jsp
                     <h4 class="name-res" title="${shops.shop_name}">${shops.shop_name}</h4>
                     <div class="address-res" title="${shops.shop_address}">${shops.shop_address}</div>
+=======
+                    <h4 class="name-res" title="Lẩu Đức Trọc - Đường Láng">Lẩu Đức Trọc -
+                      Đường Láng </h4>
+                    <div class="address-res" title="790 Đường Láng, Đống Đa, Hà Nội">790
+                      Đường Láng, Đống Đa, Hà Nội</div>
+>>>>>>> phuong:src/main/webapp/client/assets/page/home.jsp
                   </div>
                   <p class="content-promotion"><i class="fas fa-tag"></i>Giảm 100%</p>
                   <div class="opentime-status"><span class="stt online" title="Mở cửa"

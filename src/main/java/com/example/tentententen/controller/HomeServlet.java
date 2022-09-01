@@ -17,6 +17,7 @@ import java.io.IOException;
 
 @WebServlet(name="HomeServlet" , value = "/home")
 public class HomeServlet extends HttpServlet {
+    IShopService shopService = new ShopService();
     ICategoryService categoryService = new CategoryService();
     IShopService shopService= new ShopService();
     @Override
@@ -46,7 +47,11 @@ public class HomeServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
 
         request.setAttribute("categories",categoryService.fillAll());
+<<<<<<< HEAD
         request.setAttribute("shops",shopService.fillAll());
+=======
+        request.setAttribute("items",itemService.fillAll());
+>>>>>>> phuong
         dispatcher.forward(request,response);
     }
 
