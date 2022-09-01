@@ -17,9 +17,11 @@ import java.io.IOException;
 
 @WebServlet(name="HomeServlet" , value = "/home")
 public class HomeServlet extends HttpServlet {
+    IItemService itemService = new ItemService();
     IShopService shopService = new ShopService();
     ICategoryService categoryService = new CategoryService();
-    IShopService shopService= new ShopService();
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        String action = req.getParameter("action");
@@ -30,6 +32,9 @@ public class HomeServlet extends HttpServlet {
            switch (action){
                case "login":
                    showlogin(req,resp);
+                   break;
+               case "showByCategory":
+                   showByCategory(req,resp);
                    break;
                default:
                    showHome(req,resp);
@@ -44,19 +49,25 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/home.jsp");
 
         request.setAttribute("categories",categoryService.fillAll());
-<<<<<<< HEAD
         request.setAttribute("shops",shopService.fillAll());
-=======
         request.setAttribute("items",itemService.fillAll());
->>>>>>> phuong
         dispatcher.forward(request,response);
     }
 
     private void showlogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/login.jsp");
+        dispatcher.forward(request,response);
+    }
+
+    private void showByCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");
+
+        request.setAttribute("categories",categoryService.fillAll());
+        request.setAttribute("shops",shopService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
         dispatcher.forward(request,response);
     }
 
