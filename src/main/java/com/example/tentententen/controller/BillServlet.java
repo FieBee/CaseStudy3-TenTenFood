@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@WebServlet(name = "BillServlet", value = "/bill")
+@WebServlet(name = "BillServlet", value = "/bills")
 public class BillServlet extends HttpServlet {
 
     IBillService billService = new BillService();

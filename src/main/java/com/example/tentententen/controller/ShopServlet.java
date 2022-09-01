@@ -15,7 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "ShopServlet", value = "/shop")
+@WebServlet(name = "ShopServlet", value = "/shops")
 public class ShopServlet extends HttpServlet {
     private IShopService shopService;
 
