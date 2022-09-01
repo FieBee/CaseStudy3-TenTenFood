@@ -118,7 +118,7 @@ public class ItemService implements IItemService{
     public boolean edit(int id, Item item) {
         boolean rowUpdated;
         try (
-             PreparedStatement statement = connection.prepareStatement(SELECT_ITEM_BY_NAME);) {
+             PreparedStatement statement = connection.prepareStatement(UPDATE_ITEM);) {
             statement.setString(1, item.getItem_code());
             statement.setInt(2, item.getShop_id());
             statement.setInt(3, item.getCategory_id());
