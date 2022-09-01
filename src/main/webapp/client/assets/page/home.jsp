@@ -347,7 +347,7 @@
                 <div class="info-restaurant">
                   <div class="info-basic-res">
                     <h4 class="name-res" title="Lẩu Đức Trọc - Đường Láng">Lẩu Đức Trọc -
-                      Đường Láng</h4>
+                      Đường Láng </h4>
                     <div class="address-res" title="790 Đường Láng, Đống Đa, Hà Nội">790
                       Đường Láng, Đống Đa, Hà Nội</div>
                   </div>

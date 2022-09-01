@@ -4,6 +4,8 @@ import com.example.tentententen.service.category.CategoryService;
 import com.example.tentententen.service.category.ICategoryService;
 import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
+import com.example.tentententen.service.shop.IShopService;
+import com.example.tentententen.service.shop.ShopService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +17,7 @@ import java.io.IOException;
 
 @WebServlet(name="HomeServlet" , value = "/home")
 public class HomeServlet extends HttpServlet {
+    IShopService shopService = new ShopService();
     ICategoryService categoryService = new CategoryService();
     IItemService itemService = new ItemService();
     @Override
@@ -44,7 +47,7 @@ public class HomeServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
 
         request.setAttribute("categories",categoryService.fillAll());
-        request.setAttribute("itemService",itemService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
         dispatcher.forward(request,response);
 
     }
