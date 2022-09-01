@@ -339,212 +339,25 @@
                   <div class="box-line-lg"></div>
                 </div>
               </div>
-              //List items foreach
-              <c:forEach var="items" items="${items}">
-                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                href="">
-                  <div class="img-restaurant"><img
-                          src="${items.item_image}"
-                          class=""></div>
-                  <div class="info-restaurant">
-                    <div class="info-basic-res">
-                      <h4 class="name-res" title="${items.item_name}">${items.item_name}</h4>
-                      <div class="address-res" title="${items.item_description}">${items.item_description}</div>
-                    </div>
-                    <p class="content-promotion">$ ${items.item_price}</p>
-                    <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                       style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
+<%--              List items foreach--%> <c:forEach var="items" items="${items}">
+              <div class="item-restaurant"><a target="_blank" class="item-content"
+                                              href="">
+                <div class="img-restaurant"><img
+                        src="${items.item_image}"
+                        class=""></div>
+                <div class="info-restaurant">
+                  <div class="info-basic-res">
+                    <h4 class="name-res" title="${items.item_name}">${items.item_name}</h4>
+                    <div class="address-res" title="${items.item_description}">${items.item_description}</div>
+                  </div>
+                  <p class="content-promotion">$ ${items.item_price}</p>
+                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
+                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
+
                     </div>
                   </div>
                 </a></div>
               </c:forEach>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/lau-duc-troc-duong-lang">
-                <div class="img-restaurant"><img
-                        src="https://images.foody.vn/res/g75/747170/prof/s280x175/foody-upload-api-foody-mobile-1-jpg-180606103333.jpg"
-                        class=""></div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Lẩu Đức Trọc - Đường Láng">Lẩu Đức Trọc -
-                      Đường Láng</h4>
-                    <div class="address-res" title="790 Đường Láng, Đống Đa, Hà Nội">790
-                      Đường Láng, Đống Đa, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 5%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/com-chay-tue-tam">
-                <div class="img-restaurant"><img
-                        src="https://images.foody.vn/res/g104/1032994/prof/s280x175/foody-upload-api-foody-mobile-a16833863663cb3d9272-200627164610.jpg"
-                        class=""></div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Cơm Chay Tuệ Tâm">Cơm Chay Tuệ Tâm</h4>
-                    <div class="address-res"
-                         title="17B Ngõ 105 Đình Thôn, Nam Từ Liêm, Hà Nội">17B Ngõ 105 Đình
-                      Thôn, Nam Từ Liêm, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm món</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/che-ngon-pho-tang-thiet-giap">
-                <div class="img-restaurant">
-                  <div class="tag-preferred"><i class="fa fa-thumbs-up"
-                                                aria-hidden="true"></i>Yêu thích</div><img
-                        src="https://images.foody.vn/res/g100/996223/prof/s280x175/foody-upload-api-foody-mobile-kham-pha-3-quan-che--200102135359.jpg"
-                        class="">
-                </div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Chè Ngon Phố - Tăng Thiết Giáp">Chè Ngon Phố
-                      - Tăng Thiết Giáp</h4>
-                    <div class="address-res"
-                         title="17 Tăng Thiết Giáp, P. Cổ Nhuế 2, Bắc Từ Liêm, Hà Nội">17
-                      Tăng Thiết Giáp, P. Cổ Nhuế 2, Bắc Từ Liêm, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm món</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/doi-sun-pate-shop-online">
-                <div class="img-restaurant"><img
-                        src="https://images.foody.vn/res/g97/965165/prof/s280x175/foody-upload-api-foody-mobile-anh-bia-200515093155.jpg"
-                        class=""></div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Dồi Sụn Nướng &amp; Ăn Vặt - Shop Online">
-                      Dồi Sụn Nướng &amp; Ăn Vặt - Shop Online</h4>
-                    <div class="address-res"
-                         title="Bãi Xe Nhà Họp Tổ Dân Phố Khu C2 Nghĩa Tân, P. Nghĩa Tân, Cầu Giấy, Hà Nội">
-                      Bãi Xe Nhà Họp Tổ Dân Phố Khu C2 Nghĩa Tân, P. Nghĩa Tân, Cầu Giấy,
-                      Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 15%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/deilyno-bun-tron-nam-bo-mien-tron-dac-biet-ta-thanh-oai">
-                <div class="img-restaurant"><img
-                        src="https://images.foody.vn/res/g106/1050058/prof/s280x175/image-15c36f87-211105213046.jpeg"
-                        class=""></div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res"
-                        title="Deilyno - Bún Trộn Nam Bộ &amp; Miến Trộn Đặc Biệt - Tả Thanh Oai">
-                      Deilyno - Bún Trộn Nam Bộ &amp; Miến Trộn Đặc Biệt - Tả Thanh Oai
-                    </h4>
-                    <div class="address-res"
-                         title="Mặt Tiền Đường Tả Thanh Oai, Cách 3 Nhà Tính Từ Ngõ 14, Thanh Trì, Hà Nội">
-                      Mặt Tiền Đường Tả Thanh Oai, Cách 3 Nhà Tính Từ Ngõ 14, Thanh Trì,
-                      Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 35%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/teen-s-food-cac-mon-an-vat-nguyen-cong-hoan">
-                <div class="img-restaurant">
-                  <div class="tag-preferred"><i class="fa fa-thumbs-up"
-                                                aria-hidden="true"></i>Yêu thích</div><img
-                        src="https://images.foody.vn/res/g86/859643/prof/s280x175/foody-upload-api-foody-mobile-teen-food-1-jpg-181206142142.jpg"
-                        class="">
-                </div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res"
-                        title="Teen's Food - Các Món Ăn Vặt - Nguyễn Công Hoan">Teen's Food
-                      - Các Món Ăn Vặt - Nguyễn Công Hoan</h4>
-                    <div class="address-res"
-                         title="11 Nguyễn Công Hoan, P. Ngọc Khánh, Ba Đình, Hà Nội">11
-                      Nguyễn Công Hoan, P. Ngọc Khánh, Ba Đình, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 10%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/xoi-banh-mi-tra-sua-trung-kinh">
-                <div class="img-restaurant">
-                  <div class="tag-preferred"><i class="fa fa-thumbs-up"
-                                                aria-hidden="true"></i>Yêu thích</div><img
-                        src="https://images.foody.vn/res/g97/969812/prof/s280x175/foody-upload-api-foody-mobile-avar65-191017153404.jpg"
-                        class="">
-                </div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Xôi, Bánh Mì &amp; Trà Sữa - Trung Kính">
-                      Xôi, Bánh Mì &amp; Trà Sữa - Trung Kính</h4>
-                    <div class="address-res" title="18 Ngõ 22 Trung Kính, Cầu Giấy, Hà Nội">
-                      18 Ngõ 22 Trung Kính, Cầu Giấy, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 15%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/italian-pizza-khuat-duy-tien">
-                <div class="img-restaurant">
-                  <div class="tag-preferred"><i class="fa fa-thumbs-up"
-                                                aria-hidden="true"></i>Yêu thích</div><img
-                        src="https://images.foody.vn/res/g92/911616/prof/s280x175/foody-upload-api-foody-mobile-pizza-190503102619.jpg"
-                        class="">
-                </div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="Italian Pizza - Khuất Duy Tiến">Italian
-                      Pizza - Khuất Duy Tiến</h4>
-                    <div class="address-res"
-                         title="15 Khuất Duy Tiến, P. Thanh Xuân Bắc, Thanh Xuân, Hà Nội">15
-                      Khuất Duy Tiến, P. Thanh Xuân Bắc, Thanh Xuân, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 10%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
-              <div class="item-restaurant"><a target="_blank" class="item-content"
-                                              href="/ha-noi/a-lau-chao-long">
-                <div class="img-restaurant">
-                  <div class="tag-preferred"><i class="fa fa-thumbs-up"
-                                                aria-hidden="true"></i>Yêu thích</div><img
-                        src="https://images.foody.vn/res/g102/1018553/prof/s280x175/foody-upload-api-foody-mobile-c7033edf595fa201fb4e-200410103619.jpg"
-                        class="">
-                </div>
-                <div class="info-restaurant">
-                  <div class="info-basic-res">
-                    <h4 class="name-res" title="A Lẩu - Cháo Lòng">A Lẩu - Cháo Lòng</h4>
-                    <div class="address-res"
-                         title="207 Vũ Hữu, P. Thanh Xuân Bắc, Thanh Xuân, Hà Nội">207 Vũ
-                      Hữu, P. Thanh Xuân Bắc, Thanh Xuân, Hà Nội</div>
-                  </div>
-                  <p class="content-promotion"><i class="fas fa-tag"></i> Giảm hết 10%</p>
-                  <div class="opentime-status"><span class="stt online" title="Mở cửa"
-                                                     style="color: rgb(35, 152, 57); background-color: rgb(35, 152, 57);"></span>
-                  </div>
-                </div>
-              </a></div>
             </div>
             <div class="txt-center mt-2"><button class="btn-none btn-load-more link"><span
                     class="pr-1">Xem thêm</span><i class="fas fa-redo font12 "></i></button></div>

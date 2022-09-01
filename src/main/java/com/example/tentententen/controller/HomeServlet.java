@@ -44,7 +44,7 @@ public class HomeServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
 
         request.setAttribute("categories",categoryService.fillAll());
-        request.setAttribute("itemService",itemService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
         dispatcher.forward(request,response);
     }
 
