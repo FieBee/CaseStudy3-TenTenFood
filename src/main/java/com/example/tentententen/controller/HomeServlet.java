@@ -1,5 +1,10 @@
 package com.example.tentententen.controller;
 
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
+import com.example.tentententen.service.item.IItemService;
+import com.example.tentententen.service.item.ItemService;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +15,8 @@ import java.io.IOException;
 
 @WebServlet(name="HomeServlet" , value = "/home")
 public class HomeServlet extends HttpServlet {
+    ICategoryService categoryService = new CategoryService();
+    IItemService itemService = new ItemService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        String action = req.getParameter("action");
@@ -35,6 +42,9 @@ public class HomeServlet extends HttpServlet {
 
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
+
+        request.setAttribute("categories",categoryService.fillAll());
+        request.setAttribute("itemService",itemService.fillAll());
         dispatcher.forward(request,response);
     }
 
@@ -47,4 +57,8 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
     }
+
+
+
+
 }
