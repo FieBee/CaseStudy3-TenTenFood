@@ -133,9 +133,10 @@
                             </div>
                         </div>
                         <div class="user-acc col-auto">
-                            <button type="button" onclick="login()" class="btn btn-none-bg btn-login">
+                            <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
                                 <span class="font14">Đăng nhập</span>
                             </button>
+<%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
                     </div>
                 </div>
@@ -230,7 +231,8 @@
             <div class="content">
                 <div class="title">Đăng nhập</div>
                 <div class="login-via">
-                    <div class="item phone"><span class="fas fa-mobile-alt"></span>Số điện thoại</div>
+                    <div class="item phone">
+                        <span class="fas fa-mobile-alt"></span>Số điện thoại</a></div>
                     <div class="item fb"><span class="fab fa-facebook-f"></span>Facebook</div>
                     <form id="google-login-form" action="https://accounts.google.com/o/oauth2/v2/auth" method="GET"><input
                             type="hidden" name="client_id"
@@ -240,16 +242,21 @@
                             type="hidden" name="response_type" value="permission id_token"><input type="hidden"
                                                                                                   name="fetch_basic_profile" value="true"><input type="hidden" name="nonce"
                                                                                                                                                  value="AO9thoqUvirPjVc4KOM61c001.snqMhG">
-                        <div class="item plus"><i class="fab fa-google-plus-g"></i>Google</div>
+                        <div class="item plus"><a target="_blank" href="https://gsso.shopeefood.vn/sms_login?app_id=nowotpapp_cX8JHsQCPqwYtrXXPJnKUhaww77ExQ&app_type=1004&client_type=1&api_version=1&client_version=3.0.0&client_id=1.0&client_language=vi&redirect_uri=https://shopeefood.vn/account/login&check_registered=1"></a><i class="fab fa-google-plus-g"></i>Google</div>
                     </form>
                 </div>
                 <p class="text">Hoặc đăng nhập bằng tài khoản của bạn</p>
                 <div class="form-login-input">
                     <div class="field-group">
-                        <div class="input-group"><i class="far fa-envelope"></i><input type="text"
-                                                                                       placeholder="Tên đăng nhập hoặc Email" value=""></div>
-                        <div class="input-group"><i class="fas fa-lock"></i><input type="password" placeholder="Mật khẩu"
-                                                                                   value=""></div>
+                        <div class="input-group">
+                            <i class="far fa-envelope"></i>
+                            <input name="account" type="text" placeholder="Tên đăng nhập hoặc Email" value="">
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input name="password" type="password" placeholder="Mật khẩu" value="">
+                        </div>
                     </div>
                     <div class="form-group clearfix">
                         <div class="float-left"><input type="checkbox" id="RememberMe" checked=""><label for="RememberMe">Lưu

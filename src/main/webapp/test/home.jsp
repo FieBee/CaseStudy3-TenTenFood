@@ -65,7 +65,7 @@
         </tr>
         <c:forEach var="i" items="${items}">
             <tr>
-                <td><c:out value="${item.item_id}"/></td>
+                <td><c:out value="${i.item_id}"/></td>
                 <td>${i.item_code}</td>
                 <td>${i.shop_id}</td>
                 <td>${i.category_id}</td>
@@ -79,12 +79,9 @@
                         <span>${i.category_name}</span> &nbsp;
                     </c:forEach>
                 </td>
-
-            </td>
-                </td>
                 <td>
-                    <a  href="/items?action=edit&id=${item.item_id}">Edit</a>
-                    <a href="/items?action=delete&id=${item.item_id}">Delete</a>
+                    <a  href="/items?action=edit&id=${i.item_id}">Edit</a>
+                    <a href="/items?action=delete&id=${i.item_id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

@@ -193,8 +193,8 @@ public class ItemService implements IItemService{
             PreparedStatement statement1 = connection.prepareStatement(INSERT_NEW_ITEM_CATEGORY);
             for (int id_category:categories
                  ) {
-                statement1.setInt(1,id_category);
-                statement1.setInt(2,item_id);
+                statement1.setInt(1,item_id);
+                statement1.setInt(2,id_category);
                 statement1.executeUpdate();
             }
 //            connection.commit();

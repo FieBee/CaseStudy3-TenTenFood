@@ -18,6 +18,7 @@ public class CustomerService implements ICustomerService {
     private static final String DELETE_CUSTOMER="DELETE FROM customer where customer_id=?";
     private static final String EDIT_CUSTOMER="UPDATE CUSTOMER SET CUSTOMER_CODE=?,CUSTOMER_NAME=?,CUSTOMER_PHONE=?,CUSTOMER_ADDRESS=?,CUSTOMER_EMAIL=?,CUSTOMER_ACCOUNT=?,CUSTOMER_PASSWORD=? WHERE customer_id=?;";
 
+    private static final String QUERY_FIND_BY_CUSTOMER = "SELECT ID FROM USERS WHERE customer_account = ? AND customer_password = ?";
     @Override
     public List<Customer> fillAll() {
         List<Customer> customerList= new ArrayList<>() ;
@@ -73,7 +74,7 @@ public class CustomerService implements ICustomerService {
             ptmt.setString(4,p.getCustomer_address());
             ptmt.setString(5,p.getCustomer_email());
             ptmt.setString(6,p.getCustomer_account());
-            ptmt.setString(7,p.getGetCustomer_password());
+            ptmt.setString(7,p.getCustomer_password());
             System.out.println(ptmt);
             ptmt.executeUpdate();
         } catch (SQLException e) {
@@ -103,7 +104,7 @@ public class CustomerService implements ICustomerService {
             ptmt.setString(4,t.getCustomer_address());
             ptmt.setString(5,t.getCustomer_email());
             ptmt.setString(6,t.getCustomer_account());
-            ptmt.setString(7,t.getGetCustomer_password());
+            ptmt.setString(7,t.getCustomer_password());
             ptmt.setInt(8,id);
             stt=ptmt.executeUpdate()>0;
         } catch (SQLException e) {
@@ -111,4 +112,20 @@ public class CustomerService implements ICustomerService {
         }
         return stt;
     }
+    public int findByUser(Customer customer) {
+        int id = -1;
+        try {
+            PreparedStatement statement = connection.prepareStatement(QUERY_FIND_BY_CUSTOMER);
+            statement.setString(1, customer.getCustomer_account());
+            statement.setString(2, customer.getCustomer_password());
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                id = rs.getInt(1);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return id;
+    }
+
 }

@@ -48,13 +48,13 @@ CREATE TABLE item (
 );
 CREATE TABLE customer (
                           customer_id INT AUTO_INCREMENT PRIMARY KEY,
-                          customer_code nVARCHAR(150) NOT NULL UNIQUE,
-                          customer_name nVARCHAR(150) NOT NULL,
-                          customer_phone nVARCHAR(150) NOT NULL UNIQUE,
-                          customer_address nVARCHAR(150) NOT NULL,
-                          customer_email nVARCHAR(150) NOT NULL UNIQUE,
-                          customer_account nVARCHAR(150) NOT NULL UNIQUE,
-                          customer_password nVARCHAR(150) NOT NULL
+                          customer_code nVARCHAR(150) UNIQUE,
+                          customer_name nVARCHAR(150) ,
+                          customer_phone nVARCHAR(150) UNIQUE,
+                          customer_address nVARCHAR(150) ,
+                          customer_email nVARCHAR(150) UNIQUE,
+                          customer_account nVARCHAR(150) UNIQUE,
+                          customer_password nVARCHAR(150)
 );
 
 
@@ -147,8 +147,9 @@ INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (5,5,10,350000
 INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (6,6,10,350000);
 INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (7,7,10,350000);
 
-CREATE TABLE book_category(
-    book_id int,
+CREATE TABLE item_category(
+    item_id int,
     category_id int
+
 
 );

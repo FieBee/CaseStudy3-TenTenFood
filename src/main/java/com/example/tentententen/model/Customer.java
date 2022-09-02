@@ -8,9 +8,9 @@ public class Customer {
     private String customer_address;
     private String customer_email;
     private String customer_account;
-    private String getCustomer_password;
+    private String customer_password;
 
-    public Customer(int customer_id, String customer_code, String customer_name, String customer_phone, String customer_address, String customer_email, String customer_account, String getCustomer_password) {
+    public Customer(int customer_id, String customer_code, String customer_name, String customer_phone, String customer_address, String customer_email, String customer_account, String customer_password) {
         this.customer_id = customer_id;
         this.customer_code = customer_code;
         this.customer_name = customer_name;
@@ -18,17 +18,22 @@ public class Customer {
         this.customer_address = customer_address;
         this.customer_email = customer_email;
         this.customer_account = customer_account;
-        this.getCustomer_password = getCustomer_password;
+        this.customer_password = customer_password;
     }
 
-    public Customer(String customer_code, String customer_name, String customer_phone, String customer_address, String customer_email, String customer_account, String getCustomer_password) {
+    public Customer(String customer_code, String customer_name, String customer_phone, String customer_address, String customer_email, String customer_account, String customer_password) {
         this.customer_code = customer_code;
         this.customer_name = customer_name;
         this.customer_phone = customer_phone;
         this.customer_address = customer_address;
         this.customer_email = customer_email;
         this.customer_account = customer_account;
-        this.getCustomer_password = getCustomer_password;
+        this.customer_password = customer_password;
+    }
+
+    public Customer(String customer_account, String customer_password) {
+        this.customer_account = customer_account;
+        this.customer_password = customer_password;
     }
 
     public int getCustomer_id() {
@@ -87,12 +92,12 @@ public class Customer {
         this.customer_account = customer_account;
     }
 
-    public String getGetCustomer_password() {
-        return getCustomer_password;
+    public String getCustomer_password() {
+        return customer_password;
     }
 
-    public void setGetCustomer_password(String getCustomer_password) {
-        this.getCustomer_password = getCustomer_password;
+    public void setCustomer_password(String customer_password) {
+        this.customer_password = customer_password;
     }
 
     @Override
@@ -105,7 +110,7 @@ public class Customer {
                 ", customer_address='" + customer_address + '\'' +
                 ", customer_email='" + customer_email + '\'' +
                 ", customer_account='" + customer_account + '\'' +
-                ", getCustomer_password='" + getCustomer_password + '\'' +
+                ", customer_password='" + customer_password + '\'' +
                 '}';
     }
 }
