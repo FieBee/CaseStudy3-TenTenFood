@@ -13,7 +13,7 @@ import java.util.List;
 public class ItemService implements IItemService{
 
     Connection connection = ConnectionJDBC.getConnect();
-    ICategoryService categoryService = new CategoryService();
+//    CategoryService categoryService = new CategoryService();
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
@@ -79,9 +79,9 @@ public class ItemService implements IItemService{
                 double item_price = resultSet.getDouble("item_price");
                 String item_description = resultSet.getString("item_description");
                 String item_image = resultSet.getString("item_image");
-                List<Category> categoryList = categoryService.findAllByItemId(item_id);
+//                List<Category> categoryList = categoryService.findAllByItemId(item_id);
 
-                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image,categoryList));
+//                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image,categoryList));
             }
         } catch (SQLException e) {
             e.printStackTrace();

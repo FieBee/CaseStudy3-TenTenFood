@@ -26,7 +26,7 @@ public class CategoryService implements ICategoryService{
     private static final String UPDATE_CATEGORY = "UPDATE item SET category_code =?, category_name =?," +
             " category_description =?  WHERE category_id =?;";
 
-    public static final String SELECT_CATEGORY_BY_ITEM_ID = "SELECT * FROM category JOIN item_category ic ON category_id = ic.category_id AND ic.book_id=?";
+    public static final String SELECT_CATEGORY_BY_ITEM_ID = "SELECT * FROM category JOIN item_category ic ON category_id = ic.category_id AND ic.category_id=?";
     @Override
     public List<Category> findAllByItemId(int item_id) {
         List<Category> categories = new ArrayList<>();
@@ -69,8 +69,6 @@ public class CategoryService implements ICategoryService{
 
                 categories.add(category);
 
-//                Category category = new Category(id, code, name, description);
-//                categoryList.add(category);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -132,15 +132,20 @@ public class CategoryServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
-    private void viewCategory(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-        String category_id = request.getParameter("id");
-        Category category = categoryService.findById(Integer.parseInt(category_id));
-        request.setAttribute("category",category);
+    private void viewCategory(HttpServletRequest request,HttpServletResponse response) {
+        try {
+            int category_id = Integer.parseInt(request.getParameter("id"));
+            Category category = categoryService.findAllByItemId(category_id);
+            request.setAttribute("category", category);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");
-        dispatcher.forward(request,response);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
 }
 
 
