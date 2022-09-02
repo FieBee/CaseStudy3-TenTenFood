@@ -15,7 +15,8 @@ import java.util.List;
 
 public class CategoryService implements ICategoryService{
 
-//    IItemService itemService = new ItemService();
+
+    ItemService itemService = new ItemService();
 //    ICategoryService categoryService = new CategoryService();
     Connection connection = ConnectionJDBC.getConnect();
     public static final String SELECT_ALL_CATEGORY = "select * from category;";
@@ -29,45 +30,52 @@ public class CategoryService implements ICategoryService{
     @Override
     public List<Category> findAllByItemId(int item_id) {
         List<Category> categories = new ArrayList<>();
-//        try {
-//            PreparedStatement statement1 = connection.prepareStatement(SELECT_CATEGORY_BY_ITEM_ID);
-//            statement1.setInt(1, item_id);
-//            ResultSet resultSet = statement1.executeQuery();
-////            ResultSet resultSet1 = statement1.getGeneratedKeys();
-//            while (resultSet.next()){
-//                int category_id = resultSet.getInt("category_id");
-//                String category_code = resultSet.getString("category_code");
-//                String category_name = resultSet.getString("category_name");
-//                String category_description = resultSet.getString("category_description");
-//
-//
-//                Category category = new Category(category_id, category_code, category_name,category_description);
-//                categories.add(category);
-//            }
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
+        try {
+            PreparedStatement statement1 = connection.prepareStatement(SELECT_CATEGORY_BY_ITEM_ID);
+            statement1.setInt(1, item_id);
+            ResultSet resultSet = statement1.executeQuery();
+//            ResultSet resultSet1 = statement1.getGeneratedKeys();
+            while (resultSet.next()){
+                int category_id = resultSet.getInt("category_id");
+                String category_code = resultSet.getString("category_code");
+                String category_name = resultSet.getString("category_name");
+                String category_description = resultSet.getString("category_description");
+
+                List<Item> items = itemService.findAllByCategoryId(category_id);
+                Category category = new Category(category_id,category_code,category_name,category_description,items);
+
+                categories.add(category);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         return categories;
     }
 
     @Override
     public List fillAll() {
-        List<Category> categoryList = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_CATEGORY);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
-                int id = resultSet.getInt("category_id");
-                String code = resultSet.getString("category_code");
-                String name = resultSet.getString("category_name");
-                String description = resultSet.getString("category_description");
-                Category category = new Category(id, code, name, description);
-                categoryList.add(category);
+                int category_id = resultSet.getInt("category_id");
+                String category_code = resultSet.getString("category_code");
+                String category_name = resultSet.getString("category_name");
+                String category_description = resultSet.getString("category_description");
+
+                List<Item> items = itemService.findAllByCategoryId(category_id);
+                Category category = new Category(category_id,category_code,category_name,category_description,items);
+
+                categories.add(category);
+
+//                Category category = new Category(id, code, name, description);
+//                categoryList.add(category);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return categoryList;
+        return categories;
     }
 
     @Override

@@ -29,6 +29,38 @@ public class ItemService implements IItemService{
     public static final String INSERT_NEW_ITEM_CATEGORY = "INSERT INTO item_category (item_id, category_id) VALUE (?, ?);";
 
 
+
+    public List<Item> findAllByCategoryId(int category_id) {
+        List<Item> items = new ArrayList<>();
+        try {
+            PreparedStatement statement1 = connection.prepareStatement(SELECT_ITEM_BY_ID);
+            statement1.setInt(1, category_id);
+            ResultSet resultSet = statement1.executeQuery();
+//            ResultSet resultSet1 = statement1.getGeneratedKeys();
+            while (resultSet.next()){
+                int item_id = resultSet.getInt("item_id");
+                String item_code = resultSet.getString("item_code");
+                int shop_id = resultSet.getInt("shop_id");
+                int category_id1 = resultSet.getInt("category_id");
+                int deal_id = resultSet.getInt("deal_id");
+                String item_name = resultSet.getString("item_name");
+                double item_price = resultSet.getDouble("item_price");
+                String item_description = resultSet.getString("item_description");
+                String item_image = resultSet.getString("item_image");
+                Item item = new Item(item_id,item_code,shop_id,category_id1,deal_id,item_name,item_price,item_description,item_image);
+                items.add(item);
+
+        //                int id = resultSet.getInt("id");
+//                String name = resultSet.getString("name");
+//                String description = resultSet.getString("description");
+//                Category category = new Category(id, name, description);
+//                categories.add(category);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return items;
+    }
     @Override
     public List<Item> fillAll() {
         List<Item> itemList = new ArrayList<>();

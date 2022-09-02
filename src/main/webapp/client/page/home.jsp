@@ -246,7 +246,7 @@
 
 <%--            Show Category_name--%>
             <c:forEach var="category" items="${categories}">
-              <a href="home?action=showByCategory&id=${category.category_id}">
+              <a href="categories?action=view&id=${category.category_id}">
                   <span class="category-item ">${category.category_name}</span>
               </a>
             </c:forEach>
