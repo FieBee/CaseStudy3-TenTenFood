@@ -63,6 +63,9 @@ public class CategoryServlet extends HttpServlet {
                 case "delete":
                     deleteCategory(request,response);
                     break;
+                case "view":
+                    viewCategory(request,response);
+                    break;
                 default:
                     listCatagory(request,response);
                     break;
@@ -124,6 +127,17 @@ public class CategoryServlet extends HttpServlet {
         request.setAttribute("categories",categories);
         RequestDispatcher dispatcher = request.getRequestDispatcher("");
         dispatcher.forward(request,response);
+    }
+
+    private void viewCategory(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        String category_id = request.getParameter("id");
+        Category category = categoryService.findById(Integer.parseInt(category_id));
+        request.setAttribute("category",category);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");
+        dispatcher.forward(request,response);
+
+
     }
 
 }

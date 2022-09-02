@@ -155,7 +155,7 @@ public class ItemServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
-    public void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
+    private void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
         List<Item> items = itemService.selectItemByName(name);
 
@@ -163,4 +163,6 @@ public class ItemServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
         dispatcher.forward(request,response);
     }
+
+
 }
