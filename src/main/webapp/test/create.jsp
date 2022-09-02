@@ -33,9 +33,10 @@
       <tr>
         <th>category_id:</th>
         <td>
-          <input type="text" name="category_id" id="category_id" size="15"/>
+          <input type="text" name="category_id" id="category_id" size="45"/>
         </td>
       </tr>
+
       <tr>
         <th>deal_id:</th>
         <td>
@@ -67,10 +68,18 @@
         </td>
       </tr>
       <tr>
+      <select name="categories" id="categories" multiple>
+        <c:forEach items="${categories}" var="c">
+          <option value="${c.category_id}">${c.category_name}</option>
+        </c:forEach>
+      </select>
+    </tr>
+      <tr>
         <td colspan="2" align="center">
           <input type="submit" value="Save"/>
         </td>
       </tr>
+
     </table>
   </form>
 </div>

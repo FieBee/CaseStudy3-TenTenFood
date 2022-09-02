@@ -50,6 +50,18 @@ public class Item {
         this.item_image = item_image;
     }
 
+    public Item( String item_code, int shop_id, int deal_id, String item_name, double item_price, String item_description, String item_image) {
+        this.item_id = item_id;
+        this.item_code = item_code;
+        this.shop_id = shop_id;
+        this.deal_id = deal_id;
+        this.item_name = item_name;
+        this.item_price = item_price;
+        this.item_description = item_description;
+        this.item_image = item_image;
+    }
+
+
     public int getItem_id() {
         return item_id;
     }

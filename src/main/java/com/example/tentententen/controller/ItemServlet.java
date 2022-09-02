@@ -2,6 +2,8 @@ package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Item;
 import com.example.tentententen.service.IService;
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
 import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
 
@@ -20,6 +22,7 @@ import java.util.List;
 @WebServlet (name = "ItemServlet", value = "/items")
 public class ItemServlet extends HttpServlet {
 
+    ICategoryService categoryService = new CategoryService();
     private IItemService itemService = new ItemService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -87,6 +90,7 @@ public class ItemServlet extends HttpServlet {
     }
     private void showCreate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/create.jsp");
+        request.setAttribute("categories", categoryService.fillAll());
         dispatcher.forward(request,response);
     }
 
@@ -98,10 +102,17 @@ public class ItemServlet extends HttpServlet {
         String item_name = new String(request.getParameter("item_name").getBytes("iso-8859-1"),"utf-8");
         double item_price = Double.parseDouble(request.getParameter("item_price"));
         String item_description = new String(request.getParameter("item_description").getBytes("iso-8859-1"),"utf-8");
-            String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
-        Item item = new Item(item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image);
+        String item_image = new String(request.getParameter("item_image").getBytes("iso-8859-1"),"utf-8");
 
-        itemService.insert(item);
+        String[] categoriesStr = request.getParameterValues("categories");
+        int[] categories = new int[categoriesStr.length];
+        for (int i = 0; i < categoriesStr.length; i++) {
+            categories[i] = Integer.parseInt(categoriesStr[i]);
+        }
+
+        Item item = new Item(item_code, shop_id,category_id,deal_id,item_name,item_price,item_description,item_image);
+
+        itemService.save(item,categories);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/create.jsp");
         dispatcher.forward(request,response);
@@ -109,7 +120,7 @@ public class ItemServlet extends HttpServlet {
 
     private void showEdit(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         int item_id = Integer.parseInt(request.getParameter("id"));
-        Item item = (Item) this.itemService.findById(item_id);
+        Item item = this.itemService.findById(item_id);
         request.setAttribute("item",item);
         RequestDispatcher dispatcher = request.getRequestDispatcher("test/edit.jsp");
         dispatcher.forward(request,response);

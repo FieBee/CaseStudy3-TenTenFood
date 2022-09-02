@@ -1,9 +1,8 @@
 package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Bill_detail;
-import com.example.tentententen.model.Shop;
-import com.example.tentententen.service.bill_detail.Bill_DetailService;
-import com.example.tentententen.service.bill_detail.IBill_DetailService;
+import com.example.tentententen.service.category.bill_detail.Bill_DetailService;
+import com.example.tentententen.service.category.bill_detail.IBill_DetailService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

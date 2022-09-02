@@ -146,3 +146,9 @@ INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (4,4,10,350000
 INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (5,5,10,350000);
 INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (6,6,10,350000);
 INSERT INTO bill_detail(bill_id, item_id, quantity, price) values (7,7,10,350000);
+
+CREATE TABLE book_category(
+    book_id int,
+    category_id int
+
+);

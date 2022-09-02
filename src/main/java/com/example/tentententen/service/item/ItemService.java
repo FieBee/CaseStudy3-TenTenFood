@@ -1,7 +1,10 @@
 package com.example.tentententen.service.item;
 
 import com.example.tentententen.connection.ConnectionJDBC;
+import com.example.tentententen.model.Category;
 import com.example.tentententen.model.Item;
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,6 +13,7 @@ import java.util.List;
 public class ItemService implements IItemService{
 
     Connection connection = ConnectionJDBC.getConnect();
+    ICategoryService categoryService = new CategoryService();
 
     private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
@@ -43,8 +47,9 @@ public class ItemService implements IItemService{
                 double item_price = resultSet.getDouble("item_price");
                 String item_description = resultSet.getString("item_description");
                 String item_image = resultSet.getString("item_image");
+                List<Category> categoryList = categoryService.findAllByItemId(item_id);
 
-                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image));
+                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image,categoryList));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -167,7 +172,7 @@ public class ItemService implements IItemService{
     public void save(Item item, int[] categories) {
         int item_id = 0;
         try{
-            connection.setAutoCommit(false);
+//            connection.setAutoCommit(false);
             PreparedStatement statement =connection.prepareStatement(INSERT_ITEM, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1,item.getItem_code());
             statement.setInt(2,item.getShop_id());
@@ -192,7 +197,7 @@ public class ItemService implements IItemService{
                 statement1.setInt(2,item_id);
                 statement1.executeUpdate();
             }
-            connection.commit();
+//            connection.commit();
         } catch (SQLException throwables) {
             try {
                 connection.rollback();

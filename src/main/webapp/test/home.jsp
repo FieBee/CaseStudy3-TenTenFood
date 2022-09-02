@@ -33,18 +33,18 @@
 <body>
 <center>
     <h1>item Management</h1>
-    <h2><a href="/home?action=create" class="csw-btn-button" rel="nofollow">Creat New item</a></h2>
+    <h2><a href="/items?action=create" class="csw-btn-button" rel="nofollow">Creat New item</a></h2>
 
     <br>
 
-    <form action="/home?action=find" method="post">
+    <form action="/items?action=find" method="post">
         <input type="text" name="search" id="search" placeholder="country">
         <input type="submit" value="Search">
     </form>
     <br>
     <h2>
-        <a href="/home?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
-        <a href="/home" class="csw-btn-button" rel="nofollow" >Display item List</a>
+        <a href="/items?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
+        <a href="/items" class="csw-btn-button" rel="nofollow" >Display item List</a>
     </h2>
 
 </center>
@@ -63,20 +63,28 @@
             <th>item_description</th>
             <th>item_image</th>
         </tr>
-        <c:forEach var="item" items="${items}">
+        <c:forEach var="i" items="${items}">
             <tr>
                 <td><c:out value="${item.item_id}"/></td>
-                <td>${item.item_code}</td>
-                <td>${item.shop_id}</td>
-                <td>${item.category_id}</td>
-                <td>${item.deal_id}</td>
-                <td>${item.item_name}</td>
-                <td>${item.item_price}</td>
-                <td>${item.item_description}</td>
-                <td>${item.item_image}</td>
+                <td>${i.item_code}</td>
+                <td>${i.shop_id}</td>
+                <td>${i.category_id}</td>
+                <td>${i.deal_id}</td>
+                <td>${i.item_name}</td>
+                <td>${i.item_price}</td>
+                <td>${i.item_description}</td>
+                <td>${i.item_image}</td>
+                <td>,m ,m
+                    <c:forEach items="${i.categoryList}" var="c">
+                        <span>${i.category_name}</span> &nbsp;
+                    </c:forEach>
+                </td>
+
+            </td>
+                </td>
                 <td>
-                    <a  href="/home?action=edit&id=${item.item_id}">Edit</a>
-                    <a href="/home?action=delete&id=${item.item_id}">Delete</a>
+                    <a  href="/items?action=edit&id=${item.item_id}">Edit</a>
+                    <a href="/items?action=delete&id=${item.item_id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

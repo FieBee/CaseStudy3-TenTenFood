@@ -1,4 +1,4 @@
-package com.example.tentententen.service.bill_detail;
+package com.example.tentententen.service.category.bill_detail;
 
 import com.example.tentententen.model.Bill_detail;
 import com.example.tentententen.service.IService;
