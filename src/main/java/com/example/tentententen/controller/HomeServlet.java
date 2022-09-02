@@ -49,7 +49,7 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
 
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",shopService.fillAll());
@@ -58,7 +58,7 @@ public class HomeServlet extends HttpServlet {
     }
 
     private void showlogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/login.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
         dispatcher.forward(request,response);
     }
 

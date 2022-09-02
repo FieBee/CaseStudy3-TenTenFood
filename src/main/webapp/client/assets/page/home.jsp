@@ -23,7 +23,7 @@
   <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=vietnamese">
   <link href="webapp/client/assets/css/main2.css" rel="stylesheet">
-  <link href="client/assets/css/home.css" rel="stylesheet">
+  <link href="client/css/home.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -341,7 +341,7 @@
                   <div class="box-line-lg"></div>
                 </div>
               </div>
-<%--              List items foreach--%>
+<%--              List shops foreach--%>
               <c:forEach var="shops" items="${shops}">
               <div class="item-restaurant"><a target="_blank" class="item-content"
                                               href="">
@@ -352,10 +352,6 @@
                   <div class="info-basic-res">
                     <h4 class="name-res" title="${shops.shop_name}">${shops.shop_name}</h4>
                     <div class="address-res" title="${shops.shop_address}">${shops.shop_address}</div>
-                    <h4 class="name-res" title="Lẩu Đức Trọc - Đường Láng">Lẩu Đức Trọc -
-                      Đường Láng </h4>
-                    <div class="address-res" title="790 Đường Láng, Đống Đa, Hà Nội">790
-                      Đường Láng, Đống Đa, Hà Nội</div>
                   </div>
                   <p class="content-promotion"><i class="fas fa-tag"></i>Giảm 100%</p>
                   <div class="opentime-status"><span class="stt online" title="Mở cửa"
@@ -1105,10 +1101,8 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>!function (r) { var n = window.webpackJsonp; window.webpackJsonp = function (e, u, c) { for (var f, i, p, a = 0, l = []; a < e.length; a++)i = e[a], o[i] && l.push(o[i][0]), o[i] = 0; for (f in u) Object.prototype.hasOwnProperty.call(u, f) && (r[f] = u[f]); for (n && n(e, u, c); l.length;)l.shift()(); if (c) for (a = 0; a < c.length; a++)p = t(t.s = c[a]); return p }; var e = {}, o = { 2: 0 }; function t(n) { if (e[n]) return e[n].exports; var o = e[n] = { i: n, l: !1, exports: {} }; return r[n].call(o.exports, o, o.exports, t), o.l = !0, o.exports } t.m = r, t.c = e, t.d = function (r, n, e) { t.o(r, n) || Object.defineProperty(r, n, { configurable: !1, enumerable: !0, get: e }) }, t.n = function (r) { var n = r && r.__esModule ? function () { return r.default } : function () { return r }; return t.d(n, "a", n), n }, t.o = function (r, n) { return Object.prototype.hasOwnProperty.call(r, n) }, t.p = "/", t.oe = function (r) { throw console.error(r), r } }([]);
-</script>
-<script defer="" src="../js/main1.js"></script>
-<script defer="" src="../js/main2.js"></script>
+
+<script></script>
 
 
 
