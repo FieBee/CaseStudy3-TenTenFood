@@ -282,9 +282,10 @@
                             </div>
                         </div>
 
-                        <div class="main-nav col"><a class="nav-item active" href="/admin?action=shopManagement">Shop</a><a
-                                class="nav-item " href="/admin?action=userManagement">User</a><a class="nav-item " href="/admin?action=dealManagement">Deal</a><a
-                                class="nav-item " href="/admin?action=categoryManagement">Category</a>
+                        <div class="main-nav col">
+                            <a class="nav-item active" href="/customers">User Information</a>
+                            <a class="nav-item active" href="/customers?action=shopManagement">Cart</a>
+
                             <%--                            <a class="nav-item "--%>
                             <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
                             <%--                            cưng</a>--%>
