@@ -221,189 +221,64 @@
             </header>
             <div class="now-banner ver_vi" style="position: fixed; top: 70px;">
                 <div class="container">
+                    <center>
+                        <h1>item Management</h1>
+                        <h2><a href="/items?action=create" class="csw-btn-button" rel="nofollow">Creat New item</a></h2>
 
-    <table >
-        <caption><h2>List of items</h2></caption>
-        <tr>
-            <th>item_id</th>
-            <th>item_code</th>
-            <th>shop_id</th>
-            <th>category_id</th>
-            <th>deal_id</th>
-            <th>item_name</th>
-            <th>item_price</th>
-            <th>item_description</th>
-            <th>item_image</th>
-        </tr>
-        <c:forEach var="i" items="${items}">
-            <tr>
-                <td><c:out value="${i.item_id}"/></td>
-                <td>${i.item_code}</td>
-                <td>${i.shop_id}</td>
-                <td>${i.category_id}</td>
-                <td>${i.deal_id}</td>
-                <td>${i.item_name}</td>
-                <td>${i.item_price}</td>
-                <td>${i.item_description}</td>
-                <td>${i.item_image}</td>
-                <td>
-                    <c:forEach items="${i.categoryList}" var="c">
-                        <span>${c.category_name}</span> &nbsp;
-                    </c:forEach>
-                </td>
-                <td>
-                    <a  href="/items?action=edit&id=${i.item_id}">Edit</a>
-                    <a href="/items?action=delete&id=${i.item_id}">Delete</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
+                        <br>
 
-<%--                    <div class="bg-corporation"><img--%>
-<%--                            src="../img/bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi.png?0a045d11888296eb26473f6126cad3f4"--%>
-<%--                            class="bg-deliverynow" alt="bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi"--%>
-<%--                            title="bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi" width="170px"--%>
-<%--                            data-change-lang="" style="width: 170px;"></div>--%>
-<%--                </div>--%>
-<%--                <div class="now-container-coporation" >--%>
-<%--                    <p class="seo-footer-link__head">Danh mục</p>--%>
-<%--                    <div class="seo-footer-link__body">--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Thuốc</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-hoa-my-pham-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Hoá mỹ phẩm</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-bcs-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">BCS</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-thiet-bi-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Thiết bị</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-thuoc-tay-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Thuốc tây</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-khau-trang-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Khẩu trang</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/medicine/danh-sach-dia-diem-phuc-vu-khan-cap-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Khẩn cấp</a></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Thú cưng</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Thú cưng</a></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Đồ ăn HN</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Đồ ăn HN</a></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Đặt bàn HN</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Thực phẩm HN</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Sản phẩm HN</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="#">--%>
-<%--                            <p class="seo-footer-link__title">Sản phẩm</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Mỹ phẩm</a><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Đồ chơi</a><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Sữa</a><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Tã bỉm</a><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Dụng cụ</a><a--%>
-<%--                                    href="#"--%>
-<%--                                    class="seo-footer-link__sub-item">Quần áo</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/fmcg/danh-sach-dia-diem-phuc-vu-giay-dep-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Giày dép</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/fmcg/danh-sach-dia-diem-phuc-vu-dien-tu-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Điện tử</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/fmcg/danh-sach-dia-diem-phuc-vu-trang-suc-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Trang sức</a></ul>--%>
-<%--                        </div>--%>
-<%--                        <div class="seo-footer-link__item"><a href="https://shopeefood.vn/ha-noi/flowers">--%>
-<%--                            <p class="seo-footer-link__title">Hoa</p>--%>
-<%--                        </a>--%>
-<%--                            <ul class="seo-footer-link__sub-item-wrapper"><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/flowers/danh-sach-dia-diem-phuc-vu-chia-buon-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Chia buồn</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/flowers/danh-sach-dia-diem-phuc-vu-cay-canh-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Cây cảnh</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/flowers/danh-sach-dia-diem-phuc-vu-chuc-mung-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Chúc mừng</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/flowers/danh-sach-dia-diem-phuc-vu-sinh-nhat-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Sinh nhật</a><a--%>
-<%--                                    href="https://shopeefood.vn/ha-noi/flowers/danh-sach-dia-diem-phuc-vu-tinh-yeu-giao-tan-noi"--%>
-<%--                                    class="seo-footer-link__sub-item">Tình yêu</a></ul>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="now-container-coporation" style="margin-top: 0px;">--%>
-<%--                    <div class="container-inner">--%>
+                        <form action="/items?action=find" method="post">
+                            <input type="text" name="search" id="search" placeholder="country">
+                            <input type="submit" value="Search">
+                        </form>
+                        <br>
+                        <h2>
+                            <a href="/items?action=sort" class="csw-btn-button" rel="nofollow" >Display item List By Name</a>
+                            <a href="/items" class="csw-btn-button" rel="nofollow" >Display item List</a>
+                        </h2>
 
-<%--                        <div class="block-last">--%>
-<%--                            <p class="title-block">Địa chỉ công ty</p>--%>
-<%--                            <span>--%>
-<%--                                <p>Công Ty Cổ Phần Foody</p>--%>
-<%--                                <p>Lầu G, Tòa nhà Jabes 1,</p>--%>
-<%--                                <p>số 244 đường Cống Quỳnh, phường Phạm Ngũ Lão, Quận 1, TPHCM</p>--%>
-<%--                                <p>Giấy CN ĐKDN số: 0311828036</p>--%>
-<%--                                <p>do Sở Kế hoạch và Đầu tư TP.HCM cấp ngày 11/6/2012,</p>--%>
-<%--                                <p>sửa đổi lần thứ 23, ngày 10/12/2020</p>--%>
-<%--                                <p>Số điện thoại: 1900 2042</p>--%>
-<%--                                <p>Email: <a href="mailto:support@shopeefood.vn"> support@shopeefood.vn</a></p>--%>
-<%--                            </span>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <hr>--%>
-<%--            </div>--%>
+                    </center>
+                    <div align="center">
 
+                        <table >
+                            <caption><h2>List of items</h2></caption>
+                            <tr>
+                                <th>item_id</th>
+                                <th>item_code</th>
+                                <th>shop_id</th>
+                                <th>category_id</th>
+                                <th>deal_id</th>
+                                <th>item_name</th>
+                                <th>item_price</th>
+                                <th>item_description</th>
+                                <th>item_image</th>
+                            </tr>
+                            <c:forEach var="i" items="${items}">
+                                <tr>
+                                    <td><c:out value="${i.item_id}"/></td>
+                                    <td>${i.item_code}</td>
+                                    <td>${i.shop_id}</td>
+                                    <td>${i.category_id}</td>
+                                    <td>${i.deal_id}</td>
+                                    <td>${i.item_name}</td>
+                                    <td>${i.item_price}</td>
+                                    <td>${i.item_description}</td>
+                                    <td>${i.item_image}</td>
+                                    <td>,m ,m
+                                        <c:forEach items="${i.categoryList}" var="c">
+                                            <span>${i.category_name}</span> &nbsp;
+                                        </c:forEach>
+                                    </td>
+                                    <td>
+                                        <a  href="/items?action=edit&id=${i.item_id}">Edit</a>
+                                        <a href="/items?action=delete&id=${i.item_id}">Delete</a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </table>
 
+                    </div>
 
-<%--        </div>--%>
-<%--        <footer class="main-footer">--%>
-<%--            <div class="container">--%>
-
-<%--            </div>--%>
-<%--            <div id="footer-bottom"></div>--%>
-<%--        </footer>--%>
-<%--    </div>--%>
-<%--    <div id="modal">--%>
-<%--        <div>--%>
-<%--            <div class="modal fade modal-noti modal-alert">--%>
-<%--                <div class="modal-dialog modal-noti" role="document">--%>
-<%--                    <div class="modal-content"><span class="close" data-dismiss="modal">x</span>--%>
-<%--                        <div class="modal-header">--%>
-<%--                            <div class="txt-bold font13"><span class="txt-red">ShopeeFood</span> Thông báo</div>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-body">--%>
-<%--                            <p class="font15"><span></span></p>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer"><button type="button" class="btn btn-red align-right">Ok</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="modal-backdrop fade under-modal show"></div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
