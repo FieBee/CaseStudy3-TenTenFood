@@ -1,51 +1,71 @@
-//package com.example.tentententen.controller;
-//
-//import com.example.tentententen.model.Customer;
-//import com.example.tentententen.service.customer.CustomerService;
-//import com.example.tentententen.service.customer.ICustomerService;
-//
-//import javax.servlet.ServletException;
-//import javax.servlet.annotation.WebServlet;
-//import javax.servlet.http.HttpServlet;
-//import javax.servlet.http.HttpServletRequest;
-//import javax.servlet.http.HttpServletResponse;
-//import java.io.IOException;
-//
-//@WebServlet(name = "LoginServlet", urlPatterns = "/login")
-//public class LoginServlet extends HttpServlet {
-//
-//    CustomerService customerService =  new CustomerService();
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        action(request, response);
-//    }
-//
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        action(request, response);
-//    }
-//
-//    private void action(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String action = request.getParameter("action");
-//        if (action == null)
-//            action = "";
-//
-//        switch (action) {
-//            case "registration":
-////                registration(request, response);
-////                break;
-//            case "login":
-//                login(request, response);
-//                break;git
-//        }
-//    }
-//
-//
-//    private void login(HttpServletRequest request, HttpServletResponse response){
-//        String account = request.getParameter("account");
-//        String password = request.getParameter("password");
-//        Customer customer = new Customer(account,password);
-//        int customer_id = customerService.findByUser(customer);
-//
-//    }
-//}
+package com.example.tentententen.controller;
+
+import com.example.tentententen.model.Customer;
+import com.example.tentententen.service.customer.CustomerService;
+import com.example.tentententen.service.customer.ICustomerService;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
+public class LoginServlet extends HttpServlet {
+
+    CustomerService customerService =  new CustomerService();
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null)
+            action = "";
+
+        switch (action) {
+            default:
+                showLogin(request,response);
+                break;
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null)
+            action = "";
+
+        switch (action) {
+            default:
+                login(request,response);
+                break;
+        }
+    }
+
+
+
+    private void showLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
+        dispatcher.forward(request,response);
+    }
+    private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String account = request.getParameter("account");
+        String password = request.getParameter("password");
+        List<Customer> customers = customerService.fillAll();
+        RequestDispatcher dispatcher;
+
+        for(int i = 0; i < customers.size(); i++){
+            if (customers.get(i).getCustomer_account().equals(account)
+                    && customers.get(i).getCustomer_password().equals(password)){
+                    dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
+                    dispatcher.forward(request,response);
+                    return;
+            }
+        }
+        request.setAttribute("message","Sai tài khoản hoặc mật khẩu!!");
+        dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
+        dispatcher.forward(request,response);
+
+    }
+}

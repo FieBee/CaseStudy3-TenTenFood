@@ -280,15 +280,15 @@
                                             class="count col-auto">1028 địa điểm</span></div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="main-nav col"><a class="nav-item active" href="/ha-noi/food">Đồ ăn</a><a
-                                class="nav-item " href="/ha-noi/fresh">Thực phẩm</a><a class="nav-item "
-                                                                                       href="/ha-noi/liquor">Bia</a><a class="nav-item " href="/ha-noi/flowers">Hoa</a><a
-                                class="nav-item " href="/ha-noi/fmcg">Siêu thị</a><a class="nav-item "
-                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú
-                            cưng</a></div>
+                        <div class="main-nav col"><a class="nav-item active" href="/admin?action=shopManagement">Shop</a><a
+                                class="nav-item " href="/admin?action=userManagement">User</a><a class="nav-item " href="/admin?action=dealManagement">Deal</a><a
+                                class="nav-item " href="/admin?action=categoryManagement">Category</a>
+<%--                            <a class="nav-item "--%>
+<%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
+<%--                            cưng</a>--%>
+                        </div>
 
                         <div class="language dropdown col-auto">
                             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
@@ -422,7 +422,6 @@
                             <th>shop_email</th>
                             <th>shop_phone</th>
                             <th>shop_address</th>
-                            <th>shop_address</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -434,7 +433,7 @@
                                 <td>${shop.shop_email}</td>
                                 <td>${shop.shop_phone}</td>
                                 <td>${shop.shop_address}</td>
-                                <td><span class="status text-success">&bull;</span> Active</td>
+<%--                                <td><span class="status text-success">&bull;</span> Active</td>--%>
                                 <td>
                                     <a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
                                     <a href="/admin?action=delete&id=${shop.shop_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>

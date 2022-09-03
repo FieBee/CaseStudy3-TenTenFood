@@ -14,8 +14,8 @@ import java.util.List;
 public class ShopService implements IShopService {
     private static final String ADD_SHOP_SQL = "insert into shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image) values (?, ?, ?, ?, ?, ?, ?,?)";
     private static final String SELECT_SHOP_BY_ID = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where shop_id = ?";
-    private static final String SELECT_ALL_SHOP = "select * from shop where";
-    private static final String DELETE_SHOP_SQL = "delete from shop where shop_id = ?";
+    private static final String SELECT_ALL_SHOP = "select * from shop where status = 1";
+    private static final String DELETE_SHOP_SQL = "UPDATE shop SET status = 0 where shop_id =?";
     private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? , shop_image=? where shop_id = ?";
     private static final String SELECT_SHOP_BY_NAME = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? , shop_image=? where shop_name = ?";
 

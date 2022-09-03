@@ -32,9 +32,6 @@ public class HomeServlet extends HttpServlet {
        }
        try{
            switch (action){
-               case "login":
-                   showlogin(req,resp);
-                   break;
                case "showByCategory":
                    showByCategory(req,resp);
                    break;
@@ -60,11 +57,6 @@ public class HomeServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
-    private void showlogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
-        dispatcher.forward(request,response);
-    }
-
     private void showByCategory(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");
 
@@ -82,9 +74,6 @@ public class HomeServlet extends HttpServlet {
         }
         try{
             switch (action){
-                case "login":
-                    showlogin(req,resp);
-                    break;
                 case "showByCategory":
                     showByCategory(req,resp);
                     break;

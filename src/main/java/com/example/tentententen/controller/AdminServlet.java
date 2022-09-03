@@ -25,6 +25,7 @@ public class AdminServlet extends HttpServlet {
 
     IBillService billService = new BillService();
     IShopService shopService = new ShopService();
+    ShopServlet shopServlet = new ShopServlet();
 
     IBill_DetailService bill_detailService = new Bill_DetailService();
     @Override
@@ -84,15 +85,22 @@ public class AdminServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
+
     private void deleteShop(HttpServletRequest request, HttpServletResponse response) throws ServletException, SQLException, IOException {
         int shop_id = Integer.parseInt(request.getParameter("id"));
-        bill_detailService.delete(shop_id);
-        billService.deleteByShopId(shop_id);
         shopService.delete(shop_id);
 
         List<Shop> shops = shopService.fillAll();
         request.setAttribute("shops",shops);
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin.jsp");
+        dispatcher.forward(request,response);
+    }
+
+    private void showEditShop(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int shop_id = Integer.parseInt(request.getParameter("id"));
+        Shop shop = this.shopService.findById(shop_id);
+        request.setAttribute("shop",shop);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("test/edit.jsp");
         dispatcher.forward(request,response);
     }
 }

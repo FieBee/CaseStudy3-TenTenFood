@@ -32,13 +32,13 @@ public class CustomerService implements ICustomerService {
                 String address= rs.getString("customer_address");
                 String email=rs.getString("customer_email");
                 String account= rs.getString("customer_account");
-                String password= rs.getString("customer_account");
+                String password= rs.getString("customer_password");
                 customerList.add(new Customer(id,code,name,phone,address,email,account,password));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return null;
+        return customerList;
     }
 
     @Override
