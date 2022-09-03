@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
 
     private void showLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
+        request.setAttribute("message","Hoặc đăng nhập bằng tài khoản của bạn");
         dispatcher.forward(request,response);
     }
 
@@ -74,7 +75,7 @@ public class LoginServlet extends HttpServlet {
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",shopService.fillAll());
         request.setAttribute("items",itemService.fillAll());
-
+        request.setAttribute("message","Hoặc đăng nhập bằng tài khoản của bạn");
         for(int i = 0; i < customers.size(); i++){
             if (ADMIN_ACCOUNT.equals(account)
                     && ADMIN_PASSWORD.equals(password)){

@@ -1,5 +1,8 @@
 package com.example.tentententen.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer {
     private int customer_id;
     private String customer_code;
@@ -9,6 +12,7 @@ public class Customer {
     private String customer_email;
     private String customer_account;
     private String customer_password;
+    private List<Item> items = new ArrayList<>();
 
     public Customer(int customer_id, String customer_code, String customer_name, String customer_phone, String customer_address, String customer_email, String customer_account, String customer_password) {
         this.customer_id = customer_id;

@@ -245,7 +245,7 @@
                         <div class="item plus"><a target="_blank" href="https://gsso.shopeefood.vn/sms_login?app_id=nowotpapp_cX8JHsQCPqwYtrXXPJnKUhaww77ExQ&app_type=1004&client_type=1&api_version=1&client_version=3.0.0&client_id=1.0&client_language=vi&redirect_uri=https://shopeefood.vn/account/login&check_registered=1"></a><i class="fab fa-google-plus-g"></i>Google</div>
                     </form>
                 </div>
-                <p class="text">Hoặc đăng nhập bằng tài khoản của bạn</p>
+                <p class="text">${message}</p>
                 <div class="form-login-input">
                     <form method="post" action="">
                         <div class="field-group">
