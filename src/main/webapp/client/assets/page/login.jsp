@@ -265,9 +265,12 @@
                                 thông tin đăng nhập</label></div><span class="float-right"><a href="/forgotPassword">Quên mật
                                     khẩu?</a></span>
                         </div>
-                        <input class="btn btn-block btn-submit" type="submit" value="Đăng nhập">
-                        <button ></button>
+
+                        <input style="font-size: 20px" class="btn btn-block btn-submit" type="submit" value="Đăng nhập">
+
                     </form>
+
+
 
 
 

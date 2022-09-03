@@ -1,8 +1,14 @@
 package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Customer;
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
 import com.example.tentententen.service.customer.CustomerService;
 import com.example.tentententen.service.customer.ICustomerService;
+import com.example.tentententen.service.item.IItemService;
+import com.example.tentententen.service.item.ItemService;
+import com.example.tentententen.service.shop.IShopService;
+import com.example.tentententen.service.shop.ShopService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,6 +24,11 @@ public class LoginServlet extends HttpServlet {
 
     private final String ADMIN_ACCOUNT = "admin";
     private final String ADMIN_PASSWORD = "123456";
+
+    ICategoryService categoryService = new CategoryService();
+    IItemService itemService = new ItemService();
+
+    IShopService shopService = new ShopService();
 
     CustomerService customerService =  new CustomerService();
     @Override
@@ -58,6 +69,9 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         List<Customer> customers = customerService.fillAll();
         RequestDispatcher dispatcher;
+        request.setAttribute("categories",categoryService.fillAll());
+        request.setAttribute("shops",shopService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
 
         for(int i = 0; i < customers.size(); i++){
             if (ADMIN_ACCOUNT.equals(account)
@@ -68,7 +82,7 @@ public class LoginServlet extends HttpServlet {
             }
             if (customers.get(i).getCustomer_account().equals(account)
                     && customers.get(i).getCustomer_password().equals(password)){
-
+                    request.setAttribute("account",account);
                     dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
                     dispatcher.forward(request,response);
                     return;

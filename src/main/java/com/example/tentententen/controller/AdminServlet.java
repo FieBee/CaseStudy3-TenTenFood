@@ -1,11 +1,14 @@
 package com.example.tentententen.controller;
 
-import com.example.tentententen.model.Bill;
 import com.example.tentententen.model.Shop;
 import com.example.tentententen.service.bill.BillService;
 import com.example.tentententen.service.bill.IBillService;
 import com.example.tentententen.service.bill_detail.Bill_DetailService;
 import com.example.tentententen.service.bill_detail.IBill_DetailService;
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
+import com.example.tentententen.service.item.IItemService;
+import com.example.tentententen.service.item.ItemService;
 import com.example.tentententen.service.shop.IShopService;
 import com.example.tentententen.service.shop.ShopService;
 
@@ -23,9 +26,9 @@ import java.util.List;
 public class AdminServlet extends HttpServlet {
 
 
-    IBillService billService = new BillService();
+    ICategoryService categoryService = new CategoryService();
+    IItemService itemService = new ItemService();
     IShopService shopService = new ShopService();
-    ShopServlet shopServlet = new ShopServlet();
 
     IBill_DetailService bill_detailService = new Bill_DetailService();
     @Override
@@ -37,6 +40,7 @@ public class AdminServlet extends HttpServlet {
         try {
             switch (action) {
                 case "shopManager":
+                    showShopManager(request,response);
                     break;
                 case "edit":
                     break;
@@ -86,6 +90,10 @@ public class AdminServlet extends HttpServlet {
     }
     public void homeAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/adminHome.jsp");
+        request.setAttribute("categories",categoryService.fillAll());
+        request.setAttribute("shops",shopService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
+
         dispatcher.forward(request,response);
     }
 

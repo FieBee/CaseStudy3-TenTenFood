@@ -3,7 +3,14 @@ package com.example.tentententen.controller;
 import com.example.tentententen.model.Customer;
 import com.example.tentententen.model.Deal;
 import com.example.tentententen.service.IService;
+import com.example.tentententen.service.category.CategoryService;
+import com.example.tentententen.service.category.ICategoryService;
 import com.example.tentententen.service.customer.CustomerService;
+import com.example.tentententen.service.customer.ICustomerService;
+import com.example.tentententen.service.item.IItemService;
+import com.example.tentententen.service.item.ItemService;
+import com.example.tentententen.service.shop.IShopService;
+import com.example.tentententen.service.shop.ShopService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,8 +25,12 @@ import java.util.List;
 
 @WebServlet(name = "CustomerServlet" , value = "/customers")
 public class CustomerServlet extends HttpServlet {
-    IService service= new CustomerService();
 
+    ICategoryService categoryService = new CategoryService();
+    IShopService shopService = new ShopService();
+    IItemService itemService = new ItemService();
+
+    ICustomerService customerService = new CustomerService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action= req.getParameter("action");
@@ -37,7 +48,7 @@ public class CustomerServlet extends HttpServlet {
                 deleteCustomer(req,resp);
                 break;
             default:
-                listCustomer(req,resp);
+                homeUser(req,resp);
                 break;
         }
     }
@@ -45,8 +56,8 @@ public class CustomerServlet extends HttpServlet {
     private void deleteCustomer(HttpServletRequest req, HttpServletResponse resp) {
         int customer_id= Integer.parseInt(req.getParameter("id"));
         try {
-            service.delete(customer_id);
-            List<Customer> customerList= service.fillAll();
+            customerService.delete(customer_id);
+            List<Customer> customerList= customerService.fillAll();
             req.setAttribute("customers",customerList);
             req.getRequestDispatcher("").forward(req,resp);
         } catch (SQLException e) {
@@ -60,7 +71,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void showEdit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int customer_id= Integer.parseInt(req.getParameter("id"));
-        Customer  customer= (Customer) service.findById(customer_id);
+        Customer  customer= (Customer) customerService.findById(customer_id);
         req.setAttribute("customer",customer);
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("");
         requestDispatcher.forward(req,resp);
@@ -72,7 +83,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void listCustomer(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Customer> customerList= service.fillAll();
+        List<Customer> customerList= customerService.fillAll();
         req.setAttribute("customers",customerList);
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("");
         requestDispatcher.forward(req,resp);
@@ -94,7 +105,20 @@ public class CustomerServlet extends HttpServlet {
             case "delete":
                 deleteCustomer(req,resp);
                 break;
+            default:
+                homeUser(req,resp);
+                break;
         }
+    }
+
+
+    public void homeUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
+        request.setAttribute("categories",categoryService.fillAll());
+        request.setAttribute("shops",shopService.fillAll());
+        request.setAttribute("items",itemService.fillAll());
+
+        dispatcher.forward(request,response);
     }
 
     private void editCustomer(HttpServletRequest req, HttpServletResponse resp) throws  ServletException, IOException {
@@ -108,7 +132,7 @@ public class CustomerServlet extends HttpServlet {
         String password= new String(req.getParameter("customer_password").getBytes("iso-8859-1"),"utf-8");
         Customer customer= new Customer(code,name,phone,address,email,account,password);
         try {
-            service.edit(item_id,customer);
+            customerService.edit(item_id,customer);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -126,7 +150,7 @@ public class CustomerServlet extends HttpServlet {
         String account= new String(req.getParameter("customer_account").getBytes("iso-8859-1"),"utf-8");
         String password= new String(req.getParameter("customer_password").getBytes("iso-8859-1"),"utf-8");
         Customer customer= new Customer(code,name,phone,address,email,account,password);
-        service.insert(customer);
+        customerService.insert(customer);
         req.setAttribute("message","Okeeee b");
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("");
         requestDispatcher.forward(req,resp);
