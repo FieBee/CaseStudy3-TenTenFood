@@ -16,7 +16,7 @@ import java.util.List;
 public class CategoryService implements ICategoryService{
 
 
-    ItemService itemService = new ItemService();
+//    ItemService itemService = new ItemService();
 //    ICategoryService categoryService = new CategoryService();
     Connection connection = ConnectionJDBC.getConnect();
     public static final String SELECT_ALL_CATEGORY = "select * from category;";
@@ -41,8 +41,8 @@ public class CategoryService implements ICategoryService{
                 String category_name = resultSet.getString("category_name");
                 String category_description = resultSet.getString("category_description");
 
-                List<Item> items = itemService.findAllByCategoryId(category_id);
-                Category category = new Category(category_id,category_code,category_name,category_description,items);
+//                List<Item> items = itemService.findAllByCategoryId(category_id);
+                Category category = new Category(category_id,category_code,category_name,category_description);
 
                 categories.add(category);
             }
@@ -64,8 +64,8 @@ public class CategoryService implements ICategoryService{
                 String category_name = resultSet.getString("category_name");
                 String category_description = resultSet.getString("category_description");
 
-                List<Item> items = itemService.findAllByCategoryId(category_id);
-                Category category = new Category(category_id,category_code,category_name,category_description,items);
+//                List<Item> items = itemService.findAllByCategoryId(category_id);
+                Category category = new Category(category_id,category_code,category_name,category_description);
 
                 categories.add(category);
 

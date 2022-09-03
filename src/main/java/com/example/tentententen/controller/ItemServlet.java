@@ -42,7 +42,7 @@ public class ItemServlet extends HttpServlet {
                     deleteItem(request,response);
                     break;
                 case "find":
-                    searchItem(request,response);
+                    showFind(request,response);
                     break;
                 default:
                     listItem(request,response);
@@ -73,6 +73,8 @@ public class ItemServlet extends HttpServlet {
                 case "find":
                     searchItem(request,response);
                     break;
+                case "listItem":
+                    listItem(request,response);
                 default:
                     listItem(request,response);
                     break;
@@ -85,7 +87,7 @@ public class ItemServlet extends HttpServlet {
     private void listItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Item> items = itemService.fillAll();
         request.setAttribute("items",items);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/find.jsp");
         dispatcher.forward(request,response);
     }
     private void showCreate(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
@@ -157,11 +159,12 @@ public class ItemServlet extends HttpServlet {
 
     private void showFind(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/find.jsp");
+        request.setAttribute("items",itemService.fillAll());
         dispatcher.forward(request,response);
     }
     private void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
-//        String name = new String(request.getParameter("searchItemByName").getBytes("iso-8859-1"),"utf-8");
-        String name = request.getParameter("search");
+        String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
+//        String name = request.getParameter("search");
         List<Item> items = itemService.selectItemByName(name);
 
         request.setAttribute("items",items);
