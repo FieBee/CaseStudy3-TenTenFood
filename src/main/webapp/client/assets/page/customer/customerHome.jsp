@@ -56,6 +56,10 @@
 </head>
 
 <body class="portal" style="font-size:calc(8px + 0.5vw);">
+<form action="/customers" method="post">
+    <input type="text" value="${customer}" name ="account">
+    <input size="300px" type="submit">
+</form>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZSQTX3" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
@@ -135,7 +139,7 @@
                         </div>
                         <div class="user-acc col-auto">
                             <a href="/customers"><button type="button" class="btn btn-none-bg btn-login">
-                                <span class="font14">${account}</span>
+                                <span class="font14"></span>
                             </button></a>
                         </div>
                     </div>
@@ -1101,6 +1105,7 @@
             <div class="modal-backdrop fade under-modal show"></div>
         </div>
     </div>
+
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

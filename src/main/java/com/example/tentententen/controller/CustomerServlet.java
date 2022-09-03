@@ -48,7 +48,7 @@ public class CustomerServlet extends HttpServlet {
                 deleteCustomer(req,resp);
                 break;
             default:
-                homeUser(req,resp);
+                showCustomerInfor(req,resp);
                 break;
         }
     }
@@ -89,6 +89,14 @@ public class CustomerServlet extends HttpServlet {
         requestDispatcher.forward(req,resp);
     }
 
+    private void showCustomerInfor(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = LoginServlet.account;
+        Customer customer = customerService.findByName(name);
+        req.setAttribute("customer",customer);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/client/assets/page/customer/customerInfor.jsp");
+        dispatcher.forward(req,resp);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws  ServletException, IOException {
         String action= req.getParameter("acion");
@@ -106,7 +114,7 @@ public class CustomerServlet extends HttpServlet {
                 deleteCustomer(req,resp);
                 break;
             default:
-                homeUser(req,resp);
+                showCustomerInfor(req,resp);
                 break;
         }
     }

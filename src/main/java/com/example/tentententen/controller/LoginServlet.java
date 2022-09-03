@@ -21,6 +21,7 @@ import java.util.List;
 
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
+    static String account ="";
 
     private final String ADMIN_ACCOUNT = "admin";
     private final String ADMIN_PASSWORD = "123456";
@@ -66,6 +67,7 @@ public class LoginServlet extends HttpServlet {
 
     private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String account = request.getParameter("account");
+        LoginServlet.account = account;
         String password = request.getParameter("password");
         List<Customer> customers = customerService.fillAll();
         RequestDispatcher dispatcher;

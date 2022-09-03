@@ -14,6 +14,7 @@ public class CustomerService implements ICustomerService {
     Connection connection= ConnectionJDBC.getConnect();
     private static final String SELECT_ALL_CUSTOMER="SELECT * FROM CUSTOMER";
     private static final String FIND_CUSTOMER_BY_ID="SELECT * FROM customer WHERE customer_id=?";
+    private static final String FIND_CUSTOMER_BY_NAME="SELECT * FROM customer WHERE customer_account = ?";
     private static final String INSERT_CUSTOMER="INSERT INTO customer(customer_code, customer_name, customer_phone, customer_address, customer_email, customer_account, customer_password) values(?,?,?,?,?,?,?);";
     private static final String DELETE_CUSTOMER="DELETE FROM customer where customer_id=?";
     private static final String EDIT_CUSTOMER="UPDATE CUSTOMER SET CUSTOMER_CODE=?,CUSTOMER_NAME=?,CUSTOMER_PHONE=?,CUSTOMER_ADDRESS=?,CUSTOMER_EMAIL=?,CUSTOMER_ACCOUNT=?,CUSTOMER_PASSWORD=? WHERE customer_id=?;";
@@ -56,6 +57,29 @@ public class CustomerService implements ICustomerService {
                 String email= rs.getString(6);
                 String account= rs.getString(7);
                 String password= rs.getString(8);
+                customer= new Customer(id,code,name,phone,address,email,account,password);
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return customer;
+    }
+
+    public Customer findByName(String account) {
+        Customer customer=null;
+        try( PreparedStatement ptmt= connection.prepareStatement(FIND_CUSTOMER_BY_NAME)){
+            ptmt.setString(1,account);
+            System.out.println(ptmt);
+            ResultSet rs= ptmt.executeQuery();
+            while (rs.next()){
+                int id = rs.getInt("customer_id");
+                String code= rs.getString("customer_code");
+                String name= rs.getString("customer_name");
+                String phone= rs.getString("customer_phone");
+                String address= rs.getString("customer_address");
+                String email= rs.getString("customer_email");
+                String password= rs.getString("customer_password");
                 customer= new Customer(id,code,name,phone,address,email,account,password);
 
             }

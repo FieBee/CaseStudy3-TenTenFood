@@ -285,7 +285,9 @@
                         <div class="main-nav col"><a class="nav-item active" href="/admin?action=shopManagement">Shop</a><a
                                 class="nav-item " href="/admin?action=userManagement">User</a><a class="nav-item " href="/admin?action=dealManagement">Deal</a><a
                                 class="nav-item " href="/admin?action=categoryManagement">Category</a>
-
+                            <%--                            <a class="nav-item "--%>
+                            <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
+                            <%--                            cưng</a>--%>
                         </div>
 
                         <div class="language dropdown col-auto">
@@ -403,41 +405,50 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-5">
-                                <h2>Admin <b>Management</b></h2>
+                                <h2>User <b>Information</b></h2>
                             </div>
                             <div class="col-sm-7">
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>--%>
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>--%>
+
                             </div>
                         </div>
                     </div>
                     <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>ShopName</th>
-                            <th>Dshop_code</th>
-                            <th>shop_email</th>
-                            <th>shop_phone</th>
-                            <th>shop_address</th>
-                        </tr>
-                        </thead>
                         <tbody>
-                        <c:forEach var="shop" items="${shops}">
-                            <tr>
-                                <td>${shop.shop_id}</td>
-                                <td>${shop.shop_code}</td>
-                                <td>< href="#"><img src="" class="avatar" alt="Avatar"> ${shop.shop_name}></td>
-                                <td>${shop.shop_email}</td>
-                                <td>${shop.shop_phone}</td>
-                                <td>${shop.shop_address}</td>
-<%--                                <td><span class="status text-success">&bull;</span> Active</td>--%>
-                                <td>
-                                    <a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                    <a href="/admin?action=delete&id=${shop.shop_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
+                        <tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr><tr>
+                            <td>customer_id</td>
+                            <td>${customer.customer_id}</td>
+                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                        </tr>
+
+
                     </table>
 
                     <div class="clearfix">

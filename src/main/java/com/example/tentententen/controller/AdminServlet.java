@@ -25,7 +25,6 @@ import java.util.List;
 @WebServlet(name = "AdminServlet", value = "/admin")
 public class AdminServlet extends HttpServlet {
 
-
     ICategoryService categoryService = new CategoryService();
     IItemService itemService = new ItemService();
     IShopService shopService = new ShopService();
