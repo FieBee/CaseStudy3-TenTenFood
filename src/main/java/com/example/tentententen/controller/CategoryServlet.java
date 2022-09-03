@@ -135,7 +135,7 @@ public class CategoryServlet extends HttpServlet {
     private void viewCategory(HttpServletRequest request,HttpServletResponse response) {
         try {
             int category_id = Integer.parseInt(request.getParameter("id"));
-            Category category = categoryService.findAllByItemId(category_id);
+            Category category = categoryService.findById(category_id);
             request.setAttribute("category", category);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("client/page/category.jsp");

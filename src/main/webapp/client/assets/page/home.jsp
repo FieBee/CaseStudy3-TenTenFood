@@ -60,7 +60,12 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZSQTX3" height="0" width="0"
                   style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
+<div>
+  <form action="/items?action=find">
+    <input type="text" name ="searchItemByName"  value="">
+    <a href="/items?action=find"> OK</a>
+  </form>
+</div>
 <div id="app">
   <div class="wrapper">
     <header class="main-header">
@@ -234,10 +239,16 @@
             <div class="local">có 37422 địa điểm ở Hà Nội từ 00:00 - 23:59</div>
           </div>
           <div class="form-search">
-            <div class="input-group"><input style="color: black;" type="text" id="txtSearchHome"
-                                            placeholder="Tìm địa điểm, món ăn, địa chỉ..." value=""><a
-                    href="/ha-noi/danh-sach-dia-diem-giao-tan-noi?q="><button type="button"
-                                                                              class="btn btn-search"><span class="fa fa-search"></span></button></a></div>
+            <div class="input-group">
+
+
+<%--              <input style="color: black;" type="text" name ="searchItemByName" placeholder="Tìm địa điểm, món ăn, địa chỉ..." value="">--%>
+<%--              <input style="color: black;" type="text" name ="searchItemByName" placeholder="Tìm địa điểm, món ăn, địa chỉ..." value="">--%>
+<%--              <a href="/items?action=find">--%>
+<%--                <button type="button" class="btn btn-search"><span class="fa fa-search"></span>--%>
+<%--                </button>--%>
+<%--              </a>--%>
+            </div>
           </div>
           <div class="category-list-filter">
             <a href="/ha-noi/danh-sach-dia-diem-giao-tan-noi">
