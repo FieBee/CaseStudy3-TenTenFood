@@ -49,7 +49,7 @@ public class ItemServlet extends HttpServlet {
                     break;
             }
         } catch (Exception e) {
-            throw new RuntimeException(e);
+           e.printStackTrace();
         }
     }
 
@@ -156,11 +156,12 @@ public class ItemServlet extends HttpServlet {
     }
 
     private void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
-        String name = new String(request.getParameter("search").getBytes("iso-8859-1"),"utf-8");
-        List<Item> items = itemService.selectItemByName(name);
+//        String name = new String(request.getParameter("searchItemByName").getBytes("iso-8859-1"),"utf-8");
+        String name = request.getParameter("searchItemByName");
+                List<Item> items = itemService.selectItemByName(name);
 
         request.setAttribute("items",items);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("test/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/find.jsp");
         dispatcher.forward(request,response);
     }
 
