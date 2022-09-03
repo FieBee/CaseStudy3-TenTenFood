@@ -67,7 +67,7 @@ public class ShopServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
-    private void deleteShop(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+    public void deleteShop(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         int shop_id = Integer.parseInt(request.getParameter("id"));
         shopService.delete(shop_id);
         List<Shop> shops = shopService.fillAll();

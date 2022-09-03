@@ -1,4 +1,4 @@
-package com.example.tentententen.service.category.bill_detail;
+package com.example.tentententen.service.bill_detail;
 
 import com.example.tentententen.connection.ConnectionJDBC;
 import com.example.tentententen.model.Bill_detail;
@@ -14,7 +14,7 @@ public class Bill_DetailService implements IBill_DetailService{
     private static final String ADD_BILL_DETAIL_SQL = "insert into bill_detail(bill_id, item_id, quantity, price) values (?, ?, ?, ?)";
     private static final String SELECT_BILL_DETAIL_BY_ID = "select bill_id, item_id, quantity, price from bill_detail where bill_detail_id = ?";
     private static final String SELECT_ALL_BILL_DETAIL = "select * from bill_detail";
-    private static final String DELETE_BILL_DETAIL_SQL = "delete from bill_detail where bill_detail_id = ?";
+    private static final String DELETE_BILL_DETAIL_SQL = "delete from bill_detail where bill_id = (select bill_id from bill where shop_id = ?) ;";
     private static final String UPDATE_BILL_DETAIL_SQL = "update bill_detail set bill_id = ?, item_id = ?, quantity = ?, price = ? where bill_detail_id = ?";
 
     Connection connection = ConnectionJDBC.getConnect();

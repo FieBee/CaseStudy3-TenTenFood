@@ -20,6 +20,7 @@ public class BillService implements IBillService{
     public static final String SELECT_BILL_BY_ID = "SELECT * FROM bill WHERE bill_id=?";
     public static final String INSERT_BILL ="INSERT INTO bill (bill_code, status, bill_date, bill_totalCost) VALUE (?,?,?,?);";
     public static final String DELETE_BILL = "DELETE FROM bill WHERE bill_id =? ;";
+    public static final String DELETE_BILL_BY_SHOP_ID = "DELETE FROM bill WHERE shop_id =? ;";
     public static final String UPDATE_BILL = "UPDATE bill SET bill_code = ?, status = ?, bill_date =?, bill_totalCost =?,customer_id=?,shop_id =? WHERE item_id =?;";
     @Override
     public List<Bill> fillAll() {
@@ -69,6 +70,18 @@ public class BillService implements IBillService{
         boolean rowDeleted;
         try(
                 PreparedStatement statement = connection.prepareStatement(DELETE_BILL);){
+            statement.setInt(1,id);
+            rowDeleted = statement.executeUpdate()>0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return rowDeleted;
+    }
+
+    public boolean deleteByShopId(int id) {
+        boolean rowDeleted;
+        try(
+                PreparedStatement statement = connection.prepareStatement(DELETE_BILL_BY_SHOP_ID);){
             statement.setInt(1,id);
             rowDeleted = statement.executeUpdate()>0;
         } catch (SQLException e) {
