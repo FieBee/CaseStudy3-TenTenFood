@@ -155,10 +155,14 @@ public class ItemServlet extends HttpServlet {
         dispatcher.forward(request,response);
     }
 
+    private void showFind(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/find.jsp");
+        dispatcher.forward(request,response);
+    }
     private void searchItem(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 //        String name = new String(request.getParameter("searchItemByName").getBytes("iso-8859-1"),"utf-8");
-        String name = request.getParameter("searchItemByName");
-                List<Item> items = itemService.selectItemByName(name);
+        String name = request.getParameter("search");
+        List<Item> items = itemService.selectItemByName(name);
 
         request.setAttribute("items",items);
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/find.jsp");
