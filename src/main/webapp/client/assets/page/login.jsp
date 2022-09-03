@@ -232,7 +232,7 @@
                 <div class="title">Đăng nhập</div>
                 <div class="login-via">
                     <div class="item phone">
-                        <span class="fas fa-mobile-alt"></span>Số điện thoại</a></div>
+                        <span class="fas fa-mobile-alt"></span>Số điện thoại</div>
                     <div class="item fb"><span class="fab fa-facebook-f"></span>Facebook</div>
                     <form id="google-login-form" action="https://accounts.google.com/o/oauth2/v2/auth" method="GET"><input
                             type="hidden" name="client_id"
@@ -247,7 +247,7 @@
                 </div>
                 <p class="text">Hoặc đăng nhập bằng tài khoản của bạn</p>
                 <div class="form-login-input">
-                    <form method="post" action="/login?action=login">
+                    <form method="post" action="">
                         <div class="field-group">
                             <div class="input-group">
                                 <i class="far fa-envelope"></i>

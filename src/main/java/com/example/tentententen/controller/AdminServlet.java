@@ -36,7 +36,7 @@ public class AdminServlet extends HttpServlet {
         }
         try {
             switch (action) {
-                case "create":
+                case "shopManager":
                     break;
                 case "edit":
                     break;
@@ -79,9 +79,13 @@ public class AdminServlet extends HttpServlet {
         }
     }
 
-    private void homeAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin.jsp");
+    public void showShopManager(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/shopManagement.jsp");
         request.setAttribute("shops",shopService.fillAll());
+        dispatcher.forward(request,response);
+    }
+    public void homeAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/adminHome.jsp");
         dispatcher.forward(request,response);
     }
 
@@ -92,7 +96,7 @@ public class AdminServlet extends HttpServlet {
 
         List<Shop> shops = shopService.fillAll();
         request.setAttribute("shops",shops);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/adminHome.jsp");
         dispatcher.forward(request,response);
     }
 

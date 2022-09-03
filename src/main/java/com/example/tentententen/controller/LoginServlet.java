@@ -16,6 +16,9 @@ import java.util.List;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
 
+    private final String ADMIN_ACCOUNT = "admin";
+    private final String ADMIN_PASSWORD = "123456";
+
     CustomerService customerService =  new CustomerService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +52,7 @@ public class LoginServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
         dispatcher.forward(request,response);
     }
+
     private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String account = request.getParameter("account");
         String password = request.getParameter("password");
@@ -56,12 +60,20 @@ public class LoginServlet extends HttpServlet {
         RequestDispatcher dispatcher;
 
         for(int i = 0; i < customers.size(); i++){
+            if (ADMIN_ACCOUNT.equals(account)
+                    && ADMIN_PASSWORD.equals(password)){
+                dispatcher = request.getRequestDispatcher("/client/assets/page/admin/adminHome.jsp");
+                dispatcher.forward(request,response);
+                return;
+            }
             if (customers.get(i).getCustomer_account().equals(account)
                     && customers.get(i).getCustomer_password().equals(password)){
+
                     dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
                     dispatcher.forward(request,response);
                     return;
             }
+
         }
         request.setAttribute("message","Sai tài khoản hoặc mật khẩu!!");
         dispatcher = request.getRequestDispatcher("client/assets/page/login.jsp");
