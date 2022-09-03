@@ -415,37 +415,37 @@
                     <table class="table table-striped table-hover">
                         <tbody>
                         <tr>
-                            <td>customer_id</td>
+                            <td>Id</td>
                             <td>${customer.customer_id}</td>
                             <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
+                            <td>Code</td>
+                            <td>${customer.customer_code}</td>
                             <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Name</td>
+                            <td>${customer.customer_name}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Phone</td>
+                            <td>${customer.customer_phone}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Address</td>
+                            <td>${customer.customer_address}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Email</td>
+                            <td>${customer.customer_email}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Account</td>
+                            <td>${customer.customer_account}</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr><tr>
-                            <td>customer_id</td>
-                            <td>${customer.customer_id}</td>
-                            <td><a href="/admin?action=edit&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
+                            <td>Password</td>
+                            <td>******</td>
+                            <td><a href="/admin?action=edit&id=${customer.customer_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a></td>
                         </tr>
 
 
