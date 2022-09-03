@@ -262,7 +262,7 @@
                         <div class="float-left"><input type="checkbox" id="RememberMe" checked=""><label for="RememberMe">Lưu
                             thông tin đăng nhập</label></div><span class="float-right"><a href="/forgotPassword">Quên mật
                                     khẩu?</a></span>
-                    </div><button class="btn btn-block btn-submit">Đăng nhập</button>
+                    </div><a href="/admin"><button class="btn btn-block btn-submit">Đăng nhập</button></a>
                 </div><br>
                 <div class="login-mess-policy">Chúng tôi không sử dụng thông tin của bạn với bất kỳ mục đích nào. Bằng cách đăng
                     nhập hoặc đăng ký, bạn đồng ý với <a
