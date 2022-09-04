@@ -431,7 +431,7 @@
 <%--                                add to cart--%>
 <%--                                <form action="/customers/addToCart&id=${items.item_id}">--%>
                                     <div class="btn-adding" >
-                                         <a href="/addToCart?id=${items.item_id}">+</a>
+                                         <a href="/addToCart?action=addOrder&id=${items.item_id}">+</a>
                                     </div>
 <%--                                </form>--%>
 

@@ -190,7 +190,6 @@ CREATE TABLE order(
     id int primary key auto_increment,
     custome_id int,
     item_id int,
-    status BIT
-
-
+    status BIT,
+    quantityItem int
 )
