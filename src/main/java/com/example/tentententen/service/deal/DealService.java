@@ -29,8 +29,8 @@ public class DealService implements IDealService{
                 int id= rs.getInt(1);
                 String code= rs.getString(2);
                 String name= rs.getString(3);
-                String description= rs.getString(4);
-                String image= rs.getString(5);
+                String description= rs.getString(6);
+                String image= rs.getString(7);
                 dealList.add(new Deal(id,code,name,description,image));
             }
         } catch (SQLException e) {
@@ -49,8 +49,9 @@ public class DealService implements IDealService{
             while (rs.next()){
                 String code= rs.getString(2);
                 String name= rs.getString(3);
-                String description= rs.getString(4);
-                String image= rs.getString(5);
+
+                String description= rs.getString(6);
+                String image= rs.getString(7);
                 deal= new Deal(id,code,name,description,image);
             }
         } catch (SQLException e) {
