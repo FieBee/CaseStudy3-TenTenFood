@@ -119,13 +119,15 @@ INSERT INTO category values(6,'ctg6','cơm hộp','ăn những đồ ăn ngon lo
 INSERT INTO category values(7,'ctg7','mì phở','ăn những đồ ăn ngon nhẹ',null,1);
 
 select * from deal;
-insert into deal values(1,'d1','Tiệc sang giá xịn giảm giá mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d01.jpg',1);
-insert into deal values(2,'d2','Món gì cũng free ship','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d02.jpg',1);
-insert into deal values(3,'d3','Tặng 1 lon coca khi mua combo 125k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d03.jpg',1);
-insert into deal  values(4,'d4','Free ship tới 25k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d04.jpg',1);
-insert into deal  values(5,'d5','Siêu tiệc giảm 99k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d05.jpg',1);
-insert into deal  values(6,'d6','Siêu tiệc 0 đồng','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d06.jpg',1);
-insert into deal  values(7,'d7','Thứ 3 sale cực mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d07.jpg',1);
+insert into deal values(1,'d1','Tiệc sang giá xịn giảm giá mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d01.png',1);
+insert into deal values(2,'d2','Món gì cũng free ship','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d02.png',1);
+insert into deal values(3,'d3','Tặng 1 lon coca khi mua combo 125k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d03.png',1);
+insert into deal  values(4,'d4','Free ship tới 25k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d04.png',1);
+insert into deal  values(5,'d5','Siêu tiệc giảm 99k','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d05.png',1);
+insert into deal  values(6,'d6','Siêu tiệc 0 đồng','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d06.png',0);
+insert into deal  values(7,'d7','Thứ 3 sale cực mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d07.png',1);
+insert into deal  values(8,'d8','Thứ 4 sale cực mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d08.png',0);
+insert into deal  values(9,'d9','Thứ 5 sale cực mạnh','2022-11-05 20:29:36','2022-11-06 14:29:36','Ăn thả ga, không lo về giá','d09.png',1);
 
 select * from item;
 INSERT INTO item VALUE (1,'it1',1,1,1,'Chả Cốm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
