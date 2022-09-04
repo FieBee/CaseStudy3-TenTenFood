@@ -102,12 +102,14 @@ ALTER TABLE category
 
 SELECT * FROM shop;
 INSERT INTO shop VALUES (1,'s1','sunny','sunny@gmail.com','0916287678','89 nguyễn hoàng','a','123456','s01.jpg',1);
-INSERT INTO shop VALUES (2,'s2','nắng mới','nangmoi@gmail.com','0916287675','39 trần nhân tông','b','123456','s01.jpg',1);
-INSERT INTO shop VALUES (3,'s3','sao mai','saomai@gmail.com','0916287674','89 tôn thất tùng','c','123456','s01.jpg',1);
-INSERT INTO shop VALUES (4,'s4','bình minh','binhminh@gmail.com','0916287672','89 yết kiều','d','123456','s01.jpg',1);
-INSERT INTO shop VALUES (5,'s5','giờ mới','giomoi@gmail.com','0916287671','89 đỗ đức','f','123456','s01.jpg',1);
-INSERT INTO shop VALUES (6,'s6','kimYoun','kimYoun@gmail.com','0916287670','10shop0 nguyễn hoàng 2','g','123456','s01.jpg',1);
-INSERT INTO shop VALUES (7,'s7','kimYoung','kimYoung@gmail.com','091628767','100 nguyễn hoàng 3','h','123456','s01.jpg',1);
+INSERT INTO shop VALUES (2,'s2','nắng mới','nangmoi@gmail.com','0916287675','39 trần nhân tông','b','123456','s02.jpg',1);
+INSERT INTO shop VALUES (3,'s3','sao mai','saomai@gmail.com','0916287674','89 tôn thất tùng','c','123456','s03.jpg',1);
+INSERT INTO shop VALUES (4,'s4','bình minh','binhminh@gmail.com','0916287672','89 yết kiều','d','123456','s04.jpg',1);
+INSERT INTO shop VALUES (5,'s5','giờ mới','giomoi@gmail.com','0916287671','89 đỗ đức','f','123456','s05.jpg',1);
+INSERT INTO shop VALUES (6,'s6','kimYoun','kimYoun@gmail.com','0916287670','10shop0 nguyễn hoàng 2','g','123456','s06.jpg',1);
+INSERT INTO shop VALUES (7,'s7','kimYoung','kimYoung@gmail.com','091628767','100 nguyễn hoàng 3','h','123456','s07.jpg',1);
+INSERT INTO shop VALUES (8,'s8','kimoung','kimYo@gmail.com','09162876','100 nguyễn hoàng 3','k','123456','s08.jpg',1);
+INSERT INTO shop VALUES (9,'s9','kimYn','mYoung@gmail.com','09162867','100 nguyễn hoàng 3','i','123456','s09.jpg',1);
 
 select * from category;
 INSERT INTO category values(1,'ctg1','đồ ăn','ăn những đồ ăn ngon',null,1);
@@ -137,9 +139,9 @@ INSERT INTO item VALUE (4,'it4',4,4,4,'Bánh Sâu Gà Cay Phomai',35000,'Bánh s
 INSERT INTO item  VALUE (5,'it5',5,5,5,'Chè đậu đỏ cốt dừa',35000,'Chè đậu đỏ làm từ đậu đỏ','da05.jpg',1);
 INSERT INTO item  VALUE (6,'it6',6,6,6,'Cơm thố',35000,'Cơm thố làm từ cơm được chiên','da06.jpg',1);
 INSERT INTO item  VALUE (7,'it7',7,7,7,'Phở chín',35000,'Phở chín là từ phở gạo nguyên chất','da07.jpg',1);
-INSERT INTO item VALUE (8,'it8',1,1,1,'Chả Cố',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
-INSERT INTO item VALUE (9,'it9',1,1,1,'Chả Cm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
-INSERT INTO item VALUE (10,'it10',1,1,1,'Ch Cốm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
+INSERT INTO item VALUE (8,'it8',1,1,1,'Chả Cố',35000,'Chả cốm làm từ cốm khá ngon','da08.jpg',1);
+INSERT INTO item VALUE (9,'it9',1,1,1,'Chả Cm',35000,'Chả cốm làm từ cốm khá ngon','da09.jpg',1);
+INSERT INTO item VALUE (10,'it10',1,1,1,'Ch Cốm',35000,'Chả cốm làm từ cốm khá ngon','da10.jpg',1);
 select * from customer;
 INSERT INTO customer  values(1,'kh01','Nguyễn Hữu Quyết','0393883210','Bắc Ninh','nguyenhuuquyet07092001@gmail.com','quyet','123456',1);
 INSERT INTO customer  values(2,'kh02','Nguyễn Văn Phương','0993883210','Bắc Giang','nguyenvanphuong@gmail.com','quyet1','123456',1);
