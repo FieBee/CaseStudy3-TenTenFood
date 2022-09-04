@@ -435,8 +435,11 @@
                                             </div>
                                             </div></div></div>
                                 </td>
-                                <td></td>
-                                <td></td>
+                                <td>${quantity}</td>
+                                <td>(${item.item_price * quantity})</td>
+                                <td>
+                                    <a href="" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                                </td>
                             </tr>
 
 

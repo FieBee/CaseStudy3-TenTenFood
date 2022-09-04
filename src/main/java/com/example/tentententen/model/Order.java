@@ -7,9 +7,17 @@ public class Order implements Serializable {
     private int id;
     private Customer customer;
     private List<Item> items;
+    private int quantityItem;
     private int status;
 
 
+    public int getQuantityItem() {
+        return quantityItem;
+    }
+
+    public void setQuantityItem(int quantityItem) {
+        this.quantityItem = quantityItem;
+    }
 
     public Order() {
         this.status = 0;
