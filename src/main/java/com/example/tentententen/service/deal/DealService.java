@@ -17,6 +17,7 @@ public class DealService implements IDealService{
     private static final String INSERT_DEAL = "INSERT INTO deal(deal_code, deal_name, deal_startDate, deal_endDate, deal_description, deal_image) VALUE (?,?,?,?,?,?)";
     private static final String DELETE_DEAL = "DELETE FROM deal WHERE deal_id=?";
     private static final String UPDATE_DEAL = "UPDATE DEAL SET deal_code=?,deal_name=?,deal_startDate=?,deal_endDate=?,deal_description=?,deal_image=?";
+
     Connection connection= ConnectionJDBC.getConnect();
     @Override
     public List<Deal> fillAll() {
@@ -107,4 +108,5 @@ public class DealService implements IDealService{
         }
         return update;
     }
+
 }

@@ -1,6 +1,6 @@
 package com.example.tentententen.controller;
 
-import com.example.tentententen.model.Deal;
+import com.example.tentententen.model.Shop;
 import com.example.tentententen.service.deal.DealService;
 import com.example.tentententen.service.deal.IDealService;
 
@@ -13,13 +13,14 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(name = "DealShopServlet", value = "/dealShops")
-public class DealShopServlet extends HttpServlet {
+public class DealItemServlet extends HttpServlet {
     IDealService dealService= new DealService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id= Integer.parseInt(req.getParameter("id"));
-        List<Deal> dealList= dealService.fillAll();
-        req.getRequestDispatcher("client/assets/page/shopDeal.jsp").forward(req,resp);
+        List<Item> dealList= dealService.find;
+        req.setAttribute("dealLists",dealList);
+        req.getRequestDispatcher("client/assets/page/itemDeal.jsp").forward(req,resp);
     }
 
     @Override
