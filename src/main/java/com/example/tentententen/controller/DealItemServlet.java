@@ -23,7 +23,7 @@ public class DealItemServlet extends HttpServlet {
         int id= Integer.parseInt(req.getParameter("id"));
         List<Item> itemList=itemService.findAllItemByIdDeal(id) ;
         req.setAttribute("itemLists",itemList);
-        req.getRequestDispatcher("client/assets/page/itemDeal.jsp").forward(req,resp);
+        req.getRequestDispatcher("client/assets/page/customer/itemDeal.jsp").forward(req,resp);
     }
 
     @Override
