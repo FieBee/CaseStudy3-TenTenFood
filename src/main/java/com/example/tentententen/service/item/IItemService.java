@@ -11,4 +11,5 @@ public interface IItemService extends IService<Item> {
     public void save(Item p, int[] categories);
 
     public List<Item> selectItemByName(String item_name);
+    List<Item> findAllItemByIdShop(int id);
 }

@@ -393,70 +393,29 @@
                 </div>
             </div>
         </header>
-        <!--form manager-->
+        <!--shop item-->
+        <div class="now-detail-restaurant clearfix"><div><div style="margin-left: 350px" class="detail-restaurant-img"><img src="https://images.foody.vn/res/g106/1050900/prof/s640x400/foody-upload-api-foody-mobile-250-201013145423.jpg" alt="Vua Cháo Sườn Sụn &amp; Đồ Ăn Vặt - Shop Online" class=""></div><div style="margin-right: 350px" class="detail-restaurant-info"><nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a class="breadcrumb-link" rel="nofollow" href="/">Home</a></li><li class="breadcrumb-item"><a class="breadcrumb-link" rel="nofollow" href="/ha-noi">Hà Nội</a></li><li class="breadcrumb-item"><a class="breadcrumb-link" rel="nofollow" href="/ha-noi/vua-chao-suon-sun-do-an-vat-shop-online">Vua Cháo Sườn Sụn &amp; Đồ Ăn Vặt - Shop Online</a></li></ol></nav><div class="kind-restaurant"><span> Shop Online<span> -<a class="link-brand" title="Vua Cháo Sườn Sụn &amp; Đồ Ăn Vặt - Shop Online" rel="nofollow" href="/thuong-hieu/vua-chao-suon-sun-do-an-vat-shop-online">Chi nhánh</a></span></span></div><h1 class="name-restaurant">Vua Cháo Sườn Sụn &amp; Đồ Ăn Vặt - Shop Online</h1><div class="address-restaurant">3 Ngách 17 Ngõ 100 Sài Đồng, P. Sài Đồng, Long Biên, Hà Nội</div><div class="rating"><div class="stars"><span class="full"><i class="fas fa-star"></i></span><span class="full"><i class="fas fa-star"></i></span><span class="full"><i class="fas fa-star"></i></span><span class="full"><i class="fas fa-star"></i></span><span class="half"><i class="fas fa-star-half-alt"></i></span></div><span class="number-rating">100+</span>đánh giá trên ShopeeFood</div><div class="view-more-rating"><a href="https://foody.vn/ha-noi/vua-chao-suon-sun-do-an-vat-shop-online" rel="noopener noreferrer nofollow" target="_blank" class="number-review">Xem thêm lượt đánh giá từ Foody</a></div><div class="status-restaurant"><div class="opentime-status"><span class="stt online" title="Mở cửa"></span></div></div><div class="cost-restaurant"><i class="fas fa-dollar-sign"></i>20,000 - 50,000</div><div class="share-social clearfix"><div class="share-social-box"><div class="fb-like" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true" data-colorscheme="light" data-kid-directed-site="false"></div></div></div><div class="utility-restaurant clearfix"><div class="utility-item"><div class="utility-title">Phí dịch vụ</div><div class="utility-content"><span class="txt-bold txt-red"> 0.0% Phí phục vụ </span></div><span class="icon icon-partner-vi" data-toggle="modal" data-target="#modal-verify-merchant"></span></div><div class="utility-item"><div class="utility-title">Dịch vụ bởi</div><div class="utility-content"><span class="txt-bold txt-red">ShopeeFood</span></div></div></div></div></div></div>
 
 
+<%--<--list item-->--%>
+        <div class="container relative clearfix"><div class="now-menu-restaurant"><div class="menu-restaurant-tab"><div class="item active">Thực đơn</div></div><div class="menu-restaurant-content-tab"><div class="menu-restaurant-container"><div class="menu-restaurant-category"><div class="list-category" id="scroll-spy"><div class="scrollbar-container ps"><div class="item"><span id="-1" title="Món Đang Giảm" class="item-link active">Món Đang Giảm</span></div><div class="item"><span id="1319110" title="MENU" class="item-link ">MENU</span></div><div class="item"><span id="1326069" title="Món Mì" class="item-link ">Món Mì</span></div><div class="item"><span id="1326074" title="Ăn Vặt" class="item-link ">Ăn Vặt</span></div><div class="item"><span id="1351153" title="Cơm Văn Phòng" class="item-link ">Cơm Văn Phòng</span></div><div class="item"><span id="1351157" title="Đồ Uống" class="item-link ">Đồ Uống</span></div><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div></div></div><div class="menu-restaurant-detail"><div class="menu-restaurant-list"><div class="search-items"><p class="input-group"><i class="fas fa-search"></i><input type="search" name="searchKey" placeholder="Tìm món" value=""></p></div><div id="restaurant-item"><div aria-label="grid" aria-readonly="true" class="ReactVirtualized__Grid ReactVirtualized__List" role="grid" tabindex="0" style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 558px; will-change: transform; overflow: auto; outline: none;"><div class="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup" style="width: auto; height: 2513px; max-width: 558px; max-height: 2513px; overflow: hidden; position: relative;"><div class="menu-group" id="section-group-menu-1319110" style="height: 56px; left: 0px; position: absolute; top: 20px; width: 100%;"><div class="title-menu">MENU</div></div>
 
-        <div class="container-xl">
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <h2>Shop <b>Management</b></h2>
-                            </div>
-                            <div class="col-sm-7">
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>--%>
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>--%>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>ShopName</th>
-                            <th>Code</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="shop" items="${shops}">
-                            <tr>
-                                <td>${shop.shop_id}</td>
-                                <td>${shop.shop_name}</td>
-                                <td>${shop.shop_code}></td>
-                                <td>${shop.shop_email}</td>
-                                <td>${shop.shop_phone}</td>
-                                <td>${shop.shop_address}</td>
-<%--                                <td><span class="status text-success">&bull;</span> Active</td>--%>
-                                <td>
-                                    <a href="/admin?action=editShop&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                    <a href="/admin?action=deleteShop&id=${shop.shop_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
+<%--            for item list--%>
+            <table>
+                <c:forEach var="items" items="items">
+                    <tr>
+                        <td>
+<%--                            <div class="item-restaurant-row" style="height: 81px; left: 0px; position: absolute; top: 50px; width: 100%;"><div class="row"><div class="col-auto item-restaurant-img"><button class="inline"><img src="${items.item_image}" alt="${items.item_name}" width="60" height="60"></button></div><div class="col item-restaurant-info"><h2 class="item-restaurant-name">${items.item_name}</h2><div class="item-restaurant-total">Đã được đặt<span class="txt-bold">&nbsp;500+&nbsp;</span>lần&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;&nbsp;10+</div></div><div class="col-auto item-restaurant-more"><div class="row "><div class="col-auto product-price"><div class="current-price">${items.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span></div></div><div class="col-auto adding-food-cart txt-right"><div class="btn-adding">+</div></div></div></div></div></div>--%>
+${items.item_name}
+                        </td>
+                    </tr>
+                </c:forEach>
 
-<%--                    <div class="clearfix">--%>
-<%--                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
-<%--                        <ul class="pagination">--%>
-<%--                            <li class="page-item disabled"><a href="#">Previous</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
-<%--                            <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
-                </div>
-            </div>
-        </div>
+            </table>
+<%--            end--%>
 
-        <!-- end form managerform manager -->
+        </div></div></div></div></div></div></div><div class="modal fade modal-topping" id="modal-topping" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><div class="row align-items-center"><div class="col-auto topping-dish-image"><img src=""></div><div class="col topping-summary"><div class="topping-dish-name"></div><div class="topping-dish-price">Giá: </div></div></div></div><div class="modal-body"><div class="topping-category"></div></div><div class="modal-footer"><div class="row align-items-center"><div class="col"><div class="topping-add-sub"><div class="btn-sub">-</div><input type="text" disabled="" value="1"><div class="btn-adding">+</div></div></div><div class="col-auto"><button type="button" class="btn btn-over"><span>Hết hàng</span></button></div></div></div></div></div></div><div class="modal fade modal-alert" id="modal-delivery-alert-MenuAlertModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"><div class="modal-dialog modal-noti" role="document"><div class="modal-content"><span class="close" data-dismiss="modal">x</span><div class="modal-header txt-bold font13"><span class="txt-red">ShopeeFood</span> Thông báo</div><div class="modal-body"><div class="col col-12"><p class="font15"><span></span></p></div></div><div class="modal-footer content-right"><button type="button" class="btn btn-red" data-dismiss="modal">Ok</button></div></div></div></div><div class="modal fade modal-box-image" id="modal-box-image" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="res-menu-carousel"></div></div></div><div class="modal fade modal-alert" id="modal-delivery-confirm-MenuConfirmModal" tabindex="-1" role="dialog" aria-hidden="true" data-keyboard="true"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><span class="close" data-dismiss="modal">x</span><div class="modal-header txt-bold font13"><span class="txt-red">service_by_shopeefood</span> Thông báo</div><div class="modal-body"><p class="font15 max-width-750"></p></div><div class="modal-footer content-right"><button type="button" class="btn btn-gray" data-dismiss="modal">Hủy</button><button type="button" class="btn btn-red" data-dismiss="modal">Ok</button></div></div></div></div></div><div class="QRcode" id="QRcode"><canvas height="200" width="200" style="height: 200px; width: 200px;"></canvas><div>Quét mã để đặt món <br> trên app Shopee</div></div></div>
+        <!-- end shop item -->
 
 
         <div class="now-container-coporation" >

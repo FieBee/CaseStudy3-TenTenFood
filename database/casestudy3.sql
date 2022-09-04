@@ -135,6 +135,9 @@ INSERT INTO item VALUE (4,'it4',4,4,4,'Bánh Sâu Gà Cay Phomai',35000,'Bánh s
 INSERT INTO item  VALUE (5,'it5',5,5,5,'Chè đậu đỏ cốt dừa',35000,'Chè đậu đỏ làm từ đậu đỏ','da05.jpg',1);
 INSERT INTO item  VALUE (6,'it6',6,6,6,'Cơm thố',35000,'Cơm thố làm từ cơm được chiên','da06.jpg',1);
 INSERT INTO item  VALUE (7,'it7',7,7,7,'Phở chín',35000,'Phở chín là từ phở gạo nguyên chất','da07.jpg',1);
+INSERT INTO item VALUE (8,'it8',1,1,1,'Chả Cố',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
+INSERT INTO item VALUE (9,'it9',1,1,1,'Chả Cm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
+INSERT INTO item VALUE (10,'it10',1,1,1,'Ch Cốm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
 select * from customer;
 INSERT INTO customer  values(1,'kh01','Nguyễn Hữu Quyết','0393883210','Bắc Ninh','nguyenhuuquyet07092001@gmail.com','quyet','123456',1);
 INSERT INTO customer  values(2,'kh02','Nguyễn Văn Phương','0993883210','Bắc Giang','nguyenvanphuong@gmail.com','quyet1','123456',1);
@@ -184,6 +187,6 @@ CREATE TABLE order(
     custome_id int,
     item_id int,
     status BIT
-                  
+
 
 )
