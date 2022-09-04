@@ -49,11 +49,9 @@ public class DealService implements IDealService{
             while (rs.next()){
                 String code= rs.getString(2);
                 String name= rs.getString(3);
-                String startDate= rs.getString(4);
-                String endDate= rs.getString(5);
-                String description= rs.getString(6);
-                String image= rs.getString(7);
-                deal= new Deal(id,code,name,startDate,endDate,description,image);
+                String description= rs.getString(4);
+                String image= rs.getString(5);
+                deal= new Deal(id,code,name,description,image);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
