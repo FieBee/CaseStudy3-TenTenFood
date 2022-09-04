@@ -282,10 +282,13 @@
                             </div>
                         </div>
 
-                        <div class="main-nav col"><a class="nav-item active" href="/admin?action=shopManagement">Shop</a><a
-                                class="nav-item " href="/admin?action=userManagement">User</a><a class="nav-item " href="/admin?action=dealManagement">Deal</a><a
-                                class="nav-item " href="/admin?action=categoryManagement">Category</a>
+                        <div class="main-nav col">
+<%--                            <a class="nav-item active" href="/customers">User Information</a>--%>
+<%--                            <a class="nav-item active" href="/customers?action=shopManagement">Cart</a>--%>
 
+                            <%--                            <a class="nav-item "--%>
+                            <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
+                            <%--                            cưng</a>--%>
                         </div>
 
                         <div class="language dropdown col-auto">
@@ -403,55 +406,74 @@
                     <div class="table-title">
                         <div class="row">
                             <div class="col-sm-5">
-                                <h2>Shop <b>Management</b></h2>
+                                <h2>Edit<b>Shop Information</b></h2>
                             </div>
                             <div class="col-sm-7">
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>--%>
-<%--                                <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>--%>
+
                             </div>
                         </div>
                     </div>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>ShopName</th>
-                            <th>Code</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach var="shop" items="${shops}">
+                    <form action="" method="post">
+                        <table class="table table-striped table-hover">
+                            <tbody>
                             <tr>
-                                <td>${shop.shop_id}</td>
-                                <td>${shop.shop_name}</td>
-                                <td>< href="#"><img src="" class="avatar" alt="Avatar"> ${shop.shop_code}></td>
-                                <td>${shop.shop_email}</td>
-                                <td>${shop.shop_phone}</td>
-                                <td>${shop.shop_address}</td>
-<%--                                <td><span class="status text-success">&bull;</span> Active</td>--%>
-                                <td>
-                                    <a href="/admin?action=editShop&id=${shop.shop_id}" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                                    <a href="/admin?action=deleteShop&id=${shop.shop_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
+                                <td>Id</td>
+                                <td><input type="text" name="shop_id" value="${shop.shop_id}"></td>
 
-<%--                    <div class="clearfix">--%>
-<%--                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
-<%--                        <ul class="pagination">--%>
-<%--                            <li class="page-item disabled"><a href="#">Previous</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
-<%--                            <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
-<%--                            <li class="page-item"><a href="#" class="page-link">Next</a></li>--%>
-<%--                        </ul>--%>
-<%--                    </div>--%>
+                            </tr>
+                            <tr>
+                                <td>Code</td>
+                                <td><input type="text" name="shop_code" value="${shop.shop_code}"></td>
+
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td><input type="text" name="shop_name" value="${shop.shop_name}"></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><input type="text" name="shop_email" value="${shop.shop_email}"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td><input type="text" name="shop_phone" value="${shop.shop_phone}"></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td><input type="text" name="shop_address" value="${shop.shop_address}"></td>
+                            </tr>
+                            <tr>
+                                <td>Account</td>
+                                <td><input type="text" name="shop_account" value="${shop.shop_account}"> </td>
+                            </tr>
+                            <tr>
+                                <td>PassWord</td>
+                                <td><input type="text" name="shop_password" value="${shop.shop_password}"></td>
+                            </tr>
+                            <tr>
+                                <td>IMG Link</td>
+                                <td><input type="text" name="shop_password" value="${shop.shop_image}"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="Save"/>
+                                </td>
+                            <tr>
+                                <td></td>
+                                <td>
+                                <c:if test="${requestScope['message'] != null}">
+                                    <span>${requestScope['message']}</span>
+                                </c:if>
+                            </td>
+                            </tr>
+                            <td></td><td><a href="/admin?action=shopManager">Back to ShopManager</a></td>
+
+                            </tr>
+                        </table>
+                    </form>
+
+
                 </div>
             </div>
         </div>

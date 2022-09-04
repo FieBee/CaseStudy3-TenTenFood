@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -41,9 +42,10 @@ public class AdminServlet extends HttpServlet {
                 case "shopManager":
                     showShopManager(request,response);
                     break;
-                case "edit":
+                case "editShop":
+                    showEditShop(request,response);
                     break;
-                case "delete":
+                case "deleteShop":
                     deleteShop(request,response);
                     break;
                 case "search":
@@ -64,11 +66,15 @@ public class AdminServlet extends HttpServlet {
         }
         try {
             switch (action) {
+                case "shopManager":
+                    showShopManager(request,response);
+                    break;
                 case "create":
                     break;
-                case "edit":
+                case "editShop":
+                    editShop(request,response);
                     break;
-                case "delete":
+                case "deleteShop":
                     deleteShop(request,response);
                     break;
                 case "search":
@@ -111,7 +117,24 @@ public class AdminServlet extends HttpServlet {
         int shop_id = Integer.parseInt(request.getParameter("id"));
         Shop shop = this.shopService.findById(shop_id);
         request.setAttribute("shop",shop);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("test/edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/editShop.jsp");
+        dispatcher.forward(request,response);
+    }
+
+    private void editShop(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+        int shop_id = Integer.parseInt(request.getParameter("shop_id"));
+        String shop_code = new String(request.getParameter("shop_code").getBytes("iso-8859-1"),"utf-8");
+        String shop_name = new String(request.getParameter("shop_name").getBytes("iso-8859-1"),"utf-8");
+        String shop_email = new String(request.getParameter("shop_email").getBytes("iso-8859-1"),"utf-8");
+        int shop_phone = Integer.parseInt(request.getParameter("shop_phone"));
+        String shop_address = new String(request.getParameter("shop_address").getBytes("iso-8859-1"),"utf-8");
+        String shop_account = new String(request.getParameter("shop_account").getBytes("iso-8859-1"),"utf-8");
+        String shop_password = new String(request.getParameter("shop_password").getBytes("iso-8859-1"),"utf-8");
+        String shop_image= request.getParameter("shop_image");
+        Shop shop = new Shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password, shop_image);
+        shopService.edit(shop_id, shop);
+        request.setAttribute("message","Sửa thông tin thành công!!");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/admin/editShop.jsp");
         dispatcher.forward(request,response);
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ShopService implements IShopService {
     private static final String ADD_SHOP_SQL = "insert into shop(shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image) values (?, ?, ?, ?, ?, ?, ?,?)";
-    private static final String SELECT_SHOP_BY_ID = "select shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password from shop where shop_id = ?";
+    private static final String SELECT_SHOP_BY_ID = "select * from shop where shop_id = ?";
     private static final String SELECT_ALL_SHOP = "select * from shop where status = 1";
     private static final String DELETE_SHOP_SQL = "UPDATE shop SET status = 0 where shop_id =?";
     private static final String UPDATE_SHOP_SQL = "update shop set shop_code = ?, shop_name = ?, shop_email = ?, shop_phone = ?, shop_address = ?, shop_account = ?, shop_password = ? , shop_image=? where shop_id = ?";
@@ -54,7 +54,7 @@ public class ShopService implements IShopService {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                int shop_id = rs.getInt("shop_id");
+//                int shop_id = rs.getInt("shop_id");
                 String shop_code = rs.getString("shop_code");
                 String shop_name = rs.getString("shop_name");
                 String shop_email = rs.getString("shop_email");
@@ -63,7 +63,7 @@ public class ShopService implements IShopService {
                 String shop_account = rs.getString("shop_account");
                 String shop_password = rs.getString("shop_password");
                 String shop_image= rs.getString("shop_image");
-                shop = new Shop(shop_id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image);
+                shop = new Shop(id, shop_code, shop_name, shop_email, shop_phone, shop_address, shop_account, shop_password,shop_image);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,15 +104,16 @@ public class ShopService implements IShopService {
     public boolean edit(int id, Shop shop) throws SQLException {
         boolean rowUpdated;
         try (PreparedStatement statement = connection.prepareStatement(UPDATE_SHOP_SQL)) {
-            statement.setInt(1, shop.getShop_id());
-            statement.setString(2, shop.getShop_code());
-            statement.setString(3, shop.getShop_name());
-            statement.setString(4, shop.getShop_email());
-            statement.setInt(5, shop.getShop_phone());
-            statement.setString(6, shop.getShop_address());
-            statement.setString(7, shop.getShop_account());
-            statement.setString(8, shop.getShop_password());
-            statement.setString(9, shop.getShop_image());
+//            statement.setInt(1, shop.getShop_id());
+            statement.setString(1, shop.getShop_code());
+            statement.setString(2, shop.getShop_name());
+            statement.setString(3, shop.getShop_email());
+            statement.setInt(4, shop.getShop_phone());
+            statement.setString(5, shop.getShop_address());
+            statement.setString(6, shop.getShop_account());
+            statement.setString(7, shop.getShop_password());
+            statement.setString(8, shop.getShop_image());
+            statement.setInt(9,id);
 
             rowUpdated = statement.executeUpdate() > 0;
         }
