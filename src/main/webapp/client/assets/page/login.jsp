@@ -242,7 +242,7 @@
                             type="hidden" name="response_type" value="permission id_token"><input type="hidden"
                                                                                                   name="fetch_basic_profile" value="true"><input type="hidden" name="nonce"
                                                                                                                                                  value="AO9thoqUvirPjVc4KOM61c001.snqMhG">
-                        <div class="item plus"><a target="_blank" href="https://gsso.shopeefood.vn/sms_login?app_id=nowotpapp_cX8JHsQCPqwYtrXXPJnKUhaww77ExQ&app_type=1004&client_type=1&api_version=1&client_version=3.0.0&client_id=1.0&client_language=vi&redirect_uri=https://shopeefood.vn/account/login&check_registered=1"></a><i class="fab fa-google-plus-g"></i>Google</div>
+                        <div class="item plus"><a target="_blank" href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=229327170580-69v69v4s94p2tvf4qi3g0qb901b2pg99.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fshopeefood.vn%2Faccount%2Flogin&scope=email%20profile%20openid&state=%2Fgioi-thieu&response_type=permission%20id_token&fetch_basic_profile=true&nonce=XGQ3vrHYjqY9A1iybTTvj4A5rusBTzEe&flowName=GeneralOAuthFlow"></a><i class="fab fa-google-plus-g"></i>Google</div>
                     </form>
                 </div>
                 <p class="text">${message}</p>
@@ -269,6 +269,12 @@
                         <input style="font-size: 20px" class="btn btn-block btn-submit" type="submit" value="Đăng nhập">
 
                     </form>
+                    <form action="/login?action=">
+                        <div class="item phone">
+                            <span class="fas fa-mobile-alt"></span>Đăng Ký
+                        </div>
+                    </form>
+
 
 
 
