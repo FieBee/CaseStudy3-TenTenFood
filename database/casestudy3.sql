@@ -133,15 +133,15 @@ insert into deal  values(9,'d9','Thứ 5 sale cực mạnh','2022-11-05 20:29:36
 
 select * from item;
 INSERT INTO item VALUE (1,'it1',1,1,1,'Chả Cốm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
-INSERT INTO item VALUE (2,'it2',2,2,2,'Trà Sữa',40000,'Trà sữa làm từ sữa tươi ','da02.jpg',1);
-INSERT INTO item VALUE (3,'it3',3,3,3,'Gỏi Cuốn Diệu Âm',45000,'Gỏi cuốn chay thuần chay','da03.jpg',1);
-INSERT INTO item VALUE (4,'it4',4,4,4,'Bánh Sâu Gà Cay Phomai',35000,'Bánh sâu làm từ bột và sâu','da04.jpg',1);
-INSERT INTO item  VALUE (5,'it5',5,5,5,'Chè đậu đỏ cốt dừa',35000,'Chè đậu đỏ làm từ đậu đỏ','da05.jpg',1);
-INSERT INTO item  VALUE (6,'it6',6,6,6,'Cơm thố',35000,'Cơm thố làm từ cơm được chiên','da06.jpg',1);
-INSERT INTO item  VALUE (7,'it7',7,7,7,'Phở chín',35000,'Phở chín là từ phở gạo nguyên chất','da07.jpg',1);
-INSERT INTO item VALUE (8,'it8',1,1,1,'Chả Cố',35000,'Chả cốm làm từ cốm khá ngon','da08.jpg',1);
-INSERT INTO item VALUE (9,'it9',1,1,1,'Chả Cm',35000,'Chả cốm làm từ cốm khá ngon','da09.jpg',1);
-INSERT INTO item VALUE (10,'it10',1,1,1,'Ch Cốm',35000,'Chả cốm làm từ cốm khá ngon','da10.jpg',1);
+INSERT INTO item VALUE (2,'it2',2,2,2,'Trà Sữa',40000,'Trà sữa làm từ sữa tươi ','da01.jpg',1);
+INSERT INTO item VALUE (3,'it3',3,3,3,'Gỏi Cuốn Diệu Âm',45000,'Gỏi cuốn chay thuần chay','da01.jpg',1);
+INSERT INTO item VALUE (4,'it4',4,4,4,'Bánh Sâu Gà Cay Phomai',35000,'Bánh sâu làm từ bột và sâu','da01.jpg',1);
+INSERT INTO item  VALUE (5,'it5',5,5,5,'Chè đậu đỏ cốt dừa',35000,'Chè đậu đỏ làm từ đậu đỏ','da01.jpg',1);
+INSERT INTO item  VALUE (6,'it6',6,6,6,'Cơm thố',35000,'Cơm thố làm từ cơm được chiên','da01.jpg',1);
+INSERT INTO item  VALUE (7,'it7',7,7,7,'Phở chín',35000,'Phở chín là từ phở gạo nguyên chất','da01.jpg',1);
+INSERT INTO item VALUE (8,'it8',1,1,1,'Chả Cố',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
+INSERT INTO item VALUE (9,'it9',1,1,1,'Chả Cm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
+INSERT INTO item VALUE (10,'it10',1,1,1,'Ch Cốm',35000,'Chả cốm làm từ cốm khá ngon','da01.jpg',1);
 select * from customer;
 INSERT INTO customer  values(1,'kh01','Nguyễn Hữu Quyết','0393883210','Bắc Ninh','nguyenhuuquyet07092001@gmail.com','quyet','123456',1);
 INSERT INTO customer  values(2,'kh02','Nguyễn Văn Phương','0993883210','Bắc Giang','nguyenvanphuong@gmail.com','quyet1','123456',1);
