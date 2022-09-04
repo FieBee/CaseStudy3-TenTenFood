@@ -179,9 +179,11 @@ insert into item_category value (6,3);
 insert into item_category value (6,2);
 
 
-CREATE TABLE admin(
-                      account varchar(16),
-                      password varchar(16)
-);
+CREATE TABLE order(
+    id int primary key auto_increment,
+    custome_id int,
+    item_id int,
+    status BIT
+                  
 
-INSERT INTO admin value ('admin','123456');
+)

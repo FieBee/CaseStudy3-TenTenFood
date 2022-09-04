@@ -43,7 +43,7 @@ public class AddToCartServlet  extends HttpServlet {
                     Order order = (Order) session.getAttribute("order");
                     List<Item> itemList = order.getItems();
                     boolean check = false;
-                    for (Item item1 = itemList){
+                    for (Item item1 : itemList){
                         if (item1.getItem_id() == item.getItem_id()){
 //                            Nhap quantity
                             check = true;

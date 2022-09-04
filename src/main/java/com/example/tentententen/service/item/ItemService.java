@@ -15,7 +15,7 @@ public class ItemService implements IItemService{
     Connection connection = ConnectionJDBC.getConnect();
     CategoryService categoryService = new CategoryService();
 
-    private static final String SELECT_ALL_ITEM = "SELECT * FROM item;";
+    private static final String SELECT_ALL_ITEM = "SELECT * FROM item WHERE status = 1;";
     private static final String SELECT_ITEM_BY_ID = "SELECT * FROM item WHERE item_id=?";
     private static final String SELECT_ITEM_BY_NAME = "SELECT * FROM item WHERE item_name like ?";
 

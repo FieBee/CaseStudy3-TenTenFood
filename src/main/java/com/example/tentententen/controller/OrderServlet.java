@@ -25,7 +25,7 @@ public class OrderServlet extends HttpServlet {
         Order order = (Order) session.getAttribute("order");
         if (customer!= null){
             order.setCustomer(customer);
-            o
+
         }
 
     }
