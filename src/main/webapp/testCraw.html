@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="home.css">
+
+</head>
+<body>
+    <div class="container-header">
+        <div class="container">
+            <div class="header-content navbar row  justify-content-between align-items-center">
+                <div class="logo-now col-auto">
+                    <span>
+                        <a href="/"><img src="/app/assets/img/shopeefoodvn.png?4aa1a38e8da801f4029b80734905f3f7" alt="ShopeeFood"></a>
+                    </span>
+                </div>    <div class="select-local col-auto">    <div class="dropdown">
+                <div class="dropdown-toggle" role="button" id="local-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hà Nội</div>
+                <div class="dropdown-menu"><div class="dropdown-item">
+                    <span class="name col">TP. HCM</span>
+                    <span class="count col-auto">85786 địa điểm</span>
+                </div>
+                    <div class="dropdown-item"><span class="name col">Hà Nội</span><span class="count col-auto">42001 địa điểm</span>
+                    </div>
+                    <div class="dropdown-item"><span class="name col">Đà Nẵng</span>
+                        <span class="count col-auto">11844 địa điểm</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="name col">Cần Thơ</span>
+                        <span class="count col-auto">3580 địa điểm</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <span class="name col">Hải Phòng</span><span class="count col-auto">4110 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Huế</span><span class="count col-auto">2887 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Khánh Hoà</span><span class="count col-auto">2449 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Đồng Nai</span><span class="count col-auto">4376 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Nghệ An</span><span class="count col-auto">1698 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Vũng Tàu</span><span class="count col-auto">1926 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Bắc Ninh</span><span class="count col-auto">603 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Bình Dương</span><span class="count col-auto">3388 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Điện Biên</span><span class="count col-auto">10454 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Lâm Đồng</span><span class="count col-auto">1464 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Quảng Nam</span><span class="count col-auto">1013 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Quảng Ninh</span><span class="count col-auto">883 địa điểm</span></div>
+                    <div class="dropdown-item"><span class="name col">Thái Nguyên</span><span class="count col-auto">1027 địa điểm</span>
+                    </div></div></div></div>
+                <div class="main-nav col">
+                    <a class="nav-item active" href="/ha-noi/food">Đồ ăn</a>
+                    <a class="nav-item " href="/ha-noi/fresh">Thực phẩm</a>
+                    <a class="nav-item " href="/ha-noi/liquor">Bia</a>
+                    <a class="nav-item " href="/ha-noi/flowers">Hoa</a>
+                    <a class="nav-item " href="/ha-noi/fmcg">Siêu thị</a>
+                    <a class="nav-item " href="/ha-noi/medicine">Thuốc</a>
+                    <a class="nav-item " href="/ha-noi/pets">Thú cưng</a>
+                </div>
+                <div class="header-icon-search col-auto"><span data-toggle="modal" data-target="#modal-search">
+                        <span class="icon icon-search-dark"></span>
+                    </span>
+                </div>
+                <div class="language dropdown col-auto">
+                    <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="icon icon-lag-vn"></span>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-item"><span class="icon icon-lag-en"></span>
+                            <span class="language-item">Tiếng Anh</span>
+                        </div>
+                        <div class="dropdown-item">
+                            <span class="icon icon-lag-vn"></span>
+                            <span class="language-item">Tiếng Việt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-acc col-auto"><button type="button" class="btn btn-none-bg btn-login">Đăng nhập</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
