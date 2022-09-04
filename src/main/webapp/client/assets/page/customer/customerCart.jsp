@@ -304,7 +304,7 @@
                         </div>
                         <div class="user-acc col-auto">
                             <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Admin</span>
+                                <span class="font14">Ckasdlasdasasd</span>
                             </button>
                             <%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
@@ -416,7 +416,11 @@
                         <tr>
                             <td>Item</td>
                             <td>Quantity</td>
-                            <td></td>
+                            <td>
+                               Sum
+                            </td>
+                            <td>Add</td>
+                            <td>Delete</td>
                         </tr>
                         <c:forEach var="item" items="${order.items}">
                             <tr>
@@ -435,16 +439,34 @@
                                             </div>
                                             </div></div></div>
                                 </td>
-                                <td>${quantity}</td>
-                                <td>(${item.item_price * quantity})</td>
+                                <td>${order.quantityItem}</td>
+                                <td>(${item.item_price * order.quantityItem})</td>
                                 <td>
-                                    <a href="" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                                    <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                                </td>
+                                <td>
+                                    <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                                 </td>
                             </tr>
 
-
-
                         </c:forEach>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>${total}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href=""><button>Thanh Toán</button></a></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+
 
 
                     </table>
