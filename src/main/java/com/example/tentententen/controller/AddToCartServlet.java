@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@WebServlet(name = "AddToCartServlet" , value = "/customers/addToCart")
+@WebServlet(name = "AddToCartServlet" , value ="/addToCart")
 public class AddToCartServlet  extends HttpServlet {
 
     IItemService itemService = new ItemService();
@@ -25,13 +25,13 @@ public class AddToCartServlet  extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int quantity = 1;
         int id;
-        if (request.getParameter("itemId")!=null){
-            id = Integer.parseInt(request.getParameter("itemId"));
+        if (request.getParameter("id")!=null){
+            id = Integer.parseInt(request.getParameter("id"));
             Item item = itemService.findById(id);
             if (item != null){
-                if (request.getParameter("quantity")!=null){
-                    quantity = Integer.parseInt(request.getParameter("quantity"));
-                }
+//                if (request.getParameter("quantity")!=null){
+//                    quantity = Integer.parseInt(request.getParameter("quantity"));
+//                }
                 HttpSession session = request.getSession();
                 if (session.getAttribute("order")==null){
                     Order order = new Order();
@@ -39,6 +39,7 @@ public class AddToCartServlet  extends HttpServlet {
                     itemList.add(item);
                     order.setItems(itemList);
                     session.setAttribute("order",order);
+                    session.setAttribute("quantity",quantity);
                 }else {
                     Order order = (Order) session.getAttribute("order");
                     List<Item> itemList = order.getItems();
@@ -56,8 +57,10 @@ public class AddToCartServlet  extends HttpServlet {
                     session.setAttribute("order",order);
                 }
             }
-            response.sendRedirect(request.getContextPath()+"aa");
+            response.sendRedirect("client/assets/page/customer/customerCart.jsp");
 
+        }else {
+            response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
         }
     }
 

@@ -27,7 +27,7 @@ public class ShopItemServlet extends HttpServlet {
         Shop shop= iShopService.findById(id);
         req.setAttribute("shop",shop);
         req.setAttribute("items", itemList);
-        req.getRequestDispatcher("client/assets/page/customer/shopItem.jsp").forward(req, resp);
+        req.getRequestDispatcher("client/assets/page/shopItem.jsp").forward(req, resp);
     }
 
     @Override

@@ -409,7 +409,40 @@
                 <c:forEach var="items" items="${items}">
                     <tr>
                         <td>
-                            <div class="item-restaurant-row" style="height: 81px; left: 0px;  top: 50px; width: 100%;"><div class="row"><div class="col-auto item-restaurant-img"><button class="inline"><img src="${items.item_image}" alt="${items.item_name}" width="60" height="60"></button></div><div class="col item-restaurant-info"><h2 class="item-restaurant-name">${items.item_name}</h2><div class="item-restaurant-total">Đã được đặt<span class="txt-bold">&nbsp;500+&nbsp;</span>lần&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;&nbsp;10+</div></div><div class="col-auto item-restaurant-more"><div class="row "><div class="col-auto product-price"><div class="current-price">${items.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span></div></div><div class="col-auto adding-food-cart txt-right"><div class="btn-adding">+</div></div></div></div></div></div>
+
+                            <div class="item-restaurant-row" style="height: 81px; left: 0px;  top: 50px; width: 100%;">
+                                <div class="row">
+                                    <div class="col-auto item-restaurant-img">
+                                        <button class="inline">
+                                            <img src="${items.item_image}" alt="${items.item_name}" width="60" height="60">
+                                        </button>
+                                    </div>
+                                    <div class="col item-restaurant-info">
+                                        <h2 class="item-restaurant-name">${items.item_name}</h2>
+                                        <div class="item-restaurant-total">Đã được đặt<span class="txt-bold">&nbsp;500+&nbsp;</span>lần&nbsp;&nbsp;|&nbsp;&nbsp;<i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;&nbsp;10+</div>
+                                    </div>
+                                    <div class="col-auto item-restaurant-more">
+                                    <div class="row ">
+                                        <div class="col-auto product-price"><div class="current-price">${items.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+                                    </div>
+                                    </div>
+                                        <div class="col-auto adding-food-cart txt-right">
+
+<%--                                add to cart--%>
+<%--                                <form action="/customers/addToCart&id=${items.item_id}">--%>
+                                    <div class="btn-adding" >
+                                         <a href="/addToCart?id=${items.item_id}">+</a>
+                                    </div>
+<%--                                </form>--%>
+
+
+
+
+                            </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </c:forEach>
