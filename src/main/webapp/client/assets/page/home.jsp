@@ -436,7 +436,7 @@
 <%--                list deal--%>
   <c:forEach var="deals" items="${deals}">
     <div class="item-restaurant"><a  class="item-content"
-                                     href="dealsShop?id=${deals.deal_id}">
+                                     href="dealShops?id=${deals.deal_id}">
       <div class="img-restaurant"><img
               src="img/${deals.deal_image}"
               class=""></div>
