@@ -30,6 +30,7 @@ public class AddToCartServlet  extends HttpServlet {
                     deleteOrder(request,response);
                     break;
                 case "addOrder":
+                    double sum = 0;
                     int quantity = 1;
                     int id;
                     if (request.getParameter("id")!=null){
@@ -46,6 +47,8 @@ public class AddToCartServlet  extends HttpServlet {
                                 order.setQuantityItem(quantity);
                                 itemList.add(item);
                                 order.setItems(itemList);
+                                sum=item.getItem_price();
+                                session.setAttribute("total",sum);
                                 session.setAttribute("order",order);
                                 session.setAttribute("quantity",quantity);
                             }else {
@@ -54,7 +57,6 @@ public class AddToCartServlet  extends HttpServlet {
                                 boolean check = false;
                                 for (Item item1 : itemList){
                                     if (item1.getItem_id() == item.getItem_id()){
-//                            Nhap quantity
                                         order.setQuantityItem(order.getQuantityItem() + quantity);
                                         check = true;
                                     }
@@ -64,7 +66,9 @@ public class AddToCartServlet  extends HttpServlet {
                                     Item item1 = new Item();
                                     itemList.add(item1);
                                 }
+
                                 session.setAttribute("order",order);
+                                session.setAttribute("total",sum);
                             }
                         }
                         response.sendRedirect("client/assets/page/customer/customerCart.jsp");
@@ -93,36 +97,17 @@ public class AddToCartServlet  extends HttpServlet {
         }
         response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
     }
-    private void addOrder(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        int quantity = 1;
-        int id;
-        if (request.getParameter("id")!=null){
-            id = Integer.parseInt(request.getParameter("id"));
-            Item item = itemService.findById(id);
-            if (item != null){
-                if (request.getParameter("quantity")!=null){
-                    quantity = Integer.parseInt(request.getParameter("quantity"));
-                }
-                HttpSession session = request.getSession();
-                if (session.getAttribute("order")==null){
-                    Order order = new Order();
-                    List<Item> itemList = new ArrayList<Item>();
-                    order.setQuantityItem(quantity);
-                    itemList.add(item);
-                    order.setItems(itemList);
-                    session.setAttribute("order",order);
-                    session.setAttribute("quantity",quantity);
-                }else {
-                    Order order = null;
-                    session.setAttribute("order",order);
-                }
-            }
-            response.sendRedirect("client/assets/page/customer/customerCart.jsp");
-
-        }else {
-            response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
+    private void getTotalPrice(HttpServletRequest request, HttpServletResponse response){
+        double sum = 0;
+        HttpSession session = request.getSession();
+        Order order = (Order) session.getAttribute("order");
+        List<Item> itemList = order.getItems();
+        for (int i = 0; i < itemList.size() ; i++) {
+            sum += itemList.get(i).getItem_price();
         }
+        session.setAttribute("total",sum);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

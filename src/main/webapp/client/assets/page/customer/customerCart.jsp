@@ -419,6 +419,7 @@
                             <td>
                                Sum
                             </td>
+                            <td>Add</td>
                             <td>Delete</td>
                         </tr>
                         <c:forEach var="item" items="${order.items}">
@@ -448,9 +449,24 @@
                                 </td>
                             </tr>
 
-
-
                         </c:forEach>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>${total}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href=""><button>Thanh Toán</button></a></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+
 
 
                     </table>
