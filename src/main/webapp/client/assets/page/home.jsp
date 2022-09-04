@@ -346,7 +346,7 @@
               </div>
 <%--              List shops foreach--%>
               <c:forEach var="shops" items="${shops}">
-              <div class="item-restaurant"><a target="_blank" class="item-content"
+              <div class="item-restaurant"><a  class="item-content"
                                               href="shopItems?id=${shops.shop_id}">
                 <div class="img-restaurant"><img
                         src="img/${shops.shop_image}"

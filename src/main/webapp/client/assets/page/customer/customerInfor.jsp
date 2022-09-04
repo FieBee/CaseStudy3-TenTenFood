@@ -237,7 +237,7 @@
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
                         <div class="logo-now col-auto"><span><a href="home.html"><img
-                                src="./assets/img/shopeefoodvn.png"
+                                src="../img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
                             <div class="dropdown">
