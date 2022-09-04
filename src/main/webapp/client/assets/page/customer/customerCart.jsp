@@ -237,7 +237,7 @@
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
                         <div class="logo-now col-auto"><span><a href="home.html"><img
-                                src="./assets/img/shopeefoodvn.png"
+                                src="img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
                             <div class="dropdown">
@@ -293,12 +293,12 @@
 
                         <div class="language dropdown col-auto">
                             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                 aria-haspopup="true" aria-expanded="false"><img src="./assets/img/vi.png"></img>
+                                 aria-haspopup="true" aria-expanded="false"><img src="img/vi.png"></img>
                             </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><img src="./assets/img/en.png"></img><span
+                                <div class="dropdown-item"><img src="img/en.png"></img><span
                                         class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                                <div class="dropdown-item"><img src="./assets/img/vi.png"></img><span
+                                <div class="dropdown-item"><img src="img/vi.png"></img><span
                                         class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
                             </div>
                         </div>
@@ -326,7 +326,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content"><span class="close" data-dismiss="modal">x</span>
                         <div class="img-now"><img
-                                src="/app/assets/img/img-new-app.png?2aafe2fa0d470c0d2fadada01c56a448"
+                                src="img/img-new-app.png?2aafe2fa0d470c0d2fadada01c56a448"
                                 alt="App now"></div>
                         <div class="info-now"><span>
                                     <h3 style="font-size: 36px;font-weight: lighter;margin-bottom: 0;">Hello you!</h3>
@@ -423,7 +423,7 @@
                                 <td>
                                     <div class="col-auto item-restaurant-img">
                                         <button class="inline">
-                                            <img src="${item.item_image}" alt="${item.item_name}" width="60" height="60">
+                                            <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
                                         </button>
                                     </div>
                                     <div class="col item-restaurant-info">
