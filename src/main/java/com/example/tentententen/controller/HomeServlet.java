@@ -3,6 +3,8 @@ package com.example.tentententen.controller;
 import com.example.tentententen.model.Item;
 import com.example.tentententen.service.category.CategoryService;
 import com.example.tentententen.service.category.ICategoryService;
+import com.example.tentententen.service.deal.DealService;
+import com.example.tentententen.service.deal.IDealService;
 import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
 import com.example.tentententen.service.shop.IShopService;
@@ -22,7 +24,7 @@ public class HomeServlet extends HttpServlet {
     IItemService itemService = new ItemService();
     IShopService shopService = new ShopService();
     ICategoryService categoryService = new CategoryService();
-
+IDealService dealService= new DealService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,7 +52,7 @@ public class HomeServlet extends HttpServlet {
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/home.jsp");
 
-
+        request.setAttribute("deals",dealService.fillAll());
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",shopService.fillAll());
         request.setAttribute("items",itemService.fillAll());

@@ -14,6 +14,14 @@ public class Deal {
     public Deal() {
     }
 
+    public Deal(int deal_id, String deal_code, String deal_name, String deal_description, String deal_image) {
+        this.deal_id = deal_id;
+        this.deal_code = deal_code;
+        this.deal_name = deal_name;
+        this.deal_description = deal_description;
+        this.deal_image = deal_image;
+    }
+
     public Deal(int deal_id, String deal_code, String deal_name, String deal_startDate, String deal_endDate, String deal_description, String deal_image) {
         this.deal_id = deal_id;
         this.deal_code = deal_code;

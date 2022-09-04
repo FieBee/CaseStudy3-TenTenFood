@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DealService implements IDealService{
-    private static final String FIND_ALL_DEAL = "SELECT * FROM DEAL ;";
+    private static final String FIND_ALL_DEAL = "SELECT deal_id,deal_code,deal_name,deal_description,deal_image FROM DEAL ;";
     private static final String FIND_BY_ID = "SELECT * FROM DEAL WHERE deal_id=?";
     private static final String INSERT_DEAL = "INSERT INTO deal(deal_code, deal_name, deal_startDate, deal_endDate, deal_description, deal_image) VALUE (?,?,?,?,?,?)";
     private static final String DELETE_DEAL = "DELETE FROM deal WHERE deal_id=?";
@@ -28,11 +28,9 @@ public class DealService implements IDealService{
                 int id= rs.getInt(1);
                 String code= rs.getString(2);
                 String name= rs.getString(3);
-                String startDate= rs.getString(4);
-                String endDate=rs.getString(5);
-                String description= rs.getString(6);
-                String image= rs.getString(7);
-                dealList.add(new Deal(id,code,name,startDate,endDate,description,image));
+                String description= rs.getString(4);
+                String image= rs.getString(5);
+                dealList.add(new Deal(id,code,name,description,image));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
