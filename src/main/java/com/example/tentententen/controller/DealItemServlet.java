@@ -26,7 +26,7 @@ public class DealItemServlet extends HttpServlet {
         List<Item> itemList=itemService.findAllItemByIdDeal(id);
         Deal deal= dealService.findById(id);
         req.setAttribute("deal",deal);
-        req.setAttribute("itemLists",itemList);
+        req.setAttribute("items",itemList);
         req.getRequestDispatcher("client/assets/page/customer/itemDeal.jsp").forward(req,resp);
     }
 
