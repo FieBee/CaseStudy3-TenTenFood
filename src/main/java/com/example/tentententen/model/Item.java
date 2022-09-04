@@ -61,6 +61,9 @@ public class Item {
         this.item_image = item_image;
     }
 
+    public Item() {
+    }
+
 
     public int getItem_id() {
         return item_id;

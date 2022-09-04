@@ -9,7 +9,9 @@ public class Order implements Serializable {
     private List<Item> items;
     private int status;
 
-    public Order(int status) {
+
+
+    public Order() {
         this.status = 0;
     }
 
