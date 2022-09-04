@@ -433,7 +433,7 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
+                                <div class="item-restaurant"><a  class="item-content"
                                                                 title="Tiệc sang giá xịn giảm 50%"
                                                                 href="/bo-suu-tap/tiec-sang-gia-xin-giam-50">
                                     <div class="img-restaurant"><img
@@ -445,7 +445,7 @@
                                         <div class="txt-blue font12">200 địa điểm</div>
                                     </div>
                                 </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
+                                <div class="item-restaurant"><a class="item-content"
                                                                 title="Món gì cũng freeship" href="/bo-suu-tap/mon-gi-cung-freeship">
                                     <div class="img-restaurant"><img
                                             src="https://images.foody.vn/delivery/collection/s320x200/image-a134bf28-220826160037.jpeg"
@@ -456,7 +456,7 @@
                                         <div class="txt-blue font12">200 địa điểm</div>
                                     </div>
                                 </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
+                                <div class="item-restaurant"><a class="item-content"
                                                                 title="Tặng 01 lon Tiger Platinum"
                                                                 href="/bo-suu-tap/tang-01-lon-tiger-platinum">
                                     <div class="img-restaurant"><img
@@ -468,7 +468,7 @@
                                         <div class="txt-blue font12">53 địa điểm</div>
                                     </div>
                                 </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
+                                <div class="item-restaurant"><a  class="item-content"
                                                                 title="Siêu Tiệc 0Đ, bao ăn xả láng"
                                                                 href="/bo-suu-tap/sieu-tiec-0d-bao-an-xa-lang">
                                     <div class="img-restaurant"><img
