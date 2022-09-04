@@ -13,6 +13,7 @@ import java.util.List;
 public class ItemService implements IItemService{
 
     private static final String SELECT_ITEM_BY_ID_SHOP = "SELECT * FROM item WHERE shop_id=?";
+    private static final String SELECT_ITEM_BY_ID_DEAL = "SELECT * FROM ITEM WHERE deal_id=?";
     Connection connection = ConnectionJDBC.getConnect();
     CategoryService categoryService = new CategoryService();
 
@@ -206,6 +207,32 @@ public class ItemService implements IItemService{
     public List<Item> findAllItemByIdShop(int id) {
        List<Item> item = new ArrayList<>();
         try(PreparedStatement statement = connection.prepareStatement(SELECT_ITEM_BY_ID_SHOP);){
+            statement.setInt(1,id);
+            System.out.println(statement);
+            ResultSet resultSet =statement.executeQuery();
+            while (resultSet.next()) {
+                int item_id = resultSet.getInt("item_id");
+                String item_code = resultSet.getString("item_code");
+                int shop_id = resultSet.getInt("shop_id");
+                int category_id = resultSet.getInt("category_id");
+                int deal_id = resultSet.getInt("deal_id");
+                String item_name = resultSet.getString("item_name");
+                double item_price = resultSet.getDouble("item_price");
+                String item_description = resultSet.getString("item_description");
+                String item_image = resultSet.getString("item_image");
+
+                item.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return item;
+    }
+
+    @Override
+    public List<Item> findAllItemByIdDeal(int id) {
+        List<Item> item = new ArrayList<>();
+        try(PreparedStatement statement = connection.prepareStatement(SELECT_ITEM_BY_ID_DEAL)){
             statement.setInt(1,id);
             System.out.println(statement);
             ResultSet resultSet =statement.executeQuery();
