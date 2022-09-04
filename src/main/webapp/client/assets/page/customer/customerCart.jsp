@@ -399,6 +399,60 @@
         <!--form manager-->
 
 
+        <div class="container-xl">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <h2>User <b>Cart</b></h2>
+                            </div>
+                            <div class="col-sm-7">
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <tbody>
+                        <tr>
+                            <td>Item</td>
+                            <td>Quantity</td>
+                            <td></td>
+                        </tr>
+                        <c:forEach var="item" items="${order.items}">
+                            <tr>
+                                <td>
+                                    <div class="col-auto item-restaurant-img">
+                                        <button class="inline">
+                                            <img src="${item.item_image}" alt="${item.item_name}" width="60" height="60">
+                                        </button>
+                                    </div>
+                                    <div class="col item-restaurant-info">
+                                        <h2 class="item-restaurant-name">${item.item_name}</h2>
+                                    </div>
+                                    <div class="col-auto item-restaurant-more">
+                                        <div class="row ">
+                                            <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+                                            </div>
+                                            </div></div></div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+
+
+                        </c:forEach>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
 
         <div class="container-xl">
             <div class="table-responsive">

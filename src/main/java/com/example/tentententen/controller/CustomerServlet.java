@@ -2,6 +2,8 @@ package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Customer;
 import com.example.tentententen.model.Deal;
+import com.example.tentententen.model.Item;
+import com.example.tentententen.model.Shop;
 import com.example.tentententen.service.IService;
 import com.example.tentententen.service.category.CategoryService;
 import com.example.tentententen.service.category.ICategoryService;
@@ -27,7 +29,7 @@ import java.util.List;
 public class CustomerServlet extends HttpServlet {
 
     ICategoryService categoryService = new CategoryService();
-    IShopService shopService = new ShopService();
+    IShopService iShopService = new ShopService();
     IItemService itemService = new ItemService();
 
     ICustomerService customerService = new CustomerService();
@@ -38,11 +40,11 @@ public class CustomerServlet extends HttpServlet {
             action="";
         }
         switch (action){
-            case "create":
-                showCreate(req,resp);
+            case "addToCart":
+                showCart(req,resp);
                 break;
-            case "edit":
-                showEdit(req,resp);
+            case "showShopItem":
+                showShopItem(req,resp);
                 break;
             case "delete":
                 deleteCustomer(req,resp);
@@ -69,6 +71,16 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
+    private void showShopItem(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
+        List<Item> itemList = itemService.findAllItemByIdShop(id);
+        Shop shop= iShopService.findById(id);
+        req.setAttribute("shop",shop);
+        req.setAttribute("items", itemList);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/client/assets/page/customer/shopItem.jsp");
+
+        requestDispatcher.forward(req,resp);
+    }
     private void showEdit(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int customer_id= Integer.parseInt(req.getParameter("id"));
         Customer  customer= (Customer) customerService.findById(customer_id);
@@ -89,6 +101,10 @@ public class CustomerServlet extends HttpServlet {
         requestDispatcher.forward(req,resp);
     }
 
+    private void showCart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/client/assets/page/customer/customerCart.jsp");
+        dispatcher.forward(req,resp);
+    }
     private void showCustomerInfor(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = LoginServlet.account;
         Customer customer = customerService.findByName(name);
@@ -123,7 +139,7 @@ public class CustomerServlet extends HttpServlet {
     public void homeUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
         request.setAttribute("categories",categoryService.fillAll());
-        request.setAttribute("shops",shopService.fillAll());
+        request.setAttribute("shops",iShopService.fillAll());
         request.setAttribute("items",itemService.fillAll());
 
         dispatcher.forward(request,response);

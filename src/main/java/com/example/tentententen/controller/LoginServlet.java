@@ -22,6 +22,7 @@ import java.util.List;
 @WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     static String account ="";
+    static boolean checkLogin = false;
 
     private final String ADMIN_ACCOUNT = "admin";
     private final String ADMIN_PASSWORD = "123456";
@@ -80,6 +81,7 @@ public class LoginServlet extends HttpServlet {
             if (ADMIN_ACCOUNT.equals(account)
                     && ADMIN_PASSWORD.equals(password)){
                 dispatcher = request.getRequestDispatcher("/client/assets/page/admin/adminHome.jsp");
+                LoginServlet.checkLogin =true;
                 dispatcher.forward(request,response);
                 return;
             }
@@ -87,6 +89,7 @@ public class LoginServlet extends HttpServlet {
                     && customers.get(i).getCustomer_password().equals(password)){
                     request.setAttribute("account",account);
                     dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
+                    LoginServlet.checkLogin =true;
                     dispatcher.forward(request,response);
                     return;
             }

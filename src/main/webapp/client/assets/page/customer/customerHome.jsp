@@ -349,9 +349,10 @@
                                 </div>
                             </div>
                             <%--              List shops foreach--%>
+
                             <c:forEach var="shops" items="${shops}">
                                 <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                href="">
+                                                                href="/customers?action=showShopItem&id=${shops.shop_id}">
                                     <div class="img-restaurant"><img
                                             src="img/${shops.shop_image}"
                                             class=""></div>
