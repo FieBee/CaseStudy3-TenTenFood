@@ -1,4 +1,4 @@
-package com.example.tentententen.controller;
+ package com.example.tentententen.controller;
 
 import com.example.tentententen.model.Item;
 import com.example.tentententen.model.Order;
@@ -24,6 +24,7 @@ public class AddToCartServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         try{
             switch (action){
                 case "delete":
@@ -33,9 +34,11 @@ public class AddToCartServlet  extends HttpServlet {
                     double sum = 0;
                     int quantity = 1;
                     int id;
+                    request.setAttribute("account", LoginServlet.USER_ACCOUNT);
                     if (request.getParameter("id")!=null){
                         id = Integer.parseInt(request.getParameter("id"));
                         Item item = itemService.findById(id);
+                        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
                         if (item != null){
                             if (request.getParameter("quantity")!=null){
                                 quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -48,6 +51,7 @@ public class AddToCartServlet  extends HttpServlet {
                                 itemList.add(item);
                                 order.setItems(itemList);
                                 sum=item.getItem_price();
+
                                 session.setAttribute("total",sum);
                                 session.setAttribute("order",order);
                                 session.setAttribute("quantity",quantity);
@@ -71,9 +75,11 @@ public class AddToCartServlet  extends HttpServlet {
                                 session.setAttribute("total",sum);
                             }
                         }
+                        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
                         response.sendRedirect("client/assets/page/customer/customerCart.jsp");
 
                     }else {
+                        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
                         response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
                     }
                     break;
@@ -95,6 +101,7 @@ public class AddToCartServlet  extends HttpServlet {
             order.getItems().remove(order.getItems().size()-1);
             session.setAttribute("order",order);
         }
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
     }
     private void getTotalPrice(HttpServletRequest request, HttpServletResponse response){
@@ -112,6 +119,7 @@ public class AddToCartServlet  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         try{
             switch (action){
 //                case "delete":

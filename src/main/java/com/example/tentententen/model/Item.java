@@ -13,6 +13,15 @@ public class Item {
     private String item_description;
     private String item_image;
     private List<Category> categoryList;
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public Item(int item_id, String item_code, int shop_id, int category_id, int deal_id, String item_name, double item_price, String item_description, String item_image) {
         this.item_id = item_id;

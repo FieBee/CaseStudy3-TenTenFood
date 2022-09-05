@@ -291,23 +291,17 @@
                             <%--                            cưng</a>--%>
                         </div>
 
-                        <div class="language dropdown col-auto">
-                            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                 aria-haspopup="true" aria-expanded="false"><img src="img/vi.png"></img>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><img src="img/en.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                                <div class="dropdown-item"><img src="img/vi.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
-                            </div>
-                        </div>
                         <div class="user-acc col-auto">
                             <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Ckasdlasdasasd</span>
+                                <span class="font14">${account}</span>
                             </button>
-                            <%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
+                        <div class="user-acc col-auto">
+                            <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">Logout</span>
+                            </button></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -422,7 +416,10 @@
                             <td>Add</td>
                             <td>Delete</td>
                         </tr>
+<%--                        chac la loi o day--%>
+<%--                        <c:forEach var="order" items="order">--%>
                         <c:forEach var="item" items="${order.items}">
+
                             <tr>
                                 <td>
                                     <div class="col-auto item-restaurant-img">
@@ -448,12 +445,12 @@
                                     <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                                 </td>
                             </tr>
-
                         </c:forEach>
+
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td>${total}</td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -462,6 +459,12 @@
                                 <td></td>
                                 <td></td>
                                 <td><a href=""><button>Thanh Toán</button></a></td>
+                                <td></td>
+                                <td></td>
+                            </tr><tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/customers?action=home"><button>Quay lại cửa hàng</button></a></td>
                                 <td></td>
                                 <td></td>
                             </tr>

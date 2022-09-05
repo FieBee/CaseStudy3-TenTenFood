@@ -236,7 +236,7 @@
             <div class="container-header">
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
-                        <div class="logo-now col-auto"><span><a href="home.html"><img
+                        <div class="logo-now col-auto"><span><a href="/customers?action=home"><img
                                 src="../img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
@@ -284,30 +284,23 @@
 
                         <div class="main-nav col">
                             <a class="nav-item active" href="/customers">User Information</a>
-                            <a class="nav-item active" href="/customers?action=shopManagement">Cart</a>
+                            <a class="nav-item active" href="/customers?action=addToCart">Cart</a>
 
                             <%--                            <a class="nav-item "--%>
                             <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
                             <%--                            cưng</a>--%>
                         </div>
-
-                        <div class="language dropdown col-auto">
-                            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                 aria-haspopup="true" aria-expanded="false"><img src="./assets/img/vi.png"></img>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><img src="./assets/img/en.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                                <div class="dropdown-item"><img src="./assets/img/vi.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
-                            </div>
+                        <div class="user-acc col-auto">
+                            <a href="/customers"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">${account}</span>
+                            </button></a>
                         </div>
                         <div class="user-acc col-auto">
-                            <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Admin</span>
-                            </button>
-                            <%--                            <input type="submit" value="Đăng nhập ">--%>
+                            <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">Logout</span>
+                            </button></a>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -308,6 +308,11 @@
                             </button>
                             <%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
+                        <div class="user-acc col-auto">
+                            <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">Logout</span>
+                            </button></a>
+                        </div>
                     </div>
                 </div>
             </div>
