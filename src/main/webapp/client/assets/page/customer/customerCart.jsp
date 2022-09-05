@@ -422,38 +422,41 @@
                             <td>Add</td>
                             <td>Delete</td>
                         </tr>
+<%--                        chac la loi o day--%>
+<%--                        <c:forEach var="order" items="order">--%>
                         <c:forEach var="item" items="${order.items}">
-                            <tr>
-                                <td>
-                                    <div class="col-auto item-restaurant-img">
-                                        <button class="inline">
-                                            <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
-                                        </button>
-                                    </div>
-                                    <div class="col item-restaurant-info">
-                                        <h2 class="item-restaurant-name">${item.item_name}</h2>
-                                    </div>
-                                    <div class="col-auto item-restaurant-more">
-                                        <div class="row ">
-                                            <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                            </div>
-                                            </div></div></div>
-                                </td>
-                                <td>${order.quantityItem}</td>
-                                <td>(${item.item_price * order.quantityItem})</td>
-                                <td>
-                                    <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                                <td>
-                                    <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-
+                        <tr>
+                            <td>
+                                <div class="col-auto item-restaurant-img">
+                                    <button class="inline">
+                                        <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
+                                    </button>
+                                </div>
+                                <div class="col item-restaurant-info">
+                                    <h2 class="item-restaurant-name">${item.item_name}</h2>
+                                </div>
+                                <div class="col-auto item-restaurant-more">
+                                    <div class="row ">
+                                        <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
+                                        </div>
+                                        </div></div></div>
+                            </td>
+                            <td>${quantity}</td>
+                            <td>(${item.item_price * quantity})</td>
+                            <td>
+                                <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                            <td>
+                                <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
                         </c:forEach>
+<%--                        </c:forEach>--%>
+
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td>${total}</td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                             </tr>
@@ -462,6 +465,12 @@
                                 <td></td>
                                 <td></td>
                                 <td><a href=""><button>Thanh Toán</button></a></td>
+                                <td></td>
+                                <td></td>
+                            </tr><tr>
+                                <td></td>
+                                <td></td>
+                                <td><a href="/customers?action=home"><button>Quay lại cửa hàng</button></a></td>
                                 <td></td>
                                 <td></td>
                             </tr>

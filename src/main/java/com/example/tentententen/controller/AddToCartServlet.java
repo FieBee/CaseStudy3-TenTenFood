@@ -72,7 +72,6 @@ public class AddToCartServlet  extends HttpServlet {
                             }
                         }
                         response.sendRedirect("client/assets/page/customer/customerCart.jsp");
-
                     }else {
                         response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
                     }
@@ -111,17 +110,50 @@ public class AddToCartServlet  extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        try{
-            switch (action){
-//                case "delete":
-//                    deleteOrder(request,response);
-//                    break;
-                default:
-                    break;
+        double sum = 0;
+        int quantity = 1;
+        int id;
+        if (request.getParameter("id")!=null){
+            id = Integer.parseInt(request.getParameter("id"));
+            Item item = itemService.findById(id);
+            if (item != null){
+                if (request.getParameter("quantity")!=null){
+                    quantity = Integer.parseInt(request.getParameter("quantity"));
+                }
+                HttpSession session = request.getSession();
+                if (session.getAttribute("order")==null){
+                    Order order = new Order();
+                    List<Item> itemList = new ArrayList<Item>();
+                    order.setQuantityItem(quantity);
+                    itemList.add(item);
+                    order.setItems(itemList);
+                    sum=item.getItem_price();
+                    session.setAttribute("total",sum);
+                    session.setAttribute("order",order);
+                    session.setAttribute("quantity",quantity);
+                }else {
+                    Order order = (Order) session.getAttribute("order");
+                    List<Item> itemList = order.getItems();
+                    boolean check = false;
+                    for (Item item1 : itemList){
+                        if (item1.getItem_id() == item.getItem_id()){
+                            order.setQuantityItem(order.getQuantityItem() + quantity);
+                            check = true;
+                        }
+                    }
+                    if (check == false){
+                        order.setQuantityItem(quantity);
+                        Item item1 = new Item();
+                        itemList.add(item1);
+                    }
+
+                    session.setAttribute("order",order);
+                    session.setAttribute("total",sum);
+                }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            response.sendRedirect("client/assets/page/customer/customerCart.jsp");
+        }else {
+            response.sendRedirect("/client/assets/page/customer/customerCart.jsp");
         }
     }
 }

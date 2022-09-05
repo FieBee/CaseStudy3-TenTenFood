@@ -40,6 +40,9 @@ public class CustomerServlet extends HttpServlet {
             action="";
         }
         switch (action){
+            case "home":
+                homeUser(req,resp);
+                break;
             case "addToCart":
                 showCart(req,resp);
                 break;
