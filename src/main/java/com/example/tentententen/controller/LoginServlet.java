@@ -5,6 +5,8 @@ import com.example.tentententen.service.category.CategoryService;
 import com.example.tentententen.service.category.ICategoryService;
 import com.example.tentententen.service.customer.CustomerService;
 import com.example.tentententen.service.customer.ICustomerService;
+import com.example.tentententen.service.deal.DealService;
+import com.example.tentententen.service.deal.IDealService;
 import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
 import com.example.tentententen.service.shop.IShopService;
@@ -26,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 
     private final String ADMIN_ACCOUNT = "admin";
     private final String ADMIN_PASSWORD = "123456";
+    IDealService dealService= new DealService();
 
     ICategoryService categoryService = new CategoryService();
     IItemService itemService = new ItemService();
@@ -73,6 +76,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         List<Customer> customers = customerService.fillAll();
         RequestDispatcher dispatcher;
+        request.setAttribute("deals",dealService.fillAll());
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",shopService.fillAll());
         request.setAttribute("items",itemService.fillAll());
