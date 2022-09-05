@@ -120,7 +120,7 @@
                         </div>
 
                         <div class="main-nav col"><a class="nav-item active" href="">Đồ ăn</a><a
-                                class="nav-item " href="/https://shopeefood.vn/ho-chi-minh/fresh">Thực phẩm</a>
+                                class="nav-item " href="https://shopeefood.vn/ho-chi-minh/fresh">Thực phẩm</a>
                             <a class="nav-item "href="https://shopeefood.vn/ho-chi-minh/liquor">Bia</a>
                             <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/flowers">Hoa</a>
                             <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/fmcg">Siêu thị</a>

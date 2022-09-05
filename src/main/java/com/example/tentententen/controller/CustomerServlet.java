@@ -35,6 +35,7 @@ public class CustomerServlet extends HttpServlet {
     ICustomerService customerService = new CustomerService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
         String action= req.getParameter("action");
         if(action==null){
             action="";
@@ -112,11 +113,12 @@ public class CustomerServlet extends HttpServlet {
     }
     private void showCustomerInfor(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = LoginServlet.account;
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
         Customer customer = customerService.findByName(name);
         req.setAttribute("customer",customer);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/client/assets/page/customer/customerInfor.jsp");
         dispatcher.forward(req,resp);
-        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
+//        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
     }
 
     @Override
