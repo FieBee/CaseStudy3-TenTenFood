@@ -26,6 +26,7 @@ public class LoginServlet extends HttpServlet {
     static String account ="";
     static boolean checkLogin = false;
 
+    static String USER_ACCOUNT = "";
     private final String ADMIN_ACCOUNT = "admin";
     private final String ADMIN_PASSWORD = "123456";
     IDealService dealService= new DealService();
@@ -91,6 +92,7 @@ public class LoginServlet extends HttpServlet {
             }
             if (customers.get(i).getCustomer_account().equals(account)
                     && customers.get(i).getCustomer_password().equals(password)){
+                    LoginServlet.USER_ACCOUNT = account;
                     request.setAttribute("account",account);
                     dispatcher = request.getRequestDispatcher("client/assets/page/customer/customerHome.jsp");
                     LoginServlet.checkLogin =true;

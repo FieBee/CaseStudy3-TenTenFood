@@ -80,6 +80,7 @@ public class CustomerServlet extends HttpServlet {
         Shop shop= iShopService.findById(id);
         req.setAttribute("shop",shop);
         req.setAttribute("items", itemList);
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/client/assets/page/customer/shopItem.jsp");
 
         requestDispatcher.forward(req,resp);
@@ -107,6 +108,7 @@ public class CustomerServlet extends HttpServlet {
     private void showCart(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher dispatcher = req.getRequestDispatcher("/client/assets/page/customer/customerCart.jsp");
         dispatcher.forward(req,resp);
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
     }
     private void showCustomerInfor(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = LoginServlet.account;
@@ -114,6 +116,7 @@ public class CustomerServlet extends HttpServlet {
         req.setAttribute("customer",customer);
         RequestDispatcher dispatcher = req.getRequestDispatcher("/client/assets/page/customer/customerInfor.jsp");
         dispatcher.forward(req,resp);
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
     }
 
     @Override
@@ -144,7 +147,7 @@ public class CustomerServlet extends HttpServlet {
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",iShopService.fillAll());
         request.setAttribute("items",itemService.fillAll());
-
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         dispatcher.forward(request,response);
     }
 
@@ -163,6 +166,7 @@ public class CustomerServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
         req.setAttribute("message","Okeeee b");
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("");
         requestDispatcher.forward(req,resp);
@@ -181,5 +185,6 @@ public class CustomerServlet extends HttpServlet {
         req.setAttribute("message","Okeeee b");
         RequestDispatcher requestDispatcher= req.getRequestDispatcher("");
         requestDispatcher.forward(req,resp);
+        req.setAttribute("account", LoginServlet.USER_ACCOUNT);
     }
 }

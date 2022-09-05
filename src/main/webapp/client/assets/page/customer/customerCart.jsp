@@ -291,23 +291,17 @@
                             <%--                            cưng</a>--%>
                         </div>
 
-                        <div class="language dropdown col-auto">
-                            <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                 aria-haspopup="true" aria-expanded="false"><img src="img/vi.png"></img>
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><img src="img/en.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                                <div class="dropdown-item"><img src="img/vi.png"></img><span
-                                        class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
-                            </div>
-                        </div>
                         <div class="user-acc col-auto">
                             <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Ckasdlasdasasd</span>
+                                <span class="font14">${account}</span>
                             </button>
-                            <%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
+                        <div class="user-acc col-auto">
+                            <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">Logout</span>
+                            </button></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -425,33 +419,7 @@
 <%--                        chac la loi o day--%>
 <%--                        <c:forEach var="order" items="order">--%>
                         <c:forEach var="item" items="${order.items}">
-<<<<<<< HEAD
-                        <tr>
-                            <td>
-                                <div class="col-auto item-restaurant-img">
-                                    <button class="inline">
-                                        <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
-                                    </button>
-                                </div>
-                                <div class="col item-restaurant-info">
-                                    <h2 class="item-restaurant-name">${item.item_name}</h2>
-                                </div>
-                                <div class="col-auto item-restaurant-more">
-                                    <div class="row ">
-                                        <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                        </div>
-                                        </div></div></div>
-                            </td>
-                            <td>${quantity}</td>
-                            <td>(${item.item_price * quantity})</td>
-                            <td>
-                                <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                            <td>
-                                <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-=======
+
                             <tr>
                                 <td>
                                     <div class="col-auto item-restaurant-img">
@@ -477,10 +445,7 @@
                                     <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                                 </td>
                             </tr>
-
->>>>>>> e9a1ae60d007f20e213f62f35c3df3dc9a514203
                         </c:forEach>
-<%--                        </c:forEach>--%>
 
                             <tr>
                                 <td></td>

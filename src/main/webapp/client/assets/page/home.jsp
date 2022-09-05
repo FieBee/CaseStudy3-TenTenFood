@@ -122,16 +122,6 @@
                                                                          href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú
               cưng</a></div>
 
-            <div class="language dropdown col-auto">
-              <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false"><img src="../img/vi.png"></img>
-              </div>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div class="dropdown-item"><img src="../img/en.png"></img><span
-                        class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                <div class="dropdown-item"><img src="../img/vi.png"></img><span
-                        class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
-              </div>
             </div>
             <div class="user-acc col-auto">
               <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
