@@ -66,28 +66,28 @@ public class ItemService implements IItemService{
     @Override
     public List<Item> fillAll() {
         List<Item> itemList = new ArrayList<>();
-//        try (
-//             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);) {
-//            System.out.println(statement);
-//            ResultSet resultSet = statement.executeQuery();
-//
-//            while (resultSet.next()) {
-//                int item_id = resultSet.getInt("item_id");
-//                String item_code = resultSet.getString("item_code");
-//                int shop_id = resultSet.getInt("shop_id");
-//                int category_id = resultSet.getInt("category_id");
-//                int deal_id = resultSet.getInt("deal_id");
-//                String item_name = resultSet.getString("item_name");
-//                double item_price = resultSet.getDouble("item_price");
-//                String item_description = resultSet.getString("item_description");
-//                String item_image = resultSet.getString("item_image");
-//                List<Category> categoryList = categoryService.findAllByItemId(item_id);
-//
-//                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image,categoryList));
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        try (
+             PreparedStatement statement = connection.prepareStatement(SELECT_ALL_ITEM);) {
+            System.out.println(statement);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int item_id = resultSet.getInt("item_id");
+                String item_code = resultSet.getString("item_code");
+                int shop_id = resultSet.getInt("shop_id");
+                int category_id = resultSet.getInt("category_id");
+                int deal_id = resultSet.getInt("deal_id");
+                String item_name = resultSet.getString("item_name");
+                double item_price = resultSet.getDouble("item_price");
+                String item_description = resultSet.getString("item_description");
+                String item_image = resultSet.getString("item_image");
+                List<Category> categoryList = categoryService.findAllByItemId(item_id);
+
+                itemList.add(new Item(item_id, item_code, shop_id, category_id,deal_id,item_name,item_price,item_description,item_image,categoryList));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return itemList;
 
     }
