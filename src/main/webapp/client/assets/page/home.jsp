@@ -243,13 +243,13 @@
             </div>
           </div>
           <div class="category-list-filter">
-            <a href="/ha-noi/danh-sach-dia-diem-giao-tan-noi">
+            <a href="https://shopeefood.vn/ha-noi/danh-sach-dia-diem-phuc-vu-food-giao-tan-noi">
               <span class="category-item ">All</span>
             </a>
 
 <%--            Show Category_name--%>
             <c:forEach var="category" items="${categories}">
-              <a href="categories?action=view&id=${category.category_id}">
+              <a href="https://shopeefood.vn/ha-noi/danh-sach-dia-diem-phuc-vu-food-giao-tan-noi">
                   <span class="category-item ">${category.category_name}</span>
               </a>
             </c:forEach>
