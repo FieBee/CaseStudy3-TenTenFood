@@ -245,7 +245,7 @@
                         </div>
                     </div>
                     <div class="category-list-filter">
-                        <a href="/ha-noi/danh-sach-dia-diem-giao-tan-noi">
+                        <a href="https://shopeefood.vn/ha-noi/danh-sach-dia-diem-phuc-vu-food-giao-tan-noi">
                             <span class="category-item ">All</span>
                         </a>
 
