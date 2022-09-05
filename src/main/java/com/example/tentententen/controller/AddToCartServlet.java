@@ -24,6 +24,7 @@ public class AddToCartServlet  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         try{
             switch (action){
                 case "delete":
@@ -118,6 +119,7 @@ public class AddToCartServlet  extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
+        request.setAttribute("account", LoginServlet.USER_ACCOUNT);
         try{
             switch (action){
 //                case "delete":

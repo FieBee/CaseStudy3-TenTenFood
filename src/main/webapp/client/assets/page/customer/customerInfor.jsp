@@ -290,13 +290,17 @@
                             <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
                             <%--                            cưng</a>--%>
                         </div>
-
                         <div class="user-acc col-auto">
-                            <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Admin</span>
-                            </button>
-                            <%--                            <input type="submit" value="Đăng nhập ">--%>
+                            <a href="/customers"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">${account}</span>
+                            </button></a>
                         </div>
+                        <div class="user-acc col-auto">
+                            <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
+                                <span class="font14">Logout</span>
+                            </button></a>
+                        </div>
+
                     </div>
                 </div>
             </div>
