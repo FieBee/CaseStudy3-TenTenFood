@@ -433,108 +433,20 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="item-restaurant"><a  class="item-content"
-                                                                title="Tiệc sang giá xịn giảm 50%"
-                                                                href="/bo-suu-tap/tiec-sang-gia-xin-giam-50">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-d5cd944a-220826155740.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Tiệc sang giá xịn giảm 50%">Tiệc sang giá
-                                            xịn giảm 50%</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a class="item-content"
-                                                                title="Món gì cũng freeship" href="/bo-suu-tap/mon-gi-cung-freeship">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-a134bf28-220826160037.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Món gì cũng freeship">Món gì cũng freeship
-                                        </h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a class="item-content"
-                                                                title="Tặng 01 lon Tiger Platinum"
-                                                                href="/bo-suu-tap/tang-01-lon-tiger-platinum">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-3201266b-220822173754.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Tặng 01 lon Tiger Platinum">Tặng 01 lon
-                                            Tiger Platinum</h4>
-                                        <div class="txt-blue font12">53 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a  class="item-content"
-                                                                title="Siêu Tiệc 0Đ, bao ăn xả láng"
-                                                                href="/bo-suu-tap/sieu-tiec-0d-bao-an-xa-lang">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-0e9ca533-220826160538.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Siêu Tiệc 0Đ, bao ăn xả láng">Siêu Tiệc 0Đ,
-                                            bao ăn xả láng</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                title="Thứ 4 - Siêu tiệc giảm 50%" href="/bo-suu-tap/sieu-tiec-giam-50">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-79626c46-220531114957.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Thứ 4 - Siêu tiệc giảm 50%">Thứ 4 - Siêu
-                                            tiệc giảm 50%</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                title="Freeship tới 35k" href="/bo-suu-tap/freeship-toi-35k">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-a86a408c-220809153141.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Freeship tới 35k">Freeship tới 35k</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                title="Siêu Tiệc Giảm 99K" href="/bo-suu-tap/sieu-tiec-giam-99k">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-1d5cc0cb-220208093155.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Siêu Tiệc Giảm 99K">Siêu Tiệc Giảm 99K</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                title="Quán mới lên sàn deal 0Đ"
-                                                                href="/bo-suu-tap/quan-moi-len-san-deal-0d">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-e12ce9e6-220406074410.png"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Quán mới lên sàn deal 0Đ">Quán mới lên sàn
-                                            deal 0Đ</h4>
-                                        <div class="txt-blue font12">200 địa điểm</div>
-                                    </div>
-                                </a></div>
-                                <div class="item-restaurant"><a target="_blank" class="item-content"
-                                                                title="Deal to bao no, giảm đến 40K"
-                                                                href="/bo-suu-tap/quan-ngon-voucher-xin-san-deal-30k">
-                                    <div class="img-restaurant"><img
-                                            src="https://images.foody.vn/delivery/collection/s320x200/image-cdf3f5e8-220506000949.jpeg"
-                                            class=""></div>
-                                    <div class="info-restaurant info-basic-res">
-                                        <h4 class="name-res" title="Deal to bao no, giảm đến 40K">Deal to bao
-                                            no, giảm đến 40K</h4>
-                                        <div class="txt-blue font12">178 địa điểm</div>
-                                    </div>
-                                </a></div>
+                                <%--                list deal--%>
+                                <c:forEach var="deals" items="${deals}">
+                                    <div class="item-restaurant"><a  class="item-content"
+                                                                     href="dealShops?id=${deals.deal_id}">
+                                        <div class="img-restaurant"><img
+                                                src="img/${deals.deal_image}"
+                                                class=""></div>
+                                        <div class="info-restaurant">
+                                            <div class="info-basic-res">
+                                                <h4 class="name-res" title="${deals.deal_name}">${deals.deal_name}</h4>
+                                            </div>
+                                        </div>
+                                    </a></div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
