@@ -237,7 +237,7 @@
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
                         <div class="logo-now col-auto"><span><a href="home.html"><img
-                                src="img/shopeefoodvn.png"
+                                src="../../../../img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
                             <div class="dropdown">
@@ -427,7 +427,7 @@
                                 <td>
                                     <div class="col-auto item-restaurant-img">
                                         <button class="inline">
-                                            <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
+                                            <img src="../../../../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
                                         </button>
                                     </div>
                                     <div class="col item-restaurant-info">
