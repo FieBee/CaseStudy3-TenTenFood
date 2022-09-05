@@ -236,7 +236,7 @@
             <div class="container-header">
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
-                        <div class="logo-now col-auto"><span><a href="home.html"><img
+                        <div class="logo-now col-auto"><span><a href="/customers?action=home"><img
                                 src="../img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
@@ -284,7 +284,7 @@
 
                         <div class="main-nav col">
                             <a class="nav-item active" href="/customers">User Information</a>
-                            <a class="nav-item active" href="/customers?action=shopManagement">Cart</a>
+                            <a class="nav-item active" href="/customers?action=addToCart">Cart</a>
 
                             <%--                            <a class="nav-item "--%>
                             <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
