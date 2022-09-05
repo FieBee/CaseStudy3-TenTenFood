@@ -115,14 +115,17 @@
 
             </div>
 
-            <div class="main-nav col"><a class="nav-item active" href="/ha-noi/food">Đồ ăn</a><a
-                    class="nav-item " href="/ha-noi/fresh">Thực phẩm</a><a class="nav-item "
-                                                                           href="/ha-noi/liquor">Bia</a><a class="nav-item " href="/ha-noi/flowers">Hoa</a><a
-                    class="nav-item " href="/ha-noi/fmcg">Siêu thị</a><a class="nav-item "
-                                                                         href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú
-              cưng</a></div>
-
+            <div class="main-nav col"><a class="nav-item active" href="">Đồ ăn</a><a
+                    class="nav-item " href="/https://shopeefood.vn/ho-chi-minh/fresh">Thực phẩm</a>
+              <a class="nav-item "href="https://shopeefood.vn/ho-chi-minh/liquor">Bia</a>
+              <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/flowers">Hoa</a>
+              <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/fmcg">Siêu thị</a>
+              <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/medicine">Thuốc</a>
+              <a class="nav-item " href="https://shopeefood.vn/ho-chi-minh/pets">Thú
+                cưng</a>
             </div>
+
+
             <div class="user-acc col-auto">
               <a href="/login"><button type="button" class="btn btn-none-bg btn-login">
                 <span class="font14">Đăng nhập</span>
