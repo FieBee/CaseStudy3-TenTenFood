@@ -7,6 +7,8 @@ import com.example.tentententen.service.bill_detail.Bill_DetailService;
 import com.example.tentententen.service.bill_detail.IBill_DetailService;
 import com.example.tentententen.service.category.CategoryService;
 import com.example.tentententen.service.category.ICategoryService;
+import com.example.tentententen.service.deal.DealService;
+import com.example.tentententen.service.deal.IDealService;
 import com.example.tentententen.service.item.IItemService;
 import com.example.tentententen.service.item.ItemService;
 import com.example.tentententen.service.shop.IShopService;
@@ -25,7 +27,7 @@ import java.util.List;
 
 @WebServlet(name = "AdminServlet", value = "/admin")
 public class AdminServlet extends HttpServlet {
-
+IDealService dealService= new DealService();
     ICategoryService categoryService = new CategoryService();
     IItemService itemService = new ItemService();
     IShopService shopService = new ShopService();
@@ -98,7 +100,7 @@ public class AdminServlet extends HttpServlet {
         request.setAttribute("categories",categoryService.fillAll());
         request.setAttribute("shops",shopService.fillAll());
         request.setAttribute("items",itemService.fillAll());
-
+        request.setAttribute("deals",dealService.fillAll());
         dispatcher.forward(request,response);
     }
 
