@@ -13,4 +13,5 @@ import java.util.List;
 public interface IShopService extends IService<Shop> {
     Shop selectShopByName(String name);
 
+
 }

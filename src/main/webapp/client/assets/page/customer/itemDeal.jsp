@@ -236,8 +236,8 @@
             <div class="container-header">
                 <div class="container">
                     <div class="header-content navbar row  justify-content-between align-items-center">
-                        <div class="logo-now col-auto"><span><a href="home.html"><img
-                                src="../../../../img/shopeefoodvn.png"
+                        <div class="logo-now col-auto"><span><a href="login"><img
+                                src="../img/shopeefoodvn.png"
                                 alt="ShopeeFood"></a></span></div>
                         <div class="select-local col-auto">
                             <div class="dropdown">
@@ -282,29 +282,26 @@
                             </div>
                         </div>
 
-                        <div class="main-nav col">
-                            <a class="nav-item active" href="/customers">User Information</a>
-                            <a class="nav-item active" href="/customers?action=shopManagement">Cart</a>
+                        <div class="main-nav col"><a class="nav-item active" href="/admin?action=shopManagement">Shop</a><a
+                                class="nav-item " href="/admin?action=userManagement">User</a><a class="nav-item " href="/admin?action=dealManagement">Deal</a><a
+                                class="nav-item " href="/admin?action=categoryManagement">Category</a>
 
-                            <%--                            <a class="nav-item "--%>
-                            <%--                                                                                     href="/ha-noi/medicine">Thuốc</a><a class="nav-item " href="/ha-noi/pets">Thú--%>
-                            <%--                            cưng</a>--%>
                         </div>
 
                         <div class="language dropdown col-auto">
                             <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown"
-                                 aria-haspopup="true" aria-expanded="false"><img src="img/vi.png"></img>
+                                 aria-haspopup="true" aria-expanded="false"><img src="./assets/img/vi.png"></img>
                             </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><img src="img/en.png"></img><span
+                                <div class="dropdown-item"><img src="./assets/img/en.png"></img><span
                                         class="font14">&nbsp;&nbsp;Tiếng Anh</span></div>
-                                <div class="dropdown-item"><img src="img/vi.png"></img><span
+                                <div class="dropdown-item"><img src="./assets/img/vi.png"></img><span
                                         class="font14">&nbsp;&nbsp;Tiếng Việt</span></div>
                             </div>
                         </div>
                         <div class="user-acc col-auto">
                             <button type="button" )onclick="login(" class="btn btn-none-bg btn-login">
-                                <span class="font14">Ckasdlasdasasd</span>
+                                <span class="font14">Admin</span>
                             </button>
                             <%--                            <input type="submit" value="Đăng nhập ">--%>
                         </div>
@@ -326,7 +323,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content"><span class="close" data-dismiss="modal">x</span>
                         <div class="img-now"><img
-                                src="img/img-new-app.png?2aafe2fa0d470c0d2fadada01c56a448"
+                                src="/app/assets/img/img-new-app.png?2aafe2fa0d470c0d2fadada01c56a448"
                                 alt="App now"></div>
                         <div class="info-now"><span>
                                     <h3 style="font-size: 36px;font-weight: lighter;margin-bottom: 0;">Hello you!</h3>
@@ -396,134 +393,14 @@
                 </div>
             </div>
         </header>
-        <!--form manager-->
+<%--itemDeal--%>
+        <div class="container"><div class="header-res-collection"><h1 class="title">${deal.deal_description}</h1><p class="title-desc">${deal.deal_description}</p></div><div class="toolbar-res-collection"><div class="row"><div class="col"><div class="facebook"><iframe title="like share facebook" src="https://www.facebook.com/plugins/like.php?href=https://shopeefood.vn/bo-suu-tap/an-le-tai-gia-giam-toi-105k&amp;width=146&amp;layout=button_count&amp;action=like&amp;size=small&amp;show_faces=true&amp;share=true&amp;height=46&amp;appId=395614663835338" width="140" height="20" scrolling="no" frameborder="0" allow="encrypted-media" style="border: none; overflow: hidden;"></iframe></div></div><div class="col-auto"><div class="local"><i class="fas fa-map-marker-alt"></i><span class="number">200</span><span>địa điểm</span></div></div><div class="col-auto"><div class="local"><select class="filter-sort"><option value="30">Gợi ý</option><option value="3">Gần tôi</option><option value="2">Đặt nhiều</option><option value="33">Giảm giá</option></select></div></div></div></div><div class="now-list-restaurant res-col-4"><div class="list-restaurant"><div class="now-loading-restaurant  "><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div><div class="box-loading"><div class="box-thumbnail"></div><div class="box-line-df"></div><div class="box-line-lgx"></div><div class="box-line-lg"></div></div></div><div><div>
+<%--            list item--%>
+            <c:forEach var="items" items="${items}">
+                <div class="item-restaurant"><a class="item-content" href=""><div class="img-restaurant"><img src="img/${items.item_image}" class=""></div><div class="info-restaurant"><div class="info-basic-res"><h2 class="name-res" title="${items.item_name}"><span class="icon icon-quality-merchant" title="${items.item_description}"></span>${items.item_name}</h2><div class="address-res" title="">${items.item_price}</div></div><p class="content-promotion"><i class="fas fa-tag"></i> Giảm món</p></div></a></div>
+            </c:forEach>
+        </div></div></div></div><ul class="pagination"><li class="disabled"><a class="" href="#"><span class="icon icon-paging-pre"></span></a></li><li class="active"><a class="undefined" href="#">1</a></li><li class=""><a class="" href="#">2</a></li><li class=""><a class="" href="#">3</a></li><li class=""><a class="" href="#">4</a></li><li class=""><a class="" href="#">5</a></li><li class=""><a class="" href="#">6</a></li><li class=""><a class="" href="#">7</a></li><li class=""><a class="" href="#">8</a></li><li class=""><a class="" href="#">9</a></li><li class=""><a class="" href="#">10</a></li><li class=""><a class="" href="#"><span class="icon icon-paging-next"></span></a></li></ul></div>
 
-
-        <div class="container-xl">
-            <div class="table-responsive">
-                <div class="table-wrapper">
-                    <div class="table-title">
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <h2>User <b>Cart</b></h2>
-                            </div>
-                            <div class="col-sm-7">
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-striped table-hover">
-                        <tbody>
-                        <tr>
-                            <td>Item</td>
-                            <td>Quantity</td>
-                            <td>
-                               Sum
-                            </td>
-                            <td>Add</td>
-                            <td>Delete</td>
-                        </tr>
-<%--                        chac la loi o day--%>
-<%--                        <c:forEach var="order" items="order">--%>
-                        <c:forEach var="item" items="${order.items}">
-                        <tr>
-                            <td>
-                                <div class="col-auto item-restaurant-img">
-                                    <button class="inline">
-                                        <img src="../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
-                                    </button>
-                                </div>
-                                <div class="col item-restaurant-info">
-                                    <h2 class="item-restaurant-name">${item.item_name}</h2>
-                                </div>
-                                <div class="col-auto item-restaurant-more">
-                                    <div class="row ">
-                                        <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                        </div>
-                                        </div></div></div>
-                            </td>
-                            <td>${quantity}</td>
-                            <td>(${item.item_price * quantity})</td>
-                            <td>
-                                <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                            <td>
-                                <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                            </td>
-                        </tr>
-=======
-                            <tr>
-                                <td>
-                                    <div class="col-auto item-restaurant-img">
-                                        <button class="inline">
-                                            <img src="../../../../img/${item.item_image}" alt="${item.item_name}" width="60" height="60">
-                                        </button>
-                                    </div>
-                                    <div class="col item-restaurant-info">
-                                        <h2 class="item-restaurant-name">${item.item_name}</h2>
-                                    </div>
-                                    <div class="col-auto item-restaurant-more">
-                                        <div class="row ">
-                                            <div class="col-auto product-price"><div class="current-price">${item.item_price}<span style="font-weight: 400;position: relative;top: -9px;font-size: 10px;right: 0;">đ</span>
-                                            </div>
-                                            </div></div></div>
-                                </td>
-                                <td>${order.quantityItem}</td>
-                                <td>(${item.item_price * order.quantityItem})</td>
-                                <td>
-                                    <a href="/addToCart?action=addOrder&id=${item.item_id}" class="Sum" title="Sum" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                                <td>
-                                    <a href="/addToCart?action=delete&id=${item.item_id}" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-<%--                        </c:forEach>--%>
-
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td><a href=""><button>Thanh Toán</button></a></td>
-                                <td></td>
-                                <td></td>
-                            </tr><tr>
-                                <td></td>
-                                <td></td>
-                                <td><a href="/customers?action=home"><button>Quay lại cửa hàng</button></a></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-
-
-
-
-                    </table>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-        <div class="container-xl">
-            <div class="table-responsive">
-                <div class="table-wrapper">
-
-
-                </div>
-            </div>
-        </div>
-
-        <!-- end form managerform manager -->
 
 
         <div class="now-container-coporation" >

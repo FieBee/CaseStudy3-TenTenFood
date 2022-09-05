@@ -12,4 +12,5 @@ public interface IItemService extends IService<Item> {
 
     public List<Item> selectItemByName(String item_name);
     List<Item> findAllItemByIdShop(int id);
+    List<Item> findAllItemByIdDeal(int id);
 }
